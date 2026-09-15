@@ -1,26 +1,29 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+namespace Bullets
 {
-    private const float maxLifetime = 3f;
-    private float lifetime = 0f;
-    
-    public Vector2 Velocity;
-    
-    private void Update()
+    public class Bullet : MonoBehaviour
     {
-        transform.position += (Vector3) Velocity * Time.deltaTime;
-        lifetime += Time.deltaTime;
-
-        if (lifetime > maxLifetime)
+        private const float maxLifetime = 3f;
+        private float lifetime = 0f;
+    
+        public Vector2 Velocity;
+    
+        private void Update()
         {
-            Disable();
-        }
-    }
+            transform.position += (Vector3) Velocity * Time.deltaTime;
+            lifetime += Time.deltaTime;
 
-    private void Disable()
-    {
-        lifetime = 0f;
-        gameObject.SetActive(false);
+            if (lifetime > maxLifetime)
+            {
+                Disable();
+            }
+        }
+
+        private void Disable()
+        {
+            lifetime = 0f;
+            gameObject.SetActive(false);
+        }
     }
 }

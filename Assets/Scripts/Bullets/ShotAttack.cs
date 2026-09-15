@@ -1,31 +1,34 @@
 using UnityEngine;
 
-public static class ShotAttack
+namespace Bullets
 {
-    public static void SimpleShot(Vector2 origin, Vector2 velocity)
+    public static class ShotAttack
     {
-        Bullet bullet = BulletPool.Instance.GetBullet();
-        bullet.transform.position = origin;
-        bullet.Velocity = velocity;
-    }
-
-    public static void RadialShot
-        (Vector2 origin, Vector2 aimDirection, RadialShotSettings settings)
-    {
-        float angleBetweenBullets = 360f / settings.numberOfBullets;
-
-        if(settings.angleOffset != 0f || settings.phaseOffset != 0f)
-            aimDirection = aimDirection.Rotate(settings.angleOffset + (settings.phaseOffset * angleBetweenBullets));
-        
-        for (int i = 0; i < settings.numberOfBullets; i++)
+        public static void SimpleShot(Vector2 origin, Vector2 velocity)
         {
-            float bulletDirectionAngle = angleBetweenBullets * i;
+            Bullet bullet = BulletPool.Instance.GetBullet();
+            bullet.transform.position = origin;
+            bullet.Velocity = velocity;
+        }
 
-            if (settings.radialMask && bulletDirectionAngle > settings.maskAngle)
-                break;
+        public static void RadialShot
+            (Vector2 origin, Vector2 aimDirection, RadialShotSettings settings)
+        {
+            float angleBetweenBullets = 360f / settings.numberOfBullets;
+
+            if(settings.angleOffset != 0f || settings.phaseOffset != 0f)
+                aimDirection = aimDirection.Rotate(settings.angleOffset + (settings.phaseOffset * angleBetweenBullets));
+        
+            for (int i = 0; i < settings.numberOfBullets; i++)
+            {
+                float bulletDirectionAngle = angleBetweenBullets * i;
+
+                if (settings.radialMask && bulletDirectionAngle > settings.maskAngle)
+                    break;
             
-            Vector2 bulletDirection = aimDirection.Rotate(bulletDirectionAngle);
-            SimpleShot(origin, bulletDirection * settings.bulletSpeed);
+                Vector2 bulletDirection = aimDirection.Rotate(bulletDirectionAngle);
+                SimpleShot(origin, bulletDirection * settings.bulletSpeed);
+            }
         }
     }
 }

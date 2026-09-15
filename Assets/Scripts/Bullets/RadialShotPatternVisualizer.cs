@@ -1,8 +1,10 @@
 using UnityEngine;
 
-public class RadialShotPatternVisualizer : MonoBehaviour
+namespace Bullets
 {
-    /*[SerializeField] private RadialShotSettings pattern;
+    public class RadialShotPatternVisualizer : MonoBehaviour
+    {
+        /*[SerializeField] private RadialShotSettings pattern;
     [SerializeField] private float radius;
     [SerializeField] private Color color;
     [SerializeField, Range (0f, 5f)] private float testTime;
@@ -48,4 +50,5 @@ public class RadialShotPatternVisualizer : MonoBehaviour
             Gizmos.DrawSphere(bulletPosition, radius);
         }
     }*/
+    }
 }

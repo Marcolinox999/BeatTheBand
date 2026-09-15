@@ -1,21 +1,23 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class TestScript : MonoBehaviour
+namespace Bullets
 {
-    [SerializeField] private float shootCooldown;
-    [SerializeField] private  RadialShotSettings shotSettings;
-
-    private float shootCooldownTimer = 0f;
-
-    private void Update()
+    public class TestScript : MonoBehaviour
     {
-        shootCooldownTimer -= Time.deltaTime;
+        [SerializeField] private float shootCooldown;
+        [SerializeField] private  RadialShotSettings shotSettings;
 
-        if (shootCooldownTimer <= 0f)
+        private float shootCooldownTimer = 0f;
+
+        private void Update()
         {
-            ShotAttack.RadialShot(transform.position, transform.up, shotSettings);
-            shootCooldownTimer += shootCooldown;
+            shootCooldownTimer -= Time.deltaTime;
+
+            if (shootCooldownTimer <= 0f)
+            {
+                ShotAttack.RadialShot(transform.position, transform.up, shotSettings);
+                shootCooldownTimer += shootCooldown;
+            }
         }
     }
 }
