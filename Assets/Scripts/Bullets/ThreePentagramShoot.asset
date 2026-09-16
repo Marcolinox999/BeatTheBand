@@ -12,8 +12,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a4382ac770904341935d2b036a438f8, type: 3}
   m_Name: ThreePentagramShoot
   m_EditorClassIdentifier: Assembly-CSharp::Bullets.RadialShotPattern
-  Repetitions: 0
-  angleOffsetBetweenReps: 0
+  Repetitions: 50
+  angleOffsetBetweenReps: 10
   startWait: 0
   endWait: 0
-  patternSettings: []
+  patternSettings:
+  - numberOfBullets: 3
+    bulletSpeed: 4
+    cooldownTime: 0.1
+    angleOffset: 60
+    phaseOffset: 1
+    radialMask: 0
+    maskAngle: 0
+    doesExplode: 0
+    timeToExplode: 1
+    explosionBullets: 6
+    explosionSpeed: 0
+  - numberOfBullets: 3
+    bulletSpeed: 4
+    cooldownTime: 0.1
+    angleOffset: -60
+    phaseOffset: 0
+    radialMask: 0
+    maskAngle: 0
+    doesExplode: 0
+    timeToExplode: 1
+    explosionBullets: 6
+    explosionSpeed: 0
+  - numberOfBullets: 3
+    bulletSpeed: 4
+    cooldownTime: 0.1
+    angleOffset: 0
+    phaseOffset: 0
+    radialMask: 0
+    maskAngle: 0
+    doesExplode: 0
+    timeToExplode: 1
+    explosionBullets: 6
+    explosionSpeed: 0
