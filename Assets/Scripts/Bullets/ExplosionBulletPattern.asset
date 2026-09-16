@@ -17,7 +17,7 @@ MonoBehaviour:
   startWait: 0
   endWait: 0
   patternSettings:
-  - numberOfBullets: 6
+  - numberOfBullets: 8
     bulletSpeed: 4
     cooldownTime: 2
     angleOffset: 0
@@ -25,6 +25,7 @@ MonoBehaviour:
     radialMask: 0
     maskAngle: 0
     doesExplode: 1
-    timeToExplode: 0.5
+    timeToExplode: 1
     explosionBullets: 6
     explosionSpeed: 2
+    isCircleShape: 0
