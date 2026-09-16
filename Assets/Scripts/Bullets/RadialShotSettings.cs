@@ -16,6 +16,13 @@ namespace Bullets
     
         [Header ("Mask")]
         public bool radialMask;
-        [Range(0f, 360f)] public float maskAngle = 360f; 
+        [Range(0f, 360f)] public float maskAngle = 360f;
+
+        [Header("Explosion Settings")]
+        public bool doesExplode = false;
+        public float timeToExplode = 1f;
+        public int explosionBullets = 6;
+        public float explosionSpeed = 3f;
+
     }
 }

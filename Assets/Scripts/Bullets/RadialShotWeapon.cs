@@ -11,6 +11,7 @@ namespace Bullets
 
         private void Update()
         {
+            
             if (onShotPattern)
                 return;
         
