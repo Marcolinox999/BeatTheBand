@@ -148,8 +148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48566c7f80457fa46aad3a9fc5e6fa43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BeatManager
-  BPM: 60
+  BPM: 100
   blip: {fileID: 8300000, guid: 51798f261b63e9c449e3177ae52898dd, type: 3}
+  windowOfInteractions: 0.2
+  perfectWindow: 0.05
+  okWindow: 0.2
 --- !u!4 &205046090
 Transform:
   m_ObjectHideFlags: 0
@@ -308,7 +311,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   speed: 0.03
   isDead: 0
-  inputActionReference: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  movementInput: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  attackInput: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
 --- !u!1 &345445241
 GameObject:
   m_ObjectHideFlags: 0

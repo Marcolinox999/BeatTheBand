@@ -19,20 +19,24 @@ namespace Player
         [Header("Input")]
         private float hInput;
         private float vInput;
-        [SerializeField] private InputActionReference inputActionReference;
+        [SerializeField] private InputActionReference movementInput;
+        [SerializeField] private InputActionReference attackInput;
         private void OnEnable()
         {
-            inputActionReference.action.Enable();
+            movementInput.action.Enable();
+            attackInput.action.Enable();
         }
 
         private void OnDisable()
         {
-            inputActionReference.action.Disable();
+            movementInput.action.Disable();
+            attackInput.action.Disable();
+
         }
 
         private void Movement()
         {
-            Vector2 moveInput =  inputActionReference.action.ReadValue<Vector2>();
+            Vector2 moveInput =  movementInput.action.ReadValue<Vector2>();
             moveInput = Vector2.ClampMagnitude(moveInput, 1);
             hInput = moveInput.x;
             vInput = moveInput.y;
@@ -50,8 +54,29 @@ namespace Player
                 case States.Dead:
                     break;
             }
+
+            if (attackInput.action.WasPressedThisFrame())
+            {
+                Attack();
+            }
         }
 
-        
+        private void Attack()
+        {
+            switch (BeatManager.instance.PrecisionCheck())
+            {
+                case BeatManager.Score.Missed:
+                    break;
+                case BeatManager.Score.Ok:
+                    Debug.Log("Ok");
+                    break;
+                case BeatManager.Score.Perfect:
+                    Debug.Log("Perfect");
+                    break;
+                
+            }
+            
+        }
     }
+    
 }
