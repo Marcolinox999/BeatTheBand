@@ -20,10 +20,6 @@ public class BossAttackState : BossState
     {
         if (attack == null)
         {
-            Debug.LogWarning(
-                "El ataque seleccionado es null."
-            );
-
             return;
         }
 
@@ -31,20 +27,10 @@ public class BossAttackState : BossState
 
         if (weapon == null)
         {
-            Debug.LogWarning(
-                $"El ataque '{attack.name}' " +
-                $"no tiene un RadialShotWeapon."
-            );
-
             return;
         }
 
         float duration = weapon.GetPatternDuration();
-
-        Debug.Log(
-            $"Activando ataque '{attack.name}' " +
-            $"durante {duration} segundos."
-        );
 
         attack.SetActive(true);
 
@@ -84,9 +70,5 @@ public class BossAttackState : BossState
         {
             attack.SetActive(false);
         }
-
-        Debug.Log(
-            "Saliendo del estado de ataque."
-        );
     }
 }

@@ -34,10 +34,7 @@ public class BossBehavior : MonoBehaviour
     private void Update()
     {
         stateMachine.Update();
-
-        // TEMPORAL:
-        // Se eliminará cuando conectemos el sistema de daño real.
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)) //IMPORTANT TO DELETE THIS IT IS JUST FOR TESTING PURPOSES
         {
             TakeDamage(100f);
         }
@@ -79,13 +76,7 @@ public class BossBehavior : MonoBehaviour
 
     private void ChangePhase(int newPhase)
     {
-        Debug.Log(
-            $"Boss comenzando transición a Fase {newPhase}"
-        );
-
-        ChangeState(
-            new BossTransitionState(this, newPhase)
-        );
+        ChangeState(new BossTransitionState(this, newPhase));
     }
 
     public BossPhase GetPhaseData(int phase)
@@ -96,10 +87,6 @@ public class BossBehavior : MonoBehaviour
     public void SetCurrentPhase(int phase)
     {
         currentPhase = phase;
-
-        Debug.Log(
-            $"Boss ha entrado en Fase {currentPhase}"
-        );
     }
 
     public void ChangeState(BossState newState)
@@ -109,6 +96,6 @@ public class BossBehavior : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Boss derrotado");
+        Debug.Log("Boss dies of death");
     }
 }
