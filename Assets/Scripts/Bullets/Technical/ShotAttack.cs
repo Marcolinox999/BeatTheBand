@@ -12,7 +12,6 @@ namespace Bullets
             bullet.transform.position = origin;
             bullet.Velocity = velocity;
             
-            //esto es para que cuando recicle balas no exploten
             if (settings != null && settings.doesExplode)
             {
                 bullet.SetupExplosion(settings.timeToExplode, settings.explosionBullets, settings.explosionSpeed);

@@ -13,14 +13,18 @@ namespace Player
         }
 
         private States _state;
+        
         [Header("Values")]
         [SerializeField] private float speed;
         [SerializeField] private bool isDead = false;
+        
         [Header("Input")]
         private float hInput;
         private float vInput;
         [SerializeField] private InputActionReference movementInput;
         [SerializeField] private InputActionReference attackInput;
+        [SerializeField] private bool pveEnabled;
+        
         private void OnEnable()
         {
             movementInput.action.Enable();
@@ -55,7 +59,7 @@ namespace Player
                     break;
             }
 
-            if (attackInput.action.WasPressedThisFrame())
+            if (attackInput.action.WasPressedThisFrame() && pveEnabled == true)
             {
                 Attack();
             }
