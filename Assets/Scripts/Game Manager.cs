@@ -12,7 +12,11 @@ public class GameManager : MonoBehaviour
     }
 
     public GameState CurrentState { get; private set; }
+    [SerializeField] private GameObject playerMap;
     [SerializeField] private string _map;
+    //[SerializeField] private int
+    
+    private Vector2 lastPosition;
 
     private void Awake()
     {
@@ -54,11 +58,13 @@ public class GameManager : MonoBehaviour
 
     public void LoadLevel(string levelSceneName)
     {
+        lastPosition = playerMap.transform.position;
         SceneManager.LoadScene(levelSceneName);
     }
 
     public void ReturnToMap()
     {
         SceneManager.LoadScene(_map);
+        playerMap.transform.position = lastPosition;
     }
 }

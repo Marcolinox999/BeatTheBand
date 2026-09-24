@@ -23,7 +23,7 @@ namespace Player
         private float vInput;
         [SerializeField] private InputActionReference movementInput;
         [SerializeField] private InputActionReference attackInput;
-        [SerializeField] private bool pveEnabled;
+        [SerializeField] private bool pveEnabled; //esta variable te la explico abajo donde se hace el check para el ataque
         
         private void OnEnable()
         {
@@ -59,7 +59,7 @@ namespace Player
                     break;
             }
 
-            if (attackInput.action.WasPressedThisFrame() && pveEnabled == true)
+            if (attackInput.action.WasPressedThisFrame() && pveEnabled == true) //MARCO HOLA lo de pve enabled es para que cuando esté en el mapa no pueda usar las armas
             {
                 Attack();
             }

@@ -18,26 +18,30 @@ public class BeatSquashStretch : MonoBehaviour
 
     private Vector3 baseScale;
     private float beatTimer;
-    private SpriteRenderer spriteRenderer;
+     SpriteRenderer spriteRenderer;
 
     private void Start()
     {
         baseScale = transform.localScale;
         particles.Play(!levelBeaten);
-        GetComponent<SpriteRenderer>().sprite = normalLevel;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = normalLevel;
+        bpm = BeatManager.instance.BPM;
     }
 
     private void Update()
     {
-        particles.Play(!levelBeaten);
-        
         if (!levelBeaten)
             Bounce();
         else
+        {
             spriteRenderer.sprite = BWLevel;
+            transform.localScale = new Vector3(1, 1, 1);
+            particles.Pause(levelBeaten);
+        }
     }
 
-    private void Bounce()
+    private void Bounce() //animación gassy
     {
         float beatDuration = 60f / bpm;
 
@@ -54,15 +58,6 @@ public class BeatSquashStretch : MonoBehaviour
         float scaleY = 1f + stretchAmount * pulse;
         float scaleX = 1f - squashAmount * pulse;
 
-        transform.localScale = new Vector3(
-            baseScale.x * scaleX,
-            baseScale.y * scaleY,
-            baseScale.z
-        );
-    }
-
-    public void SetBPM(float newBPM)
-    {
-        bpm = newBPM;
+        transform.localScale = new Vector3(baseScale.x * scaleX, baseScale.y * scaleY, baseScale.z);
     }
 }

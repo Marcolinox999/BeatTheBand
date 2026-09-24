@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BeatManager : MonoBehaviour
 {
-   [SerializeField, Range(30f, 240f)] private float BPM;
+   [Range(30f, 240f)] public float BPM;
    [SerializeField] private AudioClip blip;
    [SerializeField, Range(0.01f, 1f)] private float windowOfInteractions;
    public static BeatManager instance;

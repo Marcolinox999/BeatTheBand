@@ -466,7 +466,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1069635350}
   - component: {fileID: 1069635349}
-  - component: {fileID: 1069635351}
   - component: {fileID: 1069635348}
   m_Layer: 0
   m_Name: Player
@@ -566,23 +565,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1069635351
+--- !u!1 &1318273917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1318273919}
+  - component: {fileID: 1318273918}
+  m_Layer: 0
+  m_Name: BeatManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1318273918
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1069635347}
+  m_GameObject: {fileID: 1318273917}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48566c7f80457fa46aad3a9fc5e6fa43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BeatManager
-  BPM: 120
+  BPM: 30
   blip: {fileID: 8300000, guid: 51798f261b63e9c449e3177ae52898dd, type: 3}
-  windowOfInteractions: 0.258
-  perfectWindow: 0.53
-  okWindow: 0.26
+  windowOfInteractions: 0.2
+  perfectWindow: 0.05
+  okWindow: 0.2
+--- !u!4 &1318273919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318273917}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.3103, y: 0.95645, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1717993375
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,6 +777,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1717993378}
   - {fileID: 1069635350}
+  - {fileID: 1318273919}
   - {fileID: 942183741}
   - {fileID: 630928090}
   - {fileID: 305233306324291276}
