@@ -22,6 +22,16 @@ public class BossBehavior : BaseHealth
         stateMachine.ChangeState(new BossPhaseState(this, currentPhase));
     }
 
+    protected override void Start()
+    {
+        base.Start();
+        Init();
+    }
+
+    protected override void SpriteDamage()
+    {
+        CallDamageFlash();
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) //IMPORTANT TO DELETE THIS IT IS JUST FOR TESTING PURPOSES
