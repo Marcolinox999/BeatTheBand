@@ -12,9 +12,11 @@ public class GameManager : MonoBehaviour
     }
 
     public GameState CurrentState { get; private set; }
+    public bool[] unlockedWeapons = new bool[4];
+    //public int[] beatenLevels; por si queremos hacer que no se puedan repetir los niveles
     [SerializeField] private GameObject playerMap;
     [SerializeField] private string _map;
-    //[SerializeField] private int
+
     
     private Vector2 lastPosition;
 
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         CurrentState = GameState.Playing;
+        unlockedWeapons[0] = true;
     }
 
     public void StartGame()
@@ -66,5 +69,10 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(_map);
         playerMap.transform.position = lastPosition;
+    }
+
+    public void UnlockWeapon(int weaponID)
+    {
+        unlockedWeapons[weaponID] = true;
     }
 }

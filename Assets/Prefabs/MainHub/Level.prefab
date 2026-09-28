@@ -234,7 +234,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2687013561528581194, guid: e1593ce41ae1912478fdaa43de7c200e, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -242,7 +242,7 @@ SpriteRenderer:
   m_Size: {x: 6.12, y: 5.03}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!114 &8991255070499641664
 MonoBehaviour:
@@ -256,10 +256,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9754b346f1bf8c341a37a4ec4377d815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BeatSquashStretch
-  bpm: 120
   stretchAmount: 0.15
   squashAmount: 0.08
   animationSharpness: 8
+  anchorToGround: 1
+  enableSideSway: 0
+  swayAmount: 0.1
+  swaySpeedMultiplier: 1
   particles: {fileID: 3498311252266690387}
   normalLevel: {fileID: -2687013561528581194, guid: e1593ce41ae1912478fdaa43de7c200e, type: 3}
   BWLevel: {fileID: -2716135837001589412, guid: f5586c7beda8d1c4f89104e4f43717da, type: 3}
@@ -397,7 +400,7 @@ Transform:
   m_GameObject: {fileID: 7335076792739634807}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.4784, y: 1.95, z: 0.31}
+  m_LocalPosition: {x: -0.4784, y: 1.95, z: 1.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -486,7 +489,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.75
+      scalar: 2.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -657,7 +660,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1239,9 +1242,9 @@ ParticleSystem:
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 10
-      minScalar: 10
+      minMaxState: 3
+      scalar: 15
+      minScalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
