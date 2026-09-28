@@ -8,9 +8,7 @@ public class BossPhaseState : BossState
 
     private int lastAttackIndex = -1;
 
-    public BossPhaseState(
-        BossBehavior boss,
-        int phase) : base(boss)
+    public BossPhaseState(BossBehavior boss, int phase) : base(boss)
     {
         this.phase = phase;
     }
@@ -28,9 +26,7 @@ public class BossPhaseState : BossState
     {
         if (attacks == null || attacks.Length == 0)
         {
-            Debug.LogWarning(
-                $"La Fase {phase} no tiene ataques asignados."
-            );
+            Debug.LogWarning($"La Fase {phase} no tiene ataques asignados.");
 
             return;
         }
@@ -41,18 +37,14 @@ public class BossPhaseState : BossState
 
         if (attack == null)
         {
-            Debug.LogWarning(
-                $"El ataque {attackIndex} de la Fase {phase} es null."
-            );
+            Debug.LogWarning($"El ataque {attackIndex} de la Fase {phase} es null.");
 
             return;
         }
 
         lastAttackIndex = attackIndex;
 
-        boss.ChangeState(
-            new BossAttackState(boss, attack)
-        );
+        boss.ChangeState(new BossAttackState(boss, attack));
     }
 
     private int GetRandomAttackIndex()

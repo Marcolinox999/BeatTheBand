@@ -461,8 +461,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossBehavior
   maxHealth: 1000
+  damageCooldown: 0.5
   phases:
-  - healthThreshold: 0
+  - healthThreshold: 1000
+    transitionPause: 1
+    transitionEffect: {fileID: 0}
+    attacks:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - healthThreshold: 600
+    transitionPause: 1
+    transitionEffect: {fileID: 0}
+    attacks:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - healthThreshold: 300
     transitionPause: 1
     transitionEffect: {fileID: 0}
     attacks:
