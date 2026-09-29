@@ -26,6 +26,8 @@ namespace Bullets
 
         [Header("Circle Bomb Settings")] 
         public bool isCircleShape = false;
+        
+        
 
     }
 }
