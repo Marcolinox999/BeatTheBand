@@ -1,19 +1,16 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BeatSquashStretch : MonoBehaviour
 {
     [Header("Animation")]
+    [SerializeField] private float beatSpeedMultiplier = 1f;
     [SerializeField] private float stretchAmount = 0.15f;
     [SerializeField] private float squashAmount = 0.08f;
     [SerializeField] private float animationSharpness = 8f;
 
     [Header("Ground Anchor")]
     [SerializeField] private bool anchorToGround = true;
-
-    [Header("Side Sway")]
-    [SerializeField] private bool enableSideSway = false;
-    [SerializeField] private float swayAmount = 0.1f;
-    [SerializeField] private float swaySpeedMultiplier = 1f;
 
     [Header("Extra")]
     [SerializeField] private ParticleSystem particles;
@@ -34,7 +31,8 @@ public class BeatSquashStretch : MonoBehaviour
         baseScale = transform.localScale;
         basePosition = transform.position;
 
-        particles.Play(!levelBeaten);
+        if (particles != null)
+            particles.Play(!levelBeaten);
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = normalLevel;
@@ -55,13 +53,15 @@ public class BeatSquashStretch : MonoBehaviour
             transform.localScale = baseScale;
             transform.position = basePosition;
 
-            particles.Pause(levelBeaten);
+            if (particles != null)
+                particles.Clear();
+                particles.Pause();
         }
     }
 
     private void Bounce()
     {
-        float beatDuration = 60f / bpm;
+        float beatDuration = 60f / bpm *  beatSpeedMultiplier;
 
         beatTimer += Time.deltaTime;
 
@@ -76,34 +76,19 @@ public class BeatSquashStretch : MonoBehaviour
         float scaleY = 1f + stretchAmount * pulse;
         float scaleX = 1f - squashAmount * pulse;
 
-        Vector3 newScale = new Vector3(
-            baseScale.x * scaleX,
-            baseScale.y * scaleY,
-            baseScale.z
-        );
+        Vector3 newScale = new Vector3(baseScale.x * scaleX, baseScale.y * scaleY, baseScale.z);
 
         transform.localScale = newScale;
 
-        Vector3 newPosition = basePosition;
-
-        // Mantener la base fija
         if (anchorToGround)
         {
             float addedHeight = newScale.y - baseScale.y;
-            newPosition.y += addedHeight * 0.5f;
-        }
 
-        // Balanceo lateral opcional
-        if (enableSideSway)
+            transform.position = new Vector3(basePosition.x, basePosition.y + addedHeight * 0.5f, basePosition.z);
+        }
+        else
         {
-            float sway =
-                Mathf.Sin(
-                    t * Mathf.PI * 2f * swaySpeedMultiplier
-                ) * swayAmount * pulse;
-
-            newPosition.x += sway;
+            transform.position = basePosition;
         }
-
-        transform.position = newPosition;
     }
 }
