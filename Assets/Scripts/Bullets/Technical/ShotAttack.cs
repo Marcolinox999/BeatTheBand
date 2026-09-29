@@ -64,7 +64,6 @@ namespace Bullets
                 SimpleShot(origin, bulletDirection * speed, null);
             }
         }
-
         public static void ConeShotToPlayer(Vector2 origin, Vector2 targetPosition, RadialShotSettings settings, int numberOfBullets, float coneAngle, float speed)
         {
             Vector2 aimDirection = (targetPosition - origin).normalized;
@@ -95,6 +94,15 @@ ShotAttack.ConeShotToPlayer(
     60f,                   // Apertura del cono en grados (ej: 60 grados de abanico)
     bulletSpeed            // Velocidad de las balas
 );*/
-         
+        #region WeaponAttacks
+
+        public static void TrumpetShot(Vector2 position, Vector2 direction, float speed)
+        {
+            Bullet bullet = BulletPool.Instance.GetBullet(); 
+            bullet.transform.position = position;
+            bullet.Velocity = direction.normalized * speed;
+        }
+
+        #endregion
     }
 }

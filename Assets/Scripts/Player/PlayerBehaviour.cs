@@ -18,7 +18,9 @@ namespace Player
         }
 
         private States _state;
-        
+
+        [Header("References")] [SerializeField]
+        private WeaponManager _weaponManager;
         [Header("Values")]
         [SerializeField] private float speed;
         [SerializeField] private bool isDead = false;
@@ -136,10 +138,9 @@ namespace Player
 
             if (attackInput.action.WasPressedThisFrame() && pveEnabled == true) //MARCO HOLA lo de pve enabled es para que cuando esté en el mapa no pueda usar las armas
             {
-                Attack();
+                _weaponManager.Attack();
             }
         }
-
         private void Attack()
         {
             switch (BeatManager.instance.PrecisionCheck())
@@ -156,8 +157,6 @@ namespace Player
             }
             
         }
-
-      
     }
     
 }
