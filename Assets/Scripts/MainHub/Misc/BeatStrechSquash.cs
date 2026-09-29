@@ -16,11 +16,12 @@ public class BeatSquashStretch : MonoBehaviour
     [SerializeField] private ParticleSystem particles;
     [SerializeField] private Sprite normalLevel;
     [SerializeField] private Sprite BWLevel;
-    [SerializeField] private bool levelBeaten = false;
+    [SerializeField] private int levelNumber = 0;
+    
 
     private Vector3 baseScale;
     private Vector3 basePosition;
-
+    
     private float beatTimer;
     private float bpm;
 
@@ -32,7 +33,7 @@ public class BeatSquashStretch : MonoBehaviour
         basePosition = transform.position;
 
         if (particles != null)
-            particles.Play(!levelBeaten);
+            particles.Play(!GameManager.Instance.beatenLevels[levelNumber]);
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = normalLevel;
@@ -42,7 +43,7 @@ public class BeatSquashStretch : MonoBehaviour
 
     private void Update()
     {
-        if (!levelBeaten)
+        if (GameManager.Instance.beatenLevels[levelNumber])
         {
             Bounce();
         }
@@ -54,8 +55,10 @@ public class BeatSquashStretch : MonoBehaviour
             transform.position = basePosition;
 
             if (particles != null)
+            {
                 particles.Clear();
                 particles.Pause();
+            }
         }
     }
 

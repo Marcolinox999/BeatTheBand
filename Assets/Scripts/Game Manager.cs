@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     public GameState CurrentState { get; private set; }
     public bool[] unlockedWeapons = new bool[4];
-    //public int[] beatenLevels; por si queremos hacer que no se puedan repetir los niveles
+    public bool[] beatenLevels = new bool[3];
     [SerializeField] private GameObject playerMap;
     [SerializeField] private string _map;
 
