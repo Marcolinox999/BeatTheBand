@@ -64,5 +64,45 @@ namespace Bullets
                 SimpleShot(origin, bulletDirection * speed, null);
             }
         }
+        public static void ConeShotToPlayer(Vector2 origin, Vector2 targetPosition, RadialShotSettings settings, int numberOfBullets, float coneAngle, float speed)
+        {
+            Vector2 aimDirection = (targetPosition - origin).normalized;
+            if (numberOfBullets == 1)
+            {
+                SimpleShot(origin, aimDirection * speed,settings);
+            }
+            
+            float halfCone = coneAngle * 0.5f;
+            float angleStep = coneAngle / (numberOfBullets - 1);
+            for (int i = 0; i < numberOfBullets; i++)
+            {
+                float currentAngleOffset = -halfCone + (angleStep * i);
+                Vector2 bulletDirection = aimDirection.Rotate(currentAngleOffset);
+                SimpleShot(origin, bulletDirection * speed, null);
+            }
+        }
+        
+        
+        /* // Ejemplo de llamada dentro de la lógica de un enemigo
+Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+
+ShotAttack.ConeShotToPlayer(
+    transform.position,    // Origen (dónde está el enemigo)
+    playerPos,             // Posición actual del jugador
+    myRadialSettings,      // Tus ajustes de explosión / configuración
+    5,                     // Número de balas en el cono
+    60f,                   // Apertura del cono en grados (ej: 60 grados de abanico)
+    bulletSpeed            // Velocidad de las balas
+);*/
+        #region WeaponAttacks
+
+        public static void TrumpetShot(Vector2 position, Vector2 direction, float speed)
+        {
+            Bullet bullet = BulletPool.Instance.GetBullet(); 
+            bullet.transform.position = position;
+            bullet.Velocity = direction.normalized * speed;
+        }
+
+        #endregion
     }
 }

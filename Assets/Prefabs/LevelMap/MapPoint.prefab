@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9174814193823224395}
   - component: {fileID: 606792335778894445}
+  - component: {fileID: 1873147222024542147}
   m_Layer: 0
   m_Name: MapPoint
   m_TagString: Untagged
@@ -69,6 +70,33 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &1873147222024542147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5881025228199338471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9e10807a9fa32e478d8c565a38bfd94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MapPoint
+  up: []
+  right: []
+  down: []
+  left: []
+  LevelIndex: 0
+  sceneToLoad: 
+  levelName: 
+  isLevel: 0
+  isCorner: 0
+  isWarpPoint: 0
+  autoWarp: 0
+  hasWarped: 0
+  warpPoint: {fileID: 0}
+  levelNameText: {fileID: 0}
+  levelPanel: {fileID: 0}
 --- !u!1 &8037336513534391845
 GameObject:
   m_ObjectHideFlags: 0

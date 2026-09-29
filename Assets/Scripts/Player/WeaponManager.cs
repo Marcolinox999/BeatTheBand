@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Bullets;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -43,7 +44,6 @@ public class WeaponManager : MonoBehaviour
     {
         for (int i = weaponID +1; i <= GameManager.Instance.unlockedWeapons.Length; i++)
         {
-            Debug.Log(weaponID);
             if (i >= GameManager.Instance.unlockedWeapons.Length)
             {
                 i = 0;
@@ -73,24 +73,38 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    private void Trumpet()
+    private void Trumpet(BeatManager.Score score)
     {
-        
+        //esto es hasta que hagamos lo de apuntar
+        Vector2 direction = transform.up;
+        switch (score)
+        {
+            case BeatManager.Score.Missed:
+                return;
+
+            case BeatManager.Score.Ok:
+                ShotAttack.TrumpetShot(transform.position, direction, 8f);
+                break;
+
+            case BeatManager.Score.Perfect:
+                ShotAttack.TrumpetShot(transform.position, direction.Rotate(5f), 8f);
+                ShotAttack.TrumpetShot(transform.position, direction, 8f);
+                ShotAttack.TrumpetShot(transform.position, direction.Rotate(-5f), 8f);
+                
+                break;
+        }
     }
 
-    private void Drum()
+    private void Drum(BeatManager.Score score)
     {
-        
     }
 
-    private void Cymbals()
+    private void Cymbals(BeatManager.Score score)
     {
-        
     }
 
-    private void Accordion()
+    private void Accordion(BeatManager.Score score)
     {
-        
     }
 
     private IEnumerator TimeBetweenSwitch()
@@ -99,22 +113,23 @@ public class WeaponManager : MonoBehaviour
         yield return new WaitForSeconds(switchTime);
         canSwitch = true;
     }
-
-    private void WeaponAttack()
+    
+    public void Attack()
     {
+        BeatManager.Score score = BeatManager.instance.PrecisionCheck();
         switch (_actualWeapon)
         {
             case Weapons.Trumpet:
-                Trumpet();
+                Trumpet(score);
                 break;
             case Weapons.Drum:
-                Drum();
+                Drum(score);
                 break;
             case Weapons.Cymbals:
-                Cymbals();
+                Cymbals(score);
                 break;
             case Weapons.Accordion:
-                Accordion();
+                Accordion(score);
                 break;
         }
     }

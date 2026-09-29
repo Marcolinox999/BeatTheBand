@@ -514,11 +514,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6473fc6443469a488e679472d1d2125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  _weaponManager: {fileID: 312869187}
   speed: 0.03
   isDead: 0
   movementInput: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   attackInput: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  pveEnabled: 0
+  pveEnabled: 1
 --- !u!114 &312869187
 MonoBehaviour:
   m_ObjectHideFlags: 0
