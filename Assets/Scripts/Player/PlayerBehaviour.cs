@@ -1,5 +1,9 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace Player
 {
@@ -9,6 +13,7 @@ namespace Player
         {
             Walking,
             Dead,
+            OnMap,
             
         }
 
@@ -24,6 +29,12 @@ namespace Player
         [SerializeField] private InputActionReference movementInput;
         [SerializeField] private InputActionReference attackInput;
         [SerializeField] private bool pveEnabled; //esta variable te la explico abajo donde se hace el check para el ataque
+
+        [Header("OnMap Settings (me vas a matar Marco lo se")]
+        [SerializeField] private MapPoint currentPoint;
+        [SerializeField] private float moveSpeed = 10f;
+        private bool _isOnMap = false;
+        private Vector3 targetPosition;
         
         private void OnEnable()
         {
@@ -47,7 +58,68 @@ namespace Player
             transform.Translate(hInput * speed, vInput * speed, 0);
             if (isDead) _state =  States.Dead;
         }
+        
+        #region ON MAP SELECTION MOVEMENT
+        
+          private void OnMap()
+        {
+            if (_isOnMap || currentPoint == null) return;
+            Vector2 moveInput = movementInput.action.ReadValue<Vector2>();
 
+            if (moveInput.sqrMagnitude > 0.1f)
+            {
+                MapPoint nextPoint = null;
+                if (Math.Abs(moveInput.y) > Math.Abs(moveInput.x))
+                {
+                    if (moveInput.y > 0) nextPoint = GetValidPoint(currentPoint.up);
+                    else nextPoint = GetValidPoint(currentPoint.down);
+                }
+                else
+                {
+                    if (moveInput.x > 0) nextPoint = GetValidPoint(currentPoint.right);
+                    else nextPoint = GetValidPoint(currentPoint.left);
+                }
+
+                if (nextPoint != null)
+                {
+                    currentPoint = nextPoint;
+                    targetPosition = currentPoint.transform.position;
+                    StartCoroutine(SmoothMoveToTarget());
+                }
+            }
+
+            if (Keyboard.current != null && Keyboard.current.enterKey.wasPressedThisFrame ||
+                Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
+            {
+                if (currentPoint.isLevel && !string.IsNullOrEmpty(currentPoint.sceneToLoad))
+                {
+                    SceneManager.LoadScene(currentPoint.sceneToLoad);
+                }
+            }
+        }
+
+        private MapPoint GetValidPoint(MapPoint[] points)
+        {
+            if (points !=null && points.Length > 0)
+                return points[0];
+            return null;
+        }
+
+        private IEnumerator SmoothMoveToTarget()
+        {
+            _isOnMap = true;
+            while (Vector3.Distance(transform.position, targetPosition) > 0.1f)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+                yield return null;
+            }
+            transform.position = targetPosition;
+            _isOnMap = false;
+        }
+
+        #endregion
+        
+        
         private void Update()
         {
             switch (_state)
@@ -56,6 +128,9 @@ namespace Player
                     Movement();
                     break;
                 case States.Dead:
+                    break;
+                case  States.OnMap:
+                    OnMap();
                     break;
             }
 
@@ -81,6 +156,8 @@ namespace Player
             }
             
         }
+
+      
     }
     
 }

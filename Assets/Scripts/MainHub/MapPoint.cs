@@ -5,8 +5,8 @@ using UnityEngine;
 public class MapPoint : MonoBehaviour
 {
     [Header("WayPoints")]
-    [SerializeField]MapPoint[] up;
-    [SerializeField]MapPoint[] right, down, left;
+    [SerializeField]public MapPoint[] up;
+    [SerializeField]public MapPoint[] right, down, left;
 
     [Header("Scene Options")] 
     [SerializeField] private int LevelIndex = 0;
@@ -40,7 +40,7 @@ public class MapPoint : MonoBehaviour
         }
         
         //if NOT level or warp, set sprite image to null
-        if (!isLevel && !isWarpPoint)
+       /* if (!isLevel && !isWarpPoint)
         {
             _spriteRenderer.sprite = null;
         }
@@ -48,20 +48,22 @@ public class MapPoint : MonoBehaviour
         {
             //this can also be edited for like saving data throught the levels
         }
+        */
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("player has entered map point");
             if (levelPanel != null)
             {
                 levelPanel.SetActive(true);
             }
             if(levelNameText != null)
-                {
+            {
                 levelNameText.text = levelName;
-                }
+            }
         }
     }
 
@@ -69,7 +71,18 @@ public class MapPoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("player has exit map point");
+            if (levelPanel != null)
+            {
+                levelPanel.SetActive(false);
+            }
+
+            hasWarped = false;
             
+            if(levelNameText != null)
+            {
+                levelNameText.text = "";
+            }
         }
     }
 
