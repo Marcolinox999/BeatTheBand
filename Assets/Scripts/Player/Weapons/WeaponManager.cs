@@ -1,10 +1,6 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Bullets;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
 public class WeaponManager : MonoBehaviour
 {
     private enum Weapons
@@ -17,9 +13,21 @@ public class WeaponManager : MonoBehaviour
 
     [SerializeField] private InputActionReference weaponSwitch;
     [SerializeField] private float switchTime = 0.5f;
+    
+    [Header("References")]
+    [SerializeField] private GameObject[] bulletPrefabs;
+    //0:Trumpet 1:PTrumpet 2:Drum 3:PDrum 4:Cymbal 5:PCymbal 6:Accordion 7:PAccordion
     private Weapons _actualWeapon =  Weapons.Trumpet;
     private int weaponID = 0;
     private bool canSwitch = true;
+    [Header("Cymbals")]
+    private int accumulated;
+    private bool canFire = false;
+    [Header("Accordion")]
+    private int streak;
+    
+    
+    
 
     private void OnEnable()
     {
@@ -76,35 +84,97 @@ public class WeaponManager : MonoBehaviour
     private void Trumpet(BeatManager.Score score)
     {
         //esto es hasta que hagamos lo de apuntar
-        Vector2 direction = transform.up;
         switch (score)
         {
             case BeatManager.Score.Missed:
                 return;
 
             case BeatManager.Score.Ok:
-                ShotAttack.TrumpetShot(transform.position, direction, 8f);
+                Instantiate(bulletPrefabs[0], transform.position, Quaternion.identity);
                 break;
 
             case BeatManager.Score.Perfect:
-                ShotAttack.TrumpetShot(transform.position, direction.Rotate(5f), 8f);
-                ShotAttack.TrumpetShot(transform.position, direction, 8f);
-                ShotAttack.TrumpetShot(transform.position, direction.Rotate(-5f), 8f);
-                
+                Instantiate(bulletPrefabs[1], transform.position, Quaternion.identity);
                 break;
         }
     }
 
     private void Drum(BeatManager.Score score)
     {
+        switch (score)
+        {
+            case BeatManager.Score.Missed:
+                return;
+
+            case BeatManager.Score.Ok:
+                StartCoroutine(ShotCycles(0.1f,3,bulletPrefabs[2]));
+                break;
+
+            case BeatManager.Score.Perfect:
+                StartCoroutine(ShotCycles(0.1f,4,bulletPrefabs[3]));
+                break;
+        }
     }
 
     private void Cymbals(BeatManager.Score score)
     {
+        switch (score)
+        {
+            case BeatManager.Score.Missed:
+                canFire  = true;
+                break;
+
+            case BeatManager.Score.Ok:
+                accumulated++;
+                break;
+
+            case BeatManager.Score.Perfect:
+                accumulated = 15;
+                break;
+        }
+
+        if (canFire || accumulated >= 15)
+        {
+            for (int i = accumulated; i > 0; i--)
+            {
+                int randomRotation = Random.Range(-15, 15);
+                if (accumulated >= 15)
+                    Instantiate(bulletPrefabs[5], transform.position, Quaternion.Euler(transform.rotation.x,transform.rotation.y,randomRotation));
+                else
+                    Instantiate(bulletPrefabs[4], transform.position, Quaternion.Euler(transform.rotation.x,transform.rotation.y,randomRotation));
+            }
+            accumulated = 0;
+            canFire = false;
+        }
     }
 
     private void Accordion(BeatManager.Score score)
     {
+        switch (score)
+        {
+            case BeatManager.Score.Missed:
+                streak = 0;
+                return;
+
+            case BeatManager.Score.Ok:
+                if (streak <= 14)
+                {
+                    streak++;
+                    StartCoroutine(ShotCycles(0.1f, streak, bulletPrefabs[6]));
+                }
+                else
+                {
+                    StartCoroutine(ShotCycles(0.1f, streak, bulletPrefabs[7]));
+                }
+
+                break;
+
+            case BeatManager.Score.Perfect:
+                streak += 2;
+                StartCoroutine(ShotCycles(0.1f,streak,bulletPrefabs[7]));
+                break;
+        }
+        
     }
 
     private IEnumerator TimeBetweenSwitch()
@@ -131,6 +201,15 @@ public class WeaponManager : MonoBehaviour
             case Weapons.Accordion:
                 Accordion(score);
                 break;
+        }
+    }
+
+    private IEnumerator ShotCycles(float fireRate, int repetitions, GameObject bullet)
+    {
+        for (int i = 0; i < repetitions; i++)
+        {
+            Instantiate(bullet, transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(fireRate);
         }
     }
 }

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1596648764422642728}
   - component: {fileID: 1401349706417448837}
-  - component: {fileID: -4880587495726155996}
+  - component: {fileID: -9065030846409649007}
   m_Layer: 0
-  m_Name: TrumpetBullet
+  m_Name: PerfectDrum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0.95093346, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.11017773, b: 0.7433963, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -92,7 +92,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &-4880587495726155996
+--- !u!114 &-9065030846409649007
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,9 +101,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4428601424906138040}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d57f98e42191cbf4286ee5231295dc65, type: 3}
+  m_Script: {fileID: 11500000, guid: cc9cc7493112af5448437f08feffb7af, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BaseBullet
+  m_EditorClassIdentifier: Assembly-CSharp::HomingBullet
   speed: 5
   damage: 10
-  lifetime: 5
+  lifetime: 3
