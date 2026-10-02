@@ -9,6 +9,45 @@ public class BeatManager : MonoBehaviour
    public static BeatManager instance;
    private double nextTimeBeat;
    private double intervalTime;
+   
+   public event Action<int> OnBeat;          //Todo esto es para el tema de visuales
+   public double IntervalTime => intervalTime;
+
+   private double startDspTime;
+   
+   [Header("Visual sync")]
+   [SerializeField, Range(-0.5f, 0.5f)] private float audioLatencyOffset; 
+
+   private double lastDspTime;
+   private double lastRealTime;
+   private double smoothedDspTime;
+   private int lastFrame = -1;
+   
+   public double SmoothedDspTime
+   {
+      get
+      {
+         if (Time.frameCount != lastFrame)
+         {
+            lastFrame = Time.frameCount;
+            double dsp = AudioSettings.dspTime;
+            double real = Time.realtimeSinceStartupAsDouble;
+
+            if (dsp != lastDspTime)
+            {
+               lastDspTime = dsp;
+               lastRealTime = real;
+            }
+
+            double estimated = lastDspTime + (real - lastRealTime);
+            smoothedDspTime = Math.Max(smoothedDspTime, estimated);
+         }
+         return smoothedDspTime;
+      }
+   }
+   private int beatIndex; //aqui se acaba el tema de visuales
+   
+   public double BeatPosition => (SmoothedDspTime - startDspTime - audioLatencyOffset) / intervalTime;
 
    [Header("Opcional (WIP")] 
    [SerializeField, Range(0.01f, 1f)] private float perfectWindow;
@@ -37,9 +76,13 @@ public class BeatManager : MonoBehaviour
    private void Start()
    {
       CalculateTheBeat();
-      nextTimeBeat = AudioSettings.dspTime;
-   }
+      startDspTime = AudioSettings.dspTime;
+      nextTimeBeat = startDspTime;
 
+      lastDspTime = startDspTime;
+      lastRealTime = Time.realtimeSinceStartupAsDouble;
+      smoothedDspTime = startDspTime;
+   }
    private void CalculateTheBeat()
    {
       intervalTime = 60 / BPM;
@@ -57,6 +100,8 @@ public class BeatManager : MonoBehaviour
    private void Beat()
    {
       AudioManager.instance.PlayScheduledBeat(blip,intervalTime);
+      OnBeat?.Invoke(beatIndex);
+      beatIndex++;
       //Por si queremos recalibrarlo no lo voy a quitar del todo que sino luego es un dolor
       //Debug.Log(nextTimeBeat);
    }
