@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class WeaponManager : MonoBehaviour
 {
-    private enum Weapons
+    public enum Weapons
     {
         Trumpet,
         Drum,
@@ -17,17 +17,18 @@ public class WeaponManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject[] bulletPrefabs;
     //0:Trumpet 1:PTrumpet 2:Drum 3:PDrum 4:Cymbal 5:PCymbal 6:Accordion 7:PAccordion
-    private Weapons _actualWeapon =  Weapons.Trumpet;
+    public Weapons _actualWeapon =  Weapons.Trumpet;
     private int weaponID = 0;
     private bool canSwitch = true;
-    [Header("Cymbals")]
+    [Header("Trumpet")] [SerializeField] private int trumpetMiss;
+    [Header("Drums")] [SerializeField] private int drumsMiss;
+    [Header("Cymbals")]  [SerializeField] private int cymbalsMiss;
     private int accumulated;
     private bool canFire = false;
-    [Header("Accordion")]
+    [Header("Accordion")] [SerializeField] private int accordionmMiss;
     private int streak;
-    
-    
-    
+
+    private int missBeats = 1;
 
     private void OnEnable()
     {
@@ -62,15 +63,19 @@ public class WeaponManager : MonoBehaviour
                 switch (weaponID)
                 {
                     case 0:
+                        missBeats = trumpetMiss; ;
                         _actualWeapon =  Weapons.Trumpet;
                         break;
                     case 1:
+                        missBeats = drumsMiss;
                         _actualWeapon = Weapons.Drum;
                         break;
                     case 2:
+                        missBeats = cymbalsMiss;
                         _actualWeapon = Weapons.Cymbals;
                         break;
                     case 3:
+                        missBeats = accordionmMiss;
                         _actualWeapon = Weapons.Accordion;
                         break;
                     
@@ -87,6 +92,7 @@ public class WeaponManager : MonoBehaviour
         switch (score)
         {
             case BeatManager.Score.Missed:
+                
                 return;
 
             case BeatManager.Score.Ok:
@@ -186,7 +192,8 @@ public class WeaponManager : MonoBehaviour
     
     public void Attack()
     {
-        BeatManager.Score score = BeatManager.instance.PrecisionCheck();
+        BeatManager.Score score = BeatManager.instance.PrecisionCheck(missBeats);
+        Debug.Log(missBeats);
         switch (_actualWeapon)
         {
             case Weapons.Trumpet:

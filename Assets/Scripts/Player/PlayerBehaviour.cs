@@ -136,26 +136,10 @@ namespace Player
                     break;
             }
 
-            if (attackInput.action.WasPressedThisFrame() && pveEnabled == true) //MARCO HOLA lo de pve enabled es para que cuando esté en el mapa no pueda usar las armas
+            if (attackInput.action.WasPressedThisFrame() && pveEnabled) //MARCO HOLA lo de pve enabled es para que cuando esté en el mapa no pueda usar las armas
             {
                 _weaponManager.Attack();
             }
-        }
-        private void Attack()
-        {
-            switch (BeatManager.instance.PrecisionCheck())
-            {
-                case BeatManager.Score.Missed:
-                    break;
-                case BeatManager.Score.Ok:
-                    Debug.Log("Ok");
-                    break;
-                case BeatManager.Score.Perfect:
-                    Debug.Log("Perfect");
-                    break;
-                
-            }
-            
         }
     }
     
