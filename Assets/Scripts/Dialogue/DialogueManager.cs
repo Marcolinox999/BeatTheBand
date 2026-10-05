@@ -27,6 +27,9 @@ public class DialogueManager : MonoBehaviour
     public bool isDialogueActive = false;
  
     public float typingSpeed = 0.2f;
+
+    [Header("Audio")] [SerializeField] private AudioClip[] dialogueTypingSound;
+    private AudioSource audioSource;
     
  
     private void Awake()
@@ -35,6 +38,7 @@ public class DialogueManager : MonoBehaviour
             Instance = this;
  
         lines = new Queue<DialogueLine>();
+        
     }
  
     public void StartDialogue(Dialogue dialogue)
@@ -105,6 +109,8 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in dialogueLine.line.ToCharArray())
         {
             dialogueArea.text += letter;
+           int  i= Random.Range(0, dialogueTypingSound.Length);
+           AudioManager.instance.PlayMusic(dialogueTypingSound[i]);
             yield return new WaitForSeconds(typingSpeed);
         }
     }
