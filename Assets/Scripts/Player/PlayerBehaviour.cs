@@ -41,6 +41,7 @@ namespace Player
         
         private void OnEnable()
         {
+            currentPoint.DeactivateLevelUI();
             movementInput.action.Enable();
             if (SceneManager.GetActiveScene().name == "Level Hub")
             {
@@ -88,10 +89,12 @@ namespace Player
                 if (Math.Abs(moveInput.y) > Math.Abs(moveInput.x))
                 {
                     if (moveInput.y > 0)
-                    {nextPoint = GetValidPoint(currentPoint.up);
-                    Debug.Log("moves up");
+                    {
+                        nextPoint = GetValidPoint(currentPoint.up);
+                        Debug.Log("moves up");
                     }
-                else nextPoint = GetValidPoint(currentPoint.down); Debug.Log("moves down");
+
+                    else nextPoint = GetValidPoint(currentPoint.down); Debug.Log("moves down");
                 }
                 else
                 {
@@ -101,6 +104,10 @@ namespace Player
 
                 if (nextPoint != null)
                 {
+                    if (currentPoint.isLevel)
+                    {
+                        currentPoint.DeactivateLevelUI();
+                    }
                     currentPoint = nextPoint;
                     targetPosition = currentPoint.transform.position;
                     StartCoroutine(SmoothMoveToTarget());
@@ -119,14 +126,21 @@ namespace Player
 
         private MapPoint GetValidPoint(MapPoint[] points)
         {
-            if (points !=null && points.Length > 0)
+            if (points != null && points.Length > 0)
+            {
+                Debug.Log("Punto válido encontrado: " + points[0].name);
                 return points[0];
+            }
+    
+            Debug.LogWarning("No hay ningún MapPoint asignado en esta dirección.");
             return null;
         }
 
         private IEnumerator SmoothMoveToTarget()
         {
             _isOnMap = true;
+            currentPoint.DeactivateLevelUI();
+            
             while (Vector3.Distance(transform.position, targetPosition) > 0.1f)
             {
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
@@ -134,6 +148,11 @@ namespace Player
             }
             transform.position = targetPosition;
             _isOnMap = false;
+            
+            if (currentPoint.isLevel)
+            {
+                currentPoint.ActivateLevelUI();
+            }
         }
 
         #endregion
@@ -149,7 +168,6 @@ namespace Player
                 case States.Dead:
                     break;
                 case  States.OnMap:
-                    Debug.Log("OnMap state switch case");
                     OnMap();
                     break;
             }
