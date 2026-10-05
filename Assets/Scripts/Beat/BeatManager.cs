@@ -22,7 +22,8 @@ public class BeatManager : MonoBehaviour
    private double lastRealTime;
    private double smoothedDspTime;
    private int lastFrame = -1;
-   
+   private int skipABeat = 0;
+   [SerializeField] private GameObject PRUEBA;
    public double SmoothedDspTime
    {
       get
@@ -102,6 +103,9 @@ public class BeatManager : MonoBehaviour
       AudioManager.instance.PlayScheduledBeat(blip,intervalTime);
       OnBeat?.Invoke(beatIndex);
       beatIndex++;
+      if (skipABeat > 0) skipABeat--;
+      if (skipABeat <= 0) PRUEBA.SetActive(true);
+      Debug.Log(skipABeat);
       //Por si queremos recalibrarlo no lo voy a quitar del todo que sino luego es un dolor
       //Debug.Log(nextTimeBeat);
    }
@@ -118,7 +122,7 @@ public class BeatManager : MonoBehaviour
       return timeSinceTheLastBeat < window || timeSinceTheLastBeat >= intervalTime- window;
    }
    //Esto lo use yo para mi plataformer, dependiendo de que queramos nos va a dar un enum de un tipo si perfecto malo o reguleras.
-   public Score PrecisionCheck()
+   public Score PrecisionCheck(int missbeats)
    {
       //El codigo como tal es redundante, sin embargo esto al final no se si lo vais a querer dejar o no, es un poco lo
       //mismo pero en vez de ser si o no calcula una franja porcentual entre cada distancia del beat y te dice si lo has
@@ -129,6 +133,11 @@ public class BeatManager : MonoBehaviour
       
       double perfect = intervalTime * perfectWindow;
       double ok = intervalTime *  okWindow;
+      if (skipABeat > 0)
+      {
+         return Score.Missed;
+      }
+
       if (distanceFromBeat <= perfect)
       {
          return Score.Perfect;
@@ -139,6 +148,8 @@ public class BeatManager : MonoBehaviour
       }
       else
       {
+         PRUEBA.SetActive(false);
+         skipABeat = missbeats;
          return Score.Missed;
       }
    }
