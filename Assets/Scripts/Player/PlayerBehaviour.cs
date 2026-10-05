@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -30,7 +31,7 @@ namespace Player
         private float vInput;
         [SerializeField] private InputActionReference movementInput;
         [SerializeField] private InputActionReference attackInput;
-        [SerializeField] private bool pveEnabled; //esta variable te la explico abajo donde se hace el check para el ataque
+        private bool pveEnabled = false;
 
         [Header("OnMap Settings (me vas a matar Marco lo se")]
         [SerializeField] private MapPoint currentPoint;
@@ -41,7 +42,18 @@ namespace Player
         private void OnEnable()
         {
             movementInput.action.Enable();
-            attackInput.action.Enable();
+            if (SceneManager.GetActiveScene().name == "Level Hub")
+            {
+                _isOnMap = true;
+                _state = States.OnMap;
+            }
+            else
+            {
+                _state = States.Walking;
+                pveEnabled = true;
+                attackInput.action.Enable();
+            }
+            Debug.Log("state == " +  _state);
         }
 
         private void OnDisable()
@@ -67,19 +79,23 @@ namespace Player
         {
             if (_isOnMap || currentPoint == null) return;
             Vector2 moveInput = movementInput.action.ReadValue<Vector2>();
+            Debug.Log("movementInput chose");
 
             if (moveInput.sqrMagnitude > 0.1f)
             {
                 MapPoint nextPoint = null;
                 if (Math.Abs(moveInput.y) > Math.Abs(moveInput.x))
                 {
-                    if (moveInput.y > 0) nextPoint = GetValidPoint(currentPoint.up);
-                    else nextPoint = GetValidPoint(currentPoint.down);
+                    if (moveInput.y > 0)
+                    {nextPoint = GetValidPoint(currentPoint.up);
+                    Debug.Log("moves up");
+                    }
+                else nextPoint = GetValidPoint(currentPoint.down); Debug.Log("moves down");
                 }
                 else
                 {
-                    if (moveInput.x > 0) nextPoint = GetValidPoint(currentPoint.right);
-                    else nextPoint = GetValidPoint(currentPoint.left);
+                    if (moveInput.x > 0) {nextPoint = GetValidPoint(currentPoint.right); Debug.Log("moves right");}
+                    else nextPoint = GetValidPoint(currentPoint.left); Debug.Log("moves left");
                 }
 
                 if (nextPoint != null)
@@ -112,7 +128,7 @@ namespace Player
             _isOnMap = true;
             while (Vector3.Distance(transform.position, targetPosition) > 0.1f)
             {
-                transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
                 yield return null;
             }
             transform.position = targetPosition;
@@ -132,14 +148,16 @@ namespace Player
                 case States.Dead:
                     break;
                 case  States.OnMap:
+                    Debug.Log("OnMap state switch case");
                     OnMap();
                     break;
             }
 
-            if (attackInput.action.WasPressedThisFrame() && pveEnabled) //MARCO HOLA lo de pve enabled es para que cuando esté en el mapa no pueda usar las armas
+           /* if (attackInput.action.WasPressedThisFrame() && pveEnabled) //MARCO HOLA lo de pve enabled es para que cuando esté en el mapa no pueda usar las armas
             {
                 _weaponManager.Attack();
             }
+            */
         }
         
     }
