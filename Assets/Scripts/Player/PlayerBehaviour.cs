@@ -44,8 +44,9 @@ namespace Player
             movementInput.action.Enable();
             if (SceneManager.GetActiveScene().name == "Level Hub")
             {
-                _isOnMap = true;
+                _isOnMap = false;
                 _state = States.OnMap;
+                pveEnabled = false; 
             }
             else
             {
