@@ -141,6 +141,7 @@ namespace Player
                 _weaponManager.Attack();
             }
         }
+        
     }
     
 }

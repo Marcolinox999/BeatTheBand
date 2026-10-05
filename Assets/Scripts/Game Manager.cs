@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public GameState CurrentState { get; private set; }
     public bool[] unlockedWeapons = new bool[4];
     public bool[] beatenLevels = new bool[3];
+    public BeatManager.Score score;
     [SerializeField] private GameObject playerMap;
     [SerializeField] private string _map;
 
@@ -74,5 +75,10 @@ public class GameManager : MonoBehaviour
     public void UnlockWeapon(int weaponID)
     {
         unlockedWeapons[weaponID] = true;
+    }
+
+    public void UpdateScore(int score)
+    {
+        
     }
 }

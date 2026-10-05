@@ -20,4 +20,13 @@ public class PlayerHealth : BaseHealth
     {
         Debug.Log("Player has died");
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)) //IMPORTANT TO DELETE THIS IT IS JUST FOR TESTING PURPOSES
+        {
+            ApplyDamage(1f);
+            Debug.Log("Damage dealt" + base.CurrentHealth);
+        }
+    }
 }

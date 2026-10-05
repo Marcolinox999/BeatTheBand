@@ -18,7 +18,7 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] private GameObject[] bulletPrefabs;
     //0:Trumpet 1:PTrumpet 2:Drum 3:PDrum 4:Cymbal 5:PCymbal 6:Accordion 7:PAccordion
     public Weapons _actualWeapon =  Weapons.Trumpet;
-    private int weaponID = 0;
+    public int weaponID = 0;
     private bool canSwitch = true;
     [Header("Trumpet")] [SerializeField] private int trumpetMiss;
     [Header("Drums")] [SerializeField] private int drumsMiss;
@@ -193,6 +193,7 @@ public class WeaponManager : MonoBehaviour
     public void Attack()
     {
         BeatManager.Score score = BeatManager.instance.PrecisionCheck(missBeats);
+        
         Debug.Log(missBeats);
         switch (_actualWeapon)
         {
