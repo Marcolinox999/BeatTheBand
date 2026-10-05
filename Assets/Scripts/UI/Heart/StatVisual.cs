@@ -13,11 +13,11 @@ public class StatVisual : MonoBehaviour
     [Header("Sprites")]
     [SerializeField] Sprite[] hpSprites, colorSprites, mouthSprites;
 
-    private void Update()
+   /* private void Update()
     {
         int health = Mathf.RoundToInt(playerHealth.CurrentHealth);
         int index = Mathf.Clamp(health - 1, 0, hpSprites.Length - 1);
         heartColor = colorSprites[];
         
-    }
+    }*/
 }

@@ -134,7 +134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &41239946
 Transform:
   m_ObjectHideFlags: 0
@@ -2082,6 +2082,12 @@ MonoBehaviour:
   music: {fileID: 8300000, guid: 51798f261b63e9c449e3177ae52898dd, type: 3}
   isDialogueActive: 0
   typingSpeed: 0.2
+  dialogueTypingSound:
+  - {fileID: 8300000, guid: 93c789f05d3e705429b7f31738c97ca5, type: 3}
+  - {fileID: 8300000, guid: 9e4e841799d694241bf5e9116818821b, type: 3}
+  - {fileID: 8300000, guid: bee1b0cd1a4f6d347a29829acf7345f1, type: 3}
+  - {fileID: 8300000, guid: 6099a0931395ab44abd76752acf3a97b, type: 3}
+  - {fileID: 8300000, guid: 4ada7dbfac51d5b4b8f491154536242a, type: 3}
 --- !u!114 &1643473537
 MonoBehaviour:
   m_ObjectHideFlags: 0
