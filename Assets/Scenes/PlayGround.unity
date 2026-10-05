@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StatVisual
   playerHealth: {fileID: 312869188}
-  currentWeapon: {fileID: 312869187}
+  weapon: {fileID: 312869187}
   heartMouth: {fileID: 1707283281}
   heartHP: {fileID: 1258803016}
   heartColor: {fileID: 1834232197}
@@ -420,11 +420,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ebb59918c78947f47a4dd9a8d9e407d5, type: 3}
   - {fileID: 21300000, guid: a25f2492904d08f46a51b17e6b8cc754, type: 3}
   - {fileID: 21300000, guid: 0dfed827ba84e0b4db622e1e4b55b426, type: 3}
-  mouthSprites:
-  - {fileID: 21300000, guid: 935498316ba4d3d4a98926a71b80ee40, type: 3}
-  - {fileID: 21300000, guid: 33a289223c9ec234bbd765e21789c623, type: 3}
-  - {fileID: 21300000, guid: 3c903af711453b9408b82dca09f43cdf, type: 3}
-  - {fileID: 21300000, guid: ffc03ae52cca67d44a267e08eef9afce, type: 3}
+  idleFace: {fileID: 21300000, guid: 33a289223c9ec234bbd765e21789c623, type: 3}
+  missedFace: {fileID: 21300000, guid: 935498316ba4d3d4a98926a71b80ee40, type: 3}
+  okFace: {fileID: 21300000, guid: 3c903af711453b9408b82dca09f43cdf, type: 3}
+  perfectFace: {fileID: 21300000, guid: ffc03ae52cca67d44a267e08eef9afce, type: 3}
+  faceDuration: 0.4
 --- !u!1 &205046088
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +458,7 @@ MonoBehaviour:
   blip: {fileID: 8300000, guid: 51798f261b63e9c449e3177ae52898dd, type: 3}
   windowOfInteractions: 0.2
   audioLatencyOffset: 0.08
-  PRUEBA: {fileID: 0}
+  PRUEBA: {fileID: 488235544}
   perfectWindow: 0.05
   okWindow: 0.2
 --- !u!4 &205046090
