@@ -125,23 +125,23 @@ public class WeaponManager : MonoBehaviour
                 break;
 
             case BeatManager.Score.Ok:
-                accumulated++;
+                accumulated += 2;
                 break;
 
             case BeatManager.Score.Perfect:
-                accumulated = 15;
+                accumulated = 6;
                 break;
         }
 
-        if (canFire || accumulated >= 15)
+        if (canFire || accumulated >= 6)
         {
             for (int i = accumulated; i > 0; i--)
             {
                 int randomRotation = Random.Range(-15, 15);
-                if (accumulated >= 15)
-                    Instantiate(bulletPrefabs[5], transform.position, Quaternion.Euler(transform.rotation.x,transform.rotation.y,randomRotation));
+                if (accumulated >= 6)
+                    Instantiate(bulletPrefabs[5], transform.position, Quaternion.Euler(transform.rotation.x,transform.rotation.y,randomRotation + transform.rotation.z));
                 else
-                    Instantiate(bulletPrefabs[4], transform.position, Quaternion.Euler(transform.rotation.x,transform.rotation.y,randomRotation));
+                    Instantiate(bulletPrefabs[4], transform.position, Quaternion.Euler(transform.rotation.x,transform.rotation.y,randomRotation + transform.rotation.z));
             }
             accumulated = 0;
             canFire = false;
@@ -207,8 +207,9 @@ public class WeaponManager : MonoBehaviour
     private IEnumerator ShotCycles(float fireRate, int repetitions, GameObject bullet)
     {
         for (int i = 0; i < repetitions; i++)
-        {
-            Instantiate(bullet, transform.position, Quaternion.identity);
+        { 
+            int randomRotation = Random.Range(-3, 3);
+            Instantiate(bullet, transform.position, Quaternion.Euler(transform.rotation.x,transform.rotation.y,randomRotation + transform.rotation.z));
             yield return new WaitForSeconds(fireRate);
         }
     }
