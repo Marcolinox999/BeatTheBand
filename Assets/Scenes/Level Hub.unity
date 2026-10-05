@@ -128,6 +128,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 456788877}
     m_Modifications:
     - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: isCorner
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: up.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -282,6 +286,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 653354736}
     m_Modifications:
     - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: isLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: levelName
       value: Accordion Toucher
       objectReference: {fileID: 0}
@@ -289,6 +297,10 @@ PrefabInstance:
       propertyPath: warpPoint
       value: 
       objectReference: {fileID: 381256341}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: LevelIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: levelPanel
       value: 
@@ -301,6 +313,14 @@ PrefabInstance:
       propertyPath: levelNameText
       value: 
       objectReference: {fileID: 1842822796}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: right.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: 'right.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1797467745}
     - target: {fileID: 5881025228199338471, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: m_Name
       value: MapPoint_Acc
@@ -424,6 +444,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 653354736}
     m_Modifications:
     - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: isLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: levelName
       value: Platillos lover
       objectReference: {fileID: 0}
@@ -431,6 +455,10 @@ PrefabInstance:
       propertyPath: warpPoint
       value: 
       objectReference: {fileID: 1854156827}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: LevelIndex
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: levelPanel
       value: 
@@ -443,6 +471,14 @@ PrefabInstance:
       propertyPath: levelNameText
       value: 
       objectReference: {fileID: 1526600103}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: left.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: 'left.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1604061149}
     - target: {fileID: 5881025228199338471, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: m_Name
       value: MapPoint_Cymbals
@@ -729,6 +765,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 653354736}
     m_Modifications:
     - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: isLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: levelName
       value: "Redoble de ni\xF1os"
       objectReference: {fileID: 0}
@@ -736,6 +776,10 @@ PrefabInstance:
       propertyPath: warpPoint
       value: 
       objectReference: {fileID: 1133116365}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: LevelIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: levelPanel
       value: 
@@ -748,6 +792,30 @@ PrefabInstance:
       propertyPath: levelNameText
       value: 
       objectReference: {fileID: 1129031287}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: down.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: left.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: right.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: 'down.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1324342427}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: 'left.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1988638975}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: 'right.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1324342427}
     - target: {fileID: 5881025228199338471, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: m_Name
       value: MapPoint_Drums
@@ -1093,7 +1161,7 @@ GameObject:
   - component: {fileID: 1069635348}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1145,7 +1213,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 98
   m_MaskInteraction: 0
   m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.98490566, g: 0, b: 0.6621956, a: 1}
@@ -1170,12 +1238,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerBehaviour
   _weaponManager: {fileID: 0}
-  speed: 0.2
+  speed: 3
   isDead: 0
   movementInput: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   attackInput: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   currentPoint: {fileID: 1598413149}
-  moveSpeed: 0.01
+  moveSpeed: 3
 --- !u!4 &1069635350
 Transform:
   m_ObjectHideFlags: 0
@@ -1208,7 +1276,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1129031286
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1248,7 +1316,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: drum hitter
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1348,6 +1416,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 456788877}
     m_Modifications:
     - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: isCorner
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: up.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1362,7 +1434,7 @@ PrefabInstance:
     - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: 'up.Array.data[0]'
       value: 
-      objectReference: {fileID: 381256341}
+      objectReference: {fileID: 1133116365}
     - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: 'down.Array.data[0]'
       value: 
@@ -1512,6 +1584,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 456788877}
     m_Modifications:
     - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: isCorner
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: up.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1605,7 +1681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1526600102
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1645,7 +1721,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: platillos mierdas
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1964,7 +2040,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717993375}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2023,6 +2099,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 456788877}
     m_Modifications:
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: isCorner
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: up.Array.size
       value: 1
@@ -2105,7 +2185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1759952614
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2191,7 +2271,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1842822795
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2231,7 +2311,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Accordion Master
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
