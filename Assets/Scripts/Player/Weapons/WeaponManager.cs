@@ -190,9 +190,12 @@ public class WeaponManager : MonoBehaviour
         canSwitch = true;
     }
     
+    public event System.Action<BeatManager.Score> OnAttackScored;
+    
     public void Attack()
     {
         BeatManager.Score score = BeatManager.instance.PrecisionCheck(missBeats);
+        OnAttackScored?.Invoke(score);
         
         Debug.Log(missBeats);
         switch (_actualWeapon)
