@@ -96,6 +96,26 @@ namespace Bullets
                 SimpleShot(spawnPosition, aimDirection * speed, settings);
             }
         }
+
+        public static void FlowerShot(Vector2 origin, Vector2 aimDirection, int numberOfBullets, float numberPetals,
+            float baseSpeed, float speedVar, RadialShotSettings settings = null)
+        {
+            float angleSpeed = 360f/numberOfBullets;
+            for (int i = 0;  i < numberOfBullets; i++)
+            {
+                float angle = i * angleSpeed;
+                float rad =  Mathf.Deg2Rad * angle;
+                
+                float speedMultiplier = Mathf.Cos(numberPetals * rad);
+                float currentSpeed = baseSpeed * (speedMultiplier * speedVar);
+                
+                if(currentSpeed  < 0.5f) currentSpeed = 0.5f;  
+                
+                
+                Vector2 bulletDirection = aimDirection.Rotate(angle);
+                SimpleShot(origin, bulletDirection * currentSpeed, settings);
+            }
+        }
         
         
         /* // Ejemplo de llamada dentro de la lógica de un enemigo
