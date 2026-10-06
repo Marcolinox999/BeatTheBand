@@ -88,7 +88,7 @@ namespace Bullets
             Vector2 aimDirection = (targetPosition - origin).normalized;
             Vector2 rightDirection = aimDirection.Rotate(-90f).normalized;
             float totalWidth = (numberOfBullets - 1) * spacing;
-            Vector2 startOrigin = origin + (rightDirection * (totalWidth / 2f));
+            Vector2 startOrigin = origin - (rightDirection * (totalWidth / 2f));
 
             for (int i = 0; i < numberOfBullets; i++)
             {

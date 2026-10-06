@@ -469,10 +469,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbae889a215934444b6ba9a84d7af529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullets.LineShotToPlayer
-  numberOfBullets: 10
-  lineSpacing: 3
+  numberOfBullets: 1
+  lineSpacing: 0.3
   bulletSpeed: 5
-  cooldownTime: 2
+  cooldownTime: 0.1
   settings:
     numberOfBullets: 10
     bulletSpeed: 5
@@ -485,7 +485,7 @@ MonoBehaviour:
     timeToExplode: 1
     explosionBullets: 6
     explosionSpeed: 3
-    isLineShot: 1
+    isLineShot: 0
     isCircleShape: 0
   playerTransform: {fileID: 734061455}
 --- !u!114 &2094732930
