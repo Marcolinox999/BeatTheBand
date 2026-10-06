@@ -81,6 +81,21 @@ namespace Bullets
                 SimpleShot(origin, bulletDirection * speed, null);
             }
         }
+
+        public static void LineShotToPlayer(Vector2 origin, Vector2 targetPosition,
+            int numberOfBullets,float spacing, float speed, RadialShotSettings settings = null)
+        {
+            Vector2 aimDirection = (targetPosition - origin).normalized;
+            Vector2 rightDirection = aimDirection.Rotate(-90f).normalized;
+            float totalWidth = (numberOfBullets - 1) * spacing;
+            Vector2 startOrigin = origin + (rightDirection * (totalWidth / 2f));
+
+            for (int i = 0; i < numberOfBullets; i++)
+            {
+                Vector2 spawnPosition = startOrigin + (rightDirection * (spacing * i));
+                SimpleShot(spawnPosition, aimDirection * speed, settings);
+            }
+        }
         
         
         /* // Ejemplo de llamada dentro de la lógica de un enemigo

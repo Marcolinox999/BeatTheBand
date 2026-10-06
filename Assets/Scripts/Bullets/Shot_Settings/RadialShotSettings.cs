@@ -24,6 +24,9 @@ namespace Bullets
         public int explosionBullets = 6;
         public float explosionSpeed = 3f;
 
+        [Header("Line Shot Settings")] 
+        public bool isLineShot = false;
+
         [Header("Circle Bomb Settings")] 
         public bool isCircleShape = false;
         

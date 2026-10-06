@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Bullets
@@ -16,21 +18,23 @@ namespace Bullets
         private int explosionBulletsCount;
         private float explosionSpeedValue;
         
-        [Header("Homing Variables")] private bool willHoming = false;
-        private GameObject homingTarget;
-        private Vector3 bulletDirection;
+        //[Header("Line Shot Settings")]
+        private bool isLineShot = false;
+        private Transform playerTransform;
+
+        
 
         private void Start()
         {
-            homingTarget = GameObject.FindGameObjectWithTag("Player");
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                playerTransform = player.transform;
+            }
         }
 
         private void Update()
         {
-            if (willHoming)
-            {
-                Vector3 bulletDirection = new Vector3(homingTarget.transform.position.x - transform.position.x, homingTarget.transform.position.y - transform.position.y, 0).normalized;
-            }
             transform.position += (Vector3) Velocity * Time.deltaTime;
             lifetime += Time.deltaTime;
 
@@ -79,6 +83,7 @@ namespace Bullets
             lifetime = 0f;
             gameObject.SetActive(false);
         }
+        
         
     }
 }
