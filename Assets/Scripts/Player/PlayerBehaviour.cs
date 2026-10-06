@@ -31,7 +31,7 @@ namespace Player
         private float vInput;
         [SerializeField] private InputActionReference movementInput;
         [SerializeField] private InputActionReference attackInput;
-        private bool pveEnabled = false;
+        [SerializeField] private bool pveEnabled = false;
 
         [Header("OnMap Settings (me vas a matar Marco lo se")]
         [SerializeField] private MapPoint currentPoint;
@@ -172,11 +172,11 @@ namespace Player
                     break;
             }
 
-           /* if (attackInput.action.WasPressedThisFrame() && pveEnabled) //MARCO HOLA lo de pve enabled es para que cuando esté en el mapa no pueda usar las armas
+            if (attackInput.action.WasPressedThisFrame() && pveEnabled)
             {
                 _weaponManager.Attack();
             }
-            */
+            
         }
         
     }
