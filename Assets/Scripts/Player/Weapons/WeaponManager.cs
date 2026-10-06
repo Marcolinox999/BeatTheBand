@@ -29,6 +29,12 @@ public class WeaponManager : MonoBehaviour
     private int streak;
 
     private int missBeats = 1;
+    private Camera _camera;
+
+    private void Awake()
+    {
+        _camera = Camera.main;
+    }
 
     private void OnEnable()
     {
@@ -100,7 +106,7 @@ public class WeaponManager : MonoBehaviour
                 break;
 
             case BeatManager.Score.Perfect:
-                Instantiate(bulletPrefabs[1], transform.position, Quaternion.identity);
+                Instantiate(bulletPrefabs[1], transform.position,Quaternion.identity);
                 break;
         }
     }
@@ -224,4 +230,6 @@ public class WeaponManager : MonoBehaviour
             yield return new WaitForSeconds(fireRate);
         }
     }
+
+    
 }
