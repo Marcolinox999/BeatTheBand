@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 869bca79fc3e2344ab93ad68f8b8bf66
+guid: c20712268ba02a74db5a1ad3ffa1332a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -469549189723009744
-    second: Frame 51_0
+      213: 6285665100030191944
+    second: Frame 57_0
+  - first:
+      213: 3971227939570305582
+    second: Frame 57_1
+  - first:
+      213: -252110860764247211
+    second: Frame 57_2
+  - first:
+      213: 7904172741784747224
+    second: Frame 57_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,12 +55,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1000
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Frame 51_0
+      name: Frame 57_0
       rect:
         serializedVersion: 2
-        x: 33
-        y: 36
-        width: 234
-        height: 245
+        x: 49
+        y: 338
+        width: 3094
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 03dccfdef73db79f0800000000000000
-      internalID: -469549189723009744
+      spriteID: 849ae580b1b2b3750800000000000000
+      internalID: 6285665100030191944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frame 57_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 386
+        width: 3094
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2ac13445c2ac1730800000000000000
+      internalID: 3971227939570305582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frame 57_2
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 242
+        width: 3094
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55b01240282508cf0800000000000000
+      internalID: -252110860764247211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frame 57_3
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 194
+        width: 3094
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dcb7650b3341bd60800000000000000
+      internalID: 7904172741784747224
       vertices: []
       indices: 
       edges: []
@@ -138,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Frame 51_0: -469549189723009744
+      Frame 57_0: 6285665100030191944
+      Frame 57_1: 3971227939570305582
+      Frame 57_2: -252110860764247211
+      Frame 57_3: 7904172741784747224
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
