@@ -18,6 +18,7 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] private GameObject[] bulletPrefabs;
     //0:Trumpet 1:PTrumpet 2:Drum 3:PDrum 4:Cymbal 5:PCymbal 6:Accordion 7:PAccordion
     public Weapons _actualWeapon =  Weapons.Trumpet;
+    private Transform hand;
     public int weaponID = 0;
     private bool canSwitch = true;
     [Header("Trumpet")] [SerializeField] private int trumpetMiss;
@@ -29,11 +30,10 @@ public class WeaponManager : MonoBehaviour
     private int streak;
 
     private int missBeats = 1;
-    private Camera _camera;
 
     private void Awake()
     {
-        _camera = Camera.main;
+        hand = GetComponentInChildren<Transform>();
     }
 
     private void OnEnable()
@@ -102,11 +102,11 @@ public class WeaponManager : MonoBehaviour
                 return;
 
             case BeatManager.Score.Ok:
-                Instantiate(bulletPrefabs[0], transform.position, Quaternion.identity);
+                Instantiate(bulletPrefabs[0], transform.position, hand.rotation);
                 break;
 
             case BeatManager.Score.Perfect:
-                Instantiate(bulletPrefabs[1], transform.position,Quaternion.identity);
+                Instantiate(bulletPrefabs[1], transform.position, hand.rotation);
                 break;
         }
     }
@@ -151,9 +151,9 @@ public class WeaponManager : MonoBehaviour
             {
                 int randomRotation = Random.Range(-15, 15);
                 if (accumulated >= 6)
-                    Instantiate(bulletPrefabs[5], transform.position, Quaternion.Euler(transform.rotation.x,transform.rotation.y,randomRotation + transform.rotation.z));
+                    Instantiate(bulletPrefabs[5], transform.position, hand.rotation);
                 else
-                    Instantiate(bulletPrefabs[4], transform.position, Quaternion.Euler(transform.rotation.x,transform.rotation.y,randomRotation + transform.rotation.z));
+                    Instantiate(bulletPrefabs[4], transform.position, hand.rotation);
             }
             accumulated = 0;
             canFire = false;
@@ -225,8 +225,8 @@ public class WeaponManager : MonoBehaviour
     {
         for (int i = 0; i < repetitions; i++)
         { 
-            int randomRotation = Random.Range(-3, 3);
-            Instantiate(bullet, transform.position, Quaternion.Euler(transform.rotation.x,transform.rotation.y,randomRotation + transform.rotation.z));
+            int randomRotation = Random.Range(-6, 6);
+            Instantiate(bullet, transform.position, new Quaternion());
             yield return new WaitForSeconds(fireRate);
         }
     }

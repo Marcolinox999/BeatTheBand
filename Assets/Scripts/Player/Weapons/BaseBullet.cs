@@ -8,8 +8,6 @@ public class BaseBullet : MonoBehaviour
     [SerializeField] protected float lifetime;
 
     private float timer;
-
-
     private void Update()
     {
         timer += Time.deltaTime;
@@ -22,6 +20,6 @@ public class BaseBullet : MonoBehaviour
 
     protected virtual void Movement()
     {
-        transform.Translate(transform.up * (speed * Time.deltaTime));
+        transform.Translate(-transform.right * (speed * Time.deltaTime),  Space.World);
     }
 }
