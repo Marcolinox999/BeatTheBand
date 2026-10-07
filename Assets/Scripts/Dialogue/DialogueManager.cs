@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private string tag2 = "Boss";
     [SerializeField] private Color talkingColor;
     [SerializeField] private Color listeningColor;
-    
+    [SerializeField] private int sceneIndex;
     public static DialogueManager Instance;
  
     public Image tag1Image;
@@ -117,7 +117,7 @@ public class DialogueManager : MonoBehaviour
  
     void EndDialogue()
     {
-        Debug.Log("Fin del dialogo");
+        SceneManager.LoadScene(sceneIndex);
     }
 }
 

@@ -19,8 +19,10 @@ public class WeaponManager : MonoBehaviour
     //0:Trumpet 1:PTrumpet 2:Drum 3:PDrum 4:Cymbal 5:PCymbal 6:Accordion 7:PAccordion
     public Weapons _actualWeapon =  Weapons.Trumpet;
     private Transform hand;
+    private ParticleSystem _particleSystem;
     public int weaponID = 0;
     private bool canSwitch = true;
+    [SerializeField] private AudioClip switchSound;
     [Header("Trumpet")] [SerializeField] private int trumpetMiss;
     [SerializeField] private int trumpetSpread;
     [Header("Drums")] [SerializeField] private int drumsMiss;
@@ -42,6 +44,7 @@ public class WeaponManager : MonoBehaviour
     {
         hand = GetComponentInChildren<Transform>();
         _crossHairRenderer = GetComponentInChildren<SpriteRenderer>();
+        _particleSystem = GetComponentInChildren<ParticleSystem>();
     }
 
     private void OnEnable()
@@ -98,7 +101,7 @@ public class WeaponManager : MonoBehaviour
                         break;
                     
                 }
-
+                AudioManager.instance.PlaySFX(switchSound);
                 return;
             }
         }
@@ -223,7 +226,7 @@ public class WeaponManager : MonoBehaviour
     {
         BeatManager.Score score = BeatManager.instance.PrecisionCheck(missBeats);
         OnAttackScored?.Invoke(score);
-        
+        _particleSystem.Play();
         Debug.Log(missBeats);
         switch (_actualWeapon)
         {
