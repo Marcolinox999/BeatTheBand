@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-
+/*
 namespace Bullets
 {
     public class RadialShotWeapon : MonoBehaviour
@@ -84,3 +84,4 @@ namespace Bullets
         }
     }
 }
+*/

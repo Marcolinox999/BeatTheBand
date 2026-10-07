@@ -23,9 +23,7 @@ namespace Bullets
         public float timeToExplode = 1f;
         public int explosionBullets = 6;
         public float explosionSpeed = 3;
-
-        [Header("Circle Bomb Settings")] 
-        public bool isCircleShape = false;
+        
         
         
 

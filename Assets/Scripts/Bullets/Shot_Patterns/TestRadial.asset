@@ -12,15 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a4382ac770904341935d2b036a438f8, type: 3}
   m_Name: TestRadial
   m_EditorClassIdentifier: Assembly-CSharp::RadialShotPattern
-  Repetitions: 25
-  angleOffsetBetweenReps: 79
+  Repetitions: 200
+  angleOffsetBetweenReps: 137
   startWait: 0
-  endWait: 1
+  endWait: 0
   patternSettings:
-  - numberOfBullets: 16
+  - numberOfBullets: 2
     bulletSpeed: 5
     cooldownTime: 0.1
     angleOffset: -16
     phaseOffset: -0.02
     radialMask: 1
     maskAngle: 360
+    doesExplode: 0
+    timeToExplode: 1
+    explosionBullets: 6
+    explosionSpeed: 3
+    isCircleShape: 0
