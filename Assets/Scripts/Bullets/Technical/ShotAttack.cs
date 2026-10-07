@@ -107,7 +107,7 @@ namespace Bullets
                 float rad =  Mathf.Deg2Rad * angle;
                 
                 float speedMultiplier = Mathf.Cos(numberPetals * rad);
-                float currentSpeed = baseSpeed * (speedMultiplier * speedVar);
+                float currentSpeed = baseSpeed * (0.4f + 0.6f * Mathf.Abs(speedMultiplier));
                 
                 if(currentSpeed  < 0.5f) currentSpeed = 0.5f;  
                 
@@ -115,6 +115,26 @@ namespace Bullets
                 Vector2 bulletDirection = aimDirection.Rotate(angle);
                 SimpleShot(origin, bulletDirection * currentSpeed, settings);
             }
+        }
+
+        public static void DualSpiral(Vector2 origin, Vector2 aimDirection, float angle1, float angle2,
+            RadialShotSettings settings = null)
+        {
+            Vector2 dir1 = aimDirection.Rotate(angle1);
+            RadialShot(origin, dir1, settings);
+            
+            Vector2 dir2 = aimDirection.Rotate(angle2);
+            RadialShot(origin, dir2, settings);
+        }
+
+        public static void PianoWaterfall(Vector2 origin, float timeOffset, float speed,
+            RadialShotSettings settings = null)
+        {
+            Vector2 leftOrigin = origin + new Vector2(-4f, 2f);
+            Vector2 rightOrigin = origin + new Vector2(4f, 2f);
+            
+            SimpleShot(leftOrigin, new Vector2(1.5f, -1f).normalized * speed, settings);
+            SimpleShot(rightOrigin, new Vector2(-1.5f, -1f).normalized * speed, settings);
         }
         
         
