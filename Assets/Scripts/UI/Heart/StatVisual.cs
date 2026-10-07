@@ -13,10 +13,9 @@ public class StatVisual : MonoBehaviour
     [Header("Sprites")]
     [SerializeField] private Sprite[] hpSprites, colorSprites;
     [SerializeField] private Sprite idleFace, missedFace, okFace, perfectFace;
-
     [Header("Face")]
     [SerializeField] private float faceDuration = 0.4f;
-
+    
     private Coroutine faceRoutine;
 
     private void OnEnable()
@@ -52,7 +51,6 @@ public class StatVisual : MonoBehaviour
             BeatManager.Score.Perfect => perfectFace,
             _ => idleFace
         };
-        
         if (faceRoutine != null)
             StopCoroutine(faceRoutine);
 

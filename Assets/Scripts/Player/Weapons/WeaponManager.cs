@@ -22,18 +22,26 @@ public class WeaponManager : MonoBehaviour
     public int weaponID = 0;
     private bool canSwitch = true;
     [Header("Trumpet")] [SerializeField] private int trumpetMiss;
+    [SerializeField] private int trumpetSpread;
     [Header("Drums")] [SerializeField] private int drumsMiss;
+    [SerializeField] private int drumsSpread;
     [Header("Cymbals")]  [SerializeField] private int cymbalsMiss;
+    [SerializeField] private int cymbalsSpread;
     private int accumulated;
     private bool canFire = false;
     [Header("Accordion")] [SerializeField] private int accordionmMiss;
+    [SerializeField] private int accordionSpread;
     private int streak;
+    [Header("CrossHairs")]
+    [SerializeField] private Sprite[] crossHair;
+    private SpriteRenderer _crossHairRenderer;
 
     private int missBeats = 1;
 
     private void Awake()
     {
         hand = GetComponentInChildren<Transform>();
+        _crossHairRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void OnEnable()
@@ -69,19 +77,23 @@ public class WeaponManager : MonoBehaviour
                 switch (weaponID)
                 {
                     case 0:
-                        missBeats = trumpetMiss; ;
+                        missBeats = trumpetMiss;
+                        _crossHairRenderer.sprite = crossHair[0];
                         _actualWeapon =  Weapons.Trumpet;
                         break;
                     case 1:
                         missBeats = drumsMiss;
+                        _crossHairRenderer.sprite = crossHair[1];
                         _actualWeapon = Weapons.Drum;
                         break;
                     case 2:
                         missBeats = cymbalsMiss;
+                        _crossHairRenderer.sprite = crossHair[2];
                         _actualWeapon = Weapons.Cymbals;
                         break;
                     case 3:
                         missBeats = accordionmMiss;
+                        _crossHairRenderer.sprite = crossHair[3];
                         _actualWeapon = Weapons.Accordion;
                         break;
                     
@@ -102,11 +114,17 @@ public class WeaponManager : MonoBehaviour
                 return;
 
             case BeatManager.Score.Ok:
-                Instantiate(bulletPrefabs[0], transform.position, hand.rotation);
+                float randomRotation = Random.Range(-trumpetSpread, trumpetSpread);
+
+                Quaternion rotation = hand.rotation * Quaternion.Euler(0f, 0f, randomRotation);
+                Instantiate(bulletPrefabs[0], transform.position, rotation);
                 break;
 
             case BeatManager.Score.Perfect:
-                Instantiate(bulletPrefabs[1], transform.position, hand.rotation);
+                float randomRotationP = Random.Range(-trumpetSpread, trumpetSpread);
+
+                Quaternion rotationP = hand.rotation * Quaternion.Euler(0f, 0f, randomRotationP);
+                Instantiate(bulletPrefabs[1], transform.position, rotationP);
                 break;
         }
     }
@@ -119,11 +137,11 @@ public class WeaponManager : MonoBehaviour
                 return;
 
             case BeatManager.Score.Ok:
-                StartCoroutine(ShotCycles(0.1f,3,bulletPrefabs[2]));
+                StartCoroutine(ShotCycles(0.1f,3,bulletPrefabs[2],drumsSpread));
                 break;
 
             case BeatManager.Score.Perfect:
-                StartCoroutine(ShotCycles(0.1f,4,bulletPrefabs[3]));
+                StartCoroutine(ShotCycles(0.1f,4,bulletPrefabs[3],drumsSpread));
                 break;
         }
     }
@@ -149,11 +167,13 @@ public class WeaponManager : MonoBehaviour
         {
             for (int i = accumulated; i > 0; i--)
             {
-                int randomRotation = Random.Range(-15, 15);
+                float randomRotation = Random.Range(-cymbalsSpread, cymbalsSpread);
+
+                Quaternion rotation = hand.rotation * Quaternion.Euler(0f, 0f, randomRotation);
                 if (accumulated >= 6)
-                    Instantiate(bulletPrefabs[5], transform.position, hand.rotation);
+                    Instantiate(bulletPrefabs[5], transform.position, rotation);
                 else
-                    Instantiate(bulletPrefabs[4], transform.position, hand.rotation);
+                    Instantiate(bulletPrefabs[4], transform.position, rotation);
             }
             accumulated = 0;
             canFire = false;
@@ -169,21 +189,22 @@ public class WeaponManager : MonoBehaviour
                 return;
 
             case BeatManager.Score.Ok:
-                if (streak <= 14)
+                if (streak <= 8)
                 {
                     streak++;
-                    StartCoroutine(ShotCycles(0.1f, streak, bulletPrefabs[6]));
+                    StartCoroutine(ShotCycles(0.05f, streak, bulletPrefabs[6],accordionSpread));
                 }
                 else
                 {
-                    StartCoroutine(ShotCycles(0.1f, streak, bulletPrefabs[7]));
+                    StartCoroutine(ShotCycles(0.05f, streak, bulletPrefabs[7],accordionSpread));
                 }
 
                 break;
 
             case BeatManager.Score.Perfect:
-                streak += 2;
-                StartCoroutine(ShotCycles(0.1f,streak,bulletPrefabs[7]));
+                if (streak <= 10)
+                    streak += 2;
+                StartCoroutine(ShotCycles(0.05f,streak,bulletPrefabs[7],accordionSpread));
                 break;
         }
         
@@ -221,12 +242,14 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    private IEnumerator ShotCycles(float fireRate, int repetitions, GameObject bullet)
+    private IEnumerator ShotCycles(float fireRate, int repetitions, GameObject bullet, float spread)
     {
         for (int i = 0; i < repetitions; i++)
         { 
-            int randomRotation = Random.Range(-6, 6);
-            Instantiate(bullet, transform.position, new Quaternion());
+            float randomRotation = Random.Range(-spread, spread);
+
+            Quaternion rotation = hand.rotation * Quaternion.Euler(0f, 0f, randomRotation);
+            Instantiate(bullet, transform.position, rotation);
             yield return new WaitForSeconds(fireRate);
         }
     }
