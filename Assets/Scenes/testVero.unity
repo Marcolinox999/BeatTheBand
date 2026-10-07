@@ -405,7 +405,10 @@ GameObject:
   - component: {fileID: 2094732925}
   - component: {fileID: 2094732928}
   - component: {fileID: 2094732930}
+  - component: {fileID: 2094732931}
   - component: {fileID: 2094732929}
+  - component: {fileID: 2094732932}
+  - component: {fileID: 2094732933}
   m_Layer: 0
   m_Name: Test
   m_TagString: Untagged
@@ -464,7 +467,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094732924}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbae889a215934444b6ba9a84d7af529, type: 3}
   m_Name: 
@@ -485,7 +488,6 @@ MonoBehaviour:
     timeToExplode: 1
     explosionBullets: 6
     explosionSpeed: 3
-    isLineShot: 0
     isCircleShape: 0
   playerTransform: {fileID: 734061455}
 --- !u!114 &2094732930
@@ -501,6 +503,95 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullets.RadialShotWeapon
   shotPattern: {fileID: 0}
+--- !u!114 &2094732931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094732924}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b00257773167074f9f2948cfd48d6c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bullets.FlowerShot
+  numberOfBullets: 60
+  numberOfPetals: 4
+  baseSpeed: 4
+  speedVar: 2
+  cooldownTime: 3
+  settings:
+    numberOfBullets: 0
+    bulletSpeed: 0
+    cooldownTime: 0
+    angleOffset: 0
+    phaseOffset: 0
+    radialMask: 0
+    maskAngle: 360
+    doesExplode: 0
+    timeToExplode: 1
+    explosionBullets: 6
+    explosionSpeed: 3
+    isCircleShape: 0
+--- !u!114 &2094732932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094732924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e7047704a111541801a52dc5f22083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossBehavior
+  maxHealth: 500
+  damageCooldown: 0.5
+  _flashColor: {r: 1, g: 1, b: 1, a: 1}
+  flashTime: 0.25
+  phases:
+  - healthThreshold: 0
+    transitionPause: 0
+    transitionEffect: {fileID: 0}
+    attacks: []
+  - healthThreshold: 0
+    transitionPause: 0
+    transitionEffect: {fileID: 0}
+    attacks: []
+  - healthThreshold: 0
+    transitionPause: 0
+    transitionEffect: {fileID: 0}
+    attacks: []
+  scratchDamageThreshold: 50
+  vinylScratchComponent: {fileID: 2094732933}
+--- !u!114 &2094732933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094732924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6b0092e66c14249b3e6241e91c1846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bullets.VinylScratch
+  scratchAudioClip: {fileID: 8300000, guid: 5b1c31d7f59b73448a8e59f1f3542d46, type: 3}
+  scratchAngle: -90
+  scratchDuration: 0.2
+  settings:
+    numberOfBullets: 5
+    bulletSpeed: 3
+    cooldownTime: 0.2
+    angleOffset: 0
+    phaseOffset: 0
+    radialMask: 0
+    maskAngle: 360
+    doesExplode: 0
+    timeToExplode: 1
+    explosionBullets: 6
+    explosionSpeed: 3
+    isCircleShape: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -16,4 +16,16 @@ MonoBehaviour:
   angleOffsetBetweenReps: 0
   startWait: 0
   endWait: 0
-  patternSettings: []
+  patternSettings:
+  - numberOfBullets: 0
+    bulletSpeed: 0
+    cooldownTime: 0
+    angleOffset: 0
+    phaseOffset: 0
+    radialMask: 0
+    maskAngle: 0
+    doesExplode: 0
+    timeToExplode: 0
+    explosionBullets: 0
+    explosionSpeed: 0
+    isCircleShape: 0

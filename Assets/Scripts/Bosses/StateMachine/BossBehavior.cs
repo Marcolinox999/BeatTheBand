@@ -1,3 +1,4 @@
+using Bullets;
 using UnityEngine;
 
 public class BossBehavior : BaseHealth
@@ -5,8 +6,12 @@ public class BossBehavior : BaseHealth
     [Header("Phases")]
     [SerializeField] private BossPhase[] phases;
     
+    [Header("Vinyl Scratch Mechanic")]
+    [SerializeField] private float scratchDamageThreshold = 50f;
+    private float accumulatedDamage = 0f;
+    [SerializeField] VinylScratch vinylScratchComponent;
+    
     private int currentPhase;
-
     private BossStateMachine stateMachine;
     
     public int CurrentPhase => currentPhase;
@@ -26,6 +31,11 @@ public class BossBehavior : BaseHealth
     {
         base.Start();
         Init();
+        
+        if (vinylScratchComponent == null)
+        {
+            Debug.LogError("¡Falta el componente VinylScratch en este GameObject!");
+        }
     }
 
     protected override void SpriteDamage()
@@ -36,7 +46,7 @@ public class BossBehavior : BaseHealth
     {
         if (Input.GetKeyDown(KeyCode.Space)) //IMPORTANT TO DELETE THIS IT IS JUST FOR TESTING PURPOSES
         {
-            ApplyDamage(100f);
+            ApplyDamage(20);
             Debug.Log("Damage dealt" + base.CurrentHealth);
         }
     }
@@ -56,6 +66,23 @@ public class BossBehavior : BaseHealth
         if (base.CurrentHealth <= nextPhaseData.healthThreshold)
         {
             ChangePhase(nextPhase);
+        }
+    }
+    
+    public override void ApplyDamage(float damage)
+    {
+        base.ApplyDamage(damage);
+        if (damage <= 0f || CurrentHealth <= 0f) return;
+            
+        accumulatedDamage += damage;
+
+        if (accumulatedDamage >= scratchDamageThreshold)
+        {
+            accumulatedDamage = 0f;
+            if (vinylScratchComponent != null)
+            {
+                vinylScratchComponent.TriggerVinylScratch();
+            }
         }
     }
 

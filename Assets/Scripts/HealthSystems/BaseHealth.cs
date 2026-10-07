@@ -28,7 +28,7 @@ public abstract class BaseHealth : MonoBehaviour, IDamageable
         Init();
     }
 
-    public void ApplyDamage(float damage)
+    public virtual void ApplyDamage(float damage)
     {
         SpriteDamage();
         if (!_canTakeDamage || CurrentHealth <= 0f || damage <= 0f) return;
