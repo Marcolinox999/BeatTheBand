@@ -18,21 +18,6 @@ namespace Bullets
         private int explosionBulletsCount;
         private float explosionSpeedValue;
         
-        //[Header("Line Shot Settings")]
-        private bool isLineShot = false;
-        private Transform playerTransform;
-
-        
-
-        private void Start()
-        {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            if (player != null)
-            {
-                playerTransform = player.transform;
-            }
-        }
-
         private void Update()
         {
             transform.position += (Vector3) Velocity * Time.deltaTime;

@@ -41,6 +41,25 @@ namespace Bullets
                 SimpleShot(origin, bulletDirection * settings.bulletSpeed, settings);
             }
         }
+        public static void FlowerShot(Vector2 origin, Vector2 aimDirection, int numberOfBullets, float numberPetals,
+            float baseSpeed, RadialShotSettings settings = null)
+        {
+            float angleSpeed = 360f/numberOfBullets;
+            for (int i = 0;  i < numberOfBullets; i++)
+            {
+                float angle = i * angleSpeed;
+                float rad =  Mathf.Deg2Rad * angle;
+                
+                float speedMultiplier = Mathf.Cos(numberPetals * rad);
+                float currentSpeed = baseSpeed * (0.4f + 0.6f * Mathf.Abs(speedMultiplier));
+                
+                if(currentSpeed  < 0.5f) currentSpeed = 0.5f;  
+                
+                
+                Vector2 bulletDirection = aimDirection.Rotate(angle);
+                SimpleShot(origin, bulletDirection * currentSpeed, settings);
+            }
+        }
 
         public static void ParallelShot(Vector2 center, Vector2 aimDirection, int numberLines, float spacing, float speed)
         {
@@ -67,6 +86,7 @@ namespace Bullets
         public static void ConeShotToPlayer(Vector2 origin, Vector2 targetPosition, RadialShotSettings settings, int numberOfBullets, float coneAngle, float speed)
         {
             Vector2 aimDirection = (targetPosition - origin).normalized;
+            
             if (numberOfBullets == 1)
             {
                 SimpleShot(origin, aimDirection * speed,settings);
@@ -96,26 +116,19 @@ namespace Bullets
                 SimpleShot(spawnPosition, aimDirection * speed, settings);
             }
         }
-
-        public static void FlowerShot(Vector2 origin, Vector2 aimDirection, int numberOfBullets, float numberPetals,
-            float baseSpeed, float speedVar, RadialShotSettings settings = null)
+        
+        
+        public static void PianoWaterfall(Vector2 origin, float speed,
+            RadialShotSettings settings = null)
         {
-            float angleSpeed = 360f/numberOfBullets;
-            for (int i = 0;  i < numberOfBullets; i++)
-            {
-                float angle = i * angleSpeed;
-                float rad =  Mathf.Deg2Rad * angle;
-                
-                float speedMultiplier = Mathf.Cos(numberPetals * rad);
-                float currentSpeed = baseSpeed * (0.4f + 0.6f * Mathf.Abs(speedMultiplier));
-                
-                if(currentSpeed  < 0.5f) currentSpeed = 0.5f;  
-                
-                
-                Vector2 bulletDirection = aimDirection.Rotate(angle);
-                SimpleShot(origin, bulletDirection * currentSpeed, settings);
-            }
+            Vector2 leftOrigin = origin + new Vector2(-4f, 2f);
+            Vector2 rightOrigin = origin + new Vector2(4f, 2f);
+            
+            SimpleShot(leftOrigin, new Vector2(1.5f, -1f).normalized * speed, settings);
+            SimpleShot(rightOrigin, new Vector2(-1.5f, -1f).normalized * speed, settings);
         }
+
+       
 
         public static void DualSpiral(Vector2 origin, Vector2 aimDirection, float angle1, float angle2,
             RadialShotSettings settings = null)
@@ -127,15 +140,6 @@ namespace Bullets
             RadialShot(origin, dir2, settings);
         }
 
-        public static void PianoWaterfall(Vector2 origin, float timeOffset, float speed,
-            RadialShotSettings settings = null)
-        {
-            Vector2 leftOrigin = origin + new Vector2(-4f, 2f);
-            Vector2 rightOrigin = origin + new Vector2(4f, 2f);
-            
-            SimpleShot(leftOrigin, new Vector2(1.5f, -1f).normalized * speed, settings);
-            SimpleShot(rightOrigin, new Vector2(-1.5f, -1f).normalized * speed, settings);
-        }
         
         
         /* // Ejemplo de llamada dentro de la lógica de un enemigo

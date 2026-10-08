@@ -119,6 +119,71 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &289134403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 289134406}
+  - component: {fileID: 289134405}
+  m_Layer: 0
+  m_Name: BOSS TETS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &289134405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289134403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46e7047704a111541801a52dc5f22083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossBehavior
+  maxHealth: 500
+  damageCooldown: 0.5
+  _flashColor: {r: 1, g: 1, b: 1, a: 1}
+  flashTime: 0.25
+  phases:
+  - healthThreshold: 500
+    transitionPause: 2
+    transitionEffect: {fileID: 0}
+    attacks:
+    - {fileID: 1961298354}
+  - healthThreshold: 0
+    transitionPause: 0
+    transitionEffect: {fileID: 0}
+    attacks: []
+  - healthThreshold: 0
+    transitionPause: 0
+    transitionEffect: {fileID: 0}
+    attacks: []
+  scratchDamageThreshold: 50
+  vinylScratchComponent: {fileID: 1961298355}
+--- !u!4 &289134406
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289134403}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.73431, y: -0.70135, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1961298356}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &464797037
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +223,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464797037}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.48789, y: -0.44004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -393,6 +458,66 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &1961298354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1961298356}
+  - component: {fileID: 1961298355}
+  m_Layer: 0
+  m_Name: VinylScratch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1961298355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961298354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6b0092e66c14249b3e6241e91c1846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bullets.VinylScratch
+  scratchAudioClip: {fileID: 0}
+  scratchAngle: -90
+  scratchDuration: 0.2
+  rotationSpeedPerShot: 50
+  settings:
+    numberOfBullets: 4
+    bulletSpeed: 3
+    cooldownTime: 0.05
+    angleOffset: 0
+    phaseOffset: 0
+    radialMask: 0
+    maskAngle: 360
+    doesExplode: 0
+    timeToExplode: 1
+    explosionBullets: 6
+    explosionSpeed: 3
+--- !u!4 &1961298356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961298354}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 289134406}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2094732924
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,13 +534,14 @@ GameObject:
   - component: {fileID: 2094732929}
   - component: {fileID: 2094732932}
   - component: {fileID: 2094732933}
+  - component: {fileID: 2094732934}
   m_Layer: 0
   m_Name: Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2094732925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,7 +554,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdb02c5c7a1c8de4083d68f3455c1b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullets.RadialShotWeapon
-  shotPattern: {fileID: 11400000, guid: 0c8d7e65c77e1c547af28b2c2a113421, type: 2}
+  shotPattern: {fileID: 11400000, guid: ea0531370490cd24a910f9aa43be2720, type: 2}
+  onShotPattern: 0
 --- !u!4 &2094732926
 Transform:
   m_ObjectHideFlags: 0
@@ -488,7 +615,6 @@ MonoBehaviour:
     timeToExplode: 1
     explosionBullets: 6
     explosionSpeed: 3
-    isCircleShape: 0
   playerTransform: {fileID: 734061455}
 --- !u!114 &2094732930
 MonoBehaviour:
@@ -503,6 +629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullets.RadialShotWeapon
   shotPattern: {fileID: 0}
+  onShotPattern: 0
 --- !u!114 &2094732931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,6 +660,7 @@ MonoBehaviour:
     explosionBullets: 6
     explosionSpeed: 3
     isCircleShape: 0
+  isFlower: 0
 --- !u!114 &2094732932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,7 +668,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094732924}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46e7047704a111541801a52dc5f22083, type: 3}
   m_Name: 
@@ -571,7 +699,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094732924}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae6b0092e66c14249b3e6241e91c1846, type: 3}
   m_Name: 
@@ -579,6 +707,7 @@ MonoBehaviour:
   scratchAudioClip: {fileID: 8300000, guid: 5b1c31d7f59b73448a8e59f1f3542d46, type: 3}
   scratchAngle: -90
   scratchDuration: 0.2
+  rotationSpeedPerShot: 0
   settings:
     numberOfBullets: 5
     bulletSpeed: 3
@@ -591,7 +720,31 @@ MonoBehaviour:
     timeToExplode: 1
     explosionBullets: 6
     explosionSpeed: 3
-    isCircleShape: 0
+--- !u!114 &2094732934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094732924}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbd998fe84b9e6741aa027bc1b60b556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bullets.DualSpiral
+  rotationSpeed: 10
+  settings:
+    numberOfBullets: 8
+    bulletSpeed: 4
+    cooldownTime: 4
+    angleOffset: 0
+    phaseOffset: 0
+    radialMask: 0
+    maskAngle: 360
+    doesExplode: 0
+    timeToExplode: 1
+    explosionBullets: 6
+    explosionSpeed: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -599,4 +752,5 @@ SceneRoots:
   - {fileID: 1384542498}
   - {fileID: 2094732926}
   - {fileID: 734061455}
+  - {fileID: 289134406}
   - {fileID: 464797039}

@@ -1,17 +1,15 @@
-using System.Collections;
 using UnityEngine;
 using Bullets;
 
 public class BossAttackState : BossState
 {
     private GameObject attack;
-    private RadialShotWeapon weapon;
-
-    private Coroutine attackCoroutine;
+    private BulletPatternWeapon weapon;
 
     public BossAttackState(
         BossBehavior boss,
-        GameObject attack) : base(boss)
+        GameObject attack
+    ) : base(boss)
     {
         this.attack = attack;
     }
@@ -20,55 +18,51 @@ public class BossAttackState : BossState
     {
         if (attack == null)
         {
+            Debug.LogWarning(
+                "BossAttackState: el ataque es null."
+            );
             return;
         }
 
-        weapon = attack.GetComponentInChildren<RadialShotWeapon>(true);
+        weapon =
+            attack.GetComponentInChildren<BulletPatternWeapon>(true);
 
         if (weapon == null)
         {
+            Debug.LogWarning(
+                $"No se encontró BulletPatternWeapon en {attack.name}."
+            );
             return;
         }
 
-        float duration = weapon.GetPatternDuration();
-
         attack.SetActive(true);
 
-        attackCoroutine = boss.StartCoroutine(
-            ExecuteAttack(duration)
-        );
+        weapon.PatternFinished += OnPatternFinished;
+        weapon.Play();
     }
 
-    private IEnumerator ExecuteAttack(float duration)
+    private void OnPatternFinished()
     {
-        yield return new WaitForSeconds(duration);
+        if (weapon != null)
+            weapon.PatternFinished -= OnPatternFinished;
 
         if (attack != null)
-        {
             attack.SetActive(false);
-        }
-
-        attackCoroutine = null;
 
         boss.ChangeState(
-            new BossPhaseState(
-                boss,
-                boss.CurrentPhase
-            )
+            new BossPhaseState(boss, boss.CurrentPhase)
         );
     }
 
     public override void Exit()
     {
-        if (attackCoroutine != null)
+        if (weapon != null)
         {
-            boss.StopCoroutine(attackCoroutine);
-            attackCoroutine = null;
+            weapon.PatternFinished -= OnPatternFinished;
+            weapon.Stop();
         }
 
         if (attack != null)
-        {
             attack.SetActive(false);
-        }
     }
 }

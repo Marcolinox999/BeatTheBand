@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-
+/*
 namespace Bullets
 {
     public class FlowerShot : MonoBehaviour
@@ -37,4 +37,6 @@ namespace Bullets
 
     }
 }
+*/
+
 

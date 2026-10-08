@@ -24,7 +24,7 @@ public class BossBehavior : BaseHealth
 
         stateMachine = new BossStateMachine();
 
-        stateMachine.ChangeState(new BossPhaseState(this, currentPhase));
+        //stateMachine.ChangeState(new BossPhaseState(this, currentPhase));
     }
 
     protected override void Start()
@@ -36,6 +36,7 @@ public class BossBehavior : BaseHealth
         {
             Debug.LogError("¡Falta el componente VinylScratch en este GameObject!");
         }
+        stateMachine.ChangeState(new BossPhaseState(this, currentPhase));
     }
 
     protected override void SpriteDamage()
