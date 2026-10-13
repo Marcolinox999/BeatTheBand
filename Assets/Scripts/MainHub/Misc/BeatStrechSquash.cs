@@ -1,29 +1,35 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class BeatSquashStretch : MonoBehaviour
 {
     [Header("Animation")]
+    [SerializeField] private bool anchorToGround = true;
     [SerializeField] private float beatSpeedMultiplier = 1f;
     [SerializeField] private float stretchAmount = 0.15f;
     [SerializeField] private float squashAmount = 0.08f;
     [SerializeField] private float animationSharpness = 8f;
 
-    [Header("Ground Anchor")]
-    [SerializeField] private bool anchorToGround = true;
+    [Header("Sequence")]
+    [SerializeField] private bool alternateStretchSquash = false;
+    [SerializeField] private bool waitOneBeatBeforeStart = false;
 
     [Header("Extra")]
     [SerializeField] private ParticleSystem particles;
     [SerializeField] private Sprite normalLevel;
     [SerializeField] private Sprite BWLevel;
     [SerializeField] private int levelNumber = 0;
-    
 
     private Vector3 baseScale;
     private Vector3 basePosition;
-    
+
     private float beatTimer;
     private float bpm;
+
+    private float waitTimer;
+    private bool hasWaited;
+    
+    private bool isStretched;
+    private Vector2 currentMultiplier = Vector2.one;
 
     private SpriteRenderer spriteRenderer;
 
@@ -39,6 +45,9 @@ public class BeatSquashStretch : MonoBehaviour
         spriteRenderer.sprite = normalLevel;
 
         bpm = BeatManager.instance.BPM;
+        
+        hasWaited = !waitOneBeatBeforeStart;
+        isStretched = true;
     }
 
     private void Update()
@@ -51,8 +60,8 @@ public class BeatSquashStretch : MonoBehaviour
         {
             spriteRenderer.sprite = BWLevel;
 
-            transform.localScale = baseScale;
-            transform.position = basePosition;
+            ResetTransform();
+            currentMultiplier = Vector2.one;
 
             if (particles != null)
             {
@@ -64,20 +73,54 @@ public class BeatSquashStretch : MonoBehaviour
 
     private void Bounce()
     {
-        float beatDuration = 60f / bpm *  beatSpeedMultiplier;
+        float beatDuration = 60f / bpm * beatSpeedMultiplier;
+        
+        if (!hasWaited)
+        {
+            waitTimer += Time.deltaTime;
+
+            if (waitTimer < beatDuration)
+            {
+                ResetTransform();
+                return;
+            }
+
+            hasWaited = true;
+            beatTimer = 0f;
+            isStretched = true;
+        }
 
         beatTimer += Time.deltaTime;
 
-        if (beatTimer > beatDuration)
+        while (beatTimer >= beatDuration)
+        {
             beatTimer -= beatDuration;
+            isStretched = !isStretched;
+        }
 
-        float t = beatTimer / beatDuration;
+        float scaleX;
+        float scaleY;
 
-        float pulse = Mathf.Sin(t * Mathf.PI);
-        pulse = Mathf.Pow(pulse, animationSharpness);
+        if (alternateStretchSquash)
+        {
+            Vector2 target = isStretched
+                ? new Vector2(1f - squashAmount, 1f + stretchAmount)
+                : new Vector2(1f + squashAmount, 1f - squashAmount);
+            
+            float lerpFactor = 1f - Mathf.Exp(-animationSharpness * Time.deltaTime);
+            currentMultiplier = Vector2.Lerp(currentMultiplier, target, lerpFactor);
 
-        float scaleY = 1f + stretchAmount * pulse;
-        float scaleX = 1f - squashAmount * pulse;
+            scaleX = currentMultiplier.x;
+            scaleY = currentMultiplier.y;
+        }
+        else
+        {
+            float t = beatTimer / beatDuration;
+            float pulse = Mathf.Pow(Mathf.Sin(t * Mathf.PI), animationSharpness);
+
+            scaleY = 1f + stretchAmount * pulse;
+            scaleX = 1f - squashAmount * pulse;
+        }
 
         Vector3 newScale = new Vector3(baseScale.x * scaleX, baseScale.y * scaleY, baseScale.z);
 
@@ -93,5 +136,11 @@ public class BeatSquashStretch : MonoBehaviour
         {
             transform.position = basePosition;
         }
+    }
+
+    private void ResetTransform()
+    {
+        transform.localScale = baseScale;
+        transform.position = basePosition;
     }
 }
