@@ -1,6 +1,10 @@
+using System;
 using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
+
 public class WeaponManager : MonoBehaviour
 {
     public enum Weapons
@@ -19,7 +23,8 @@ public class WeaponManager : MonoBehaviour
     //0:Trumpet 1:PTrumpet 2:Drum 3:PDrum 4:Cymbal 5:PCymbal 6:Accordion 7:PAccordion
     public Weapons _actualWeapon =  Weapons.Trumpet;
     private Transform hand;
-    private ParticleSystem _particleSystem;
+    private ParticleSystem _hitParticle;
+    private ParticleSystem.MainModule _main;
     public int weaponID = 0;
     public int MissBeats => missBeats;
     private bool canSwitch = true;
@@ -38,6 +43,7 @@ public class WeaponManager : MonoBehaviour
     [Header("CrossHairs")]
     [SerializeField] private Sprite[] crossHair;
     private SpriteRenderer _crossHairRenderer;
+    private Animator  _crossHairAnimator;
 
     private int missBeats = 1;
 
@@ -45,7 +51,9 @@ public class WeaponManager : MonoBehaviour
     {
         hand = GetComponentInChildren<Transform>();
         _crossHairRenderer = GetComponentInChildren<SpriteRenderer>();
-        _particleSystem = GetComponentInChildren<ParticleSystem>();
+        _crossHairAnimator = _crossHairRenderer.gameObject.GetComponent<Animator>();
+        _hitParticle = GetComponentInChildren<ParticleSystem>();
+        _main = _hitParticle.main;
         missBeats = trumpetMiss;
     }
 
@@ -65,7 +73,6 @@ public class WeaponManager : MonoBehaviour
             StartCoroutine(TimeBetweenSwitch());
             WeaponSwitch();
         }
-        
     }
 
     private void WeaponSwitch()
@@ -228,8 +235,31 @@ public class WeaponManager : MonoBehaviour
     {
         BeatManager.Score score = BeatManager.instance.PrecisionCheck(missBeats);
         OnAttackScored?.Invoke(score);
-        _particleSystem.Play();
-        Debug.Log(missBeats);
+        if (score == BeatManager.Score.Missed)
+        {
+            _main.startColor = Color.black;
+        }
+        else
+        {
+            _crossHairAnimator.Play("RecoilCrossHair");
+            switch (_actualWeapon)
+            {
+                case Weapons.Trumpet:
+                    _main.startColor = score == BeatManager.Score.Ok ? Color.yellowNice : Color.darkOrange;
+                    break;
+                case Weapons.Drum:
+                    _main.startColor = score == BeatManager.Score.Ok ? Color.royalBlue : Color.midnightBlue;
+                    break;
+                case Weapons.Cymbals:
+                    _main.startColor = score == BeatManager.Score.Ok ? Color.softGreen : Color.darkGreen;
+                    break;
+                case Weapons.Accordion:
+                    _main.startColor = score == BeatManager.Score.Ok ? Color.softRed : Color.darkRed;
+                
+                    break;
+            }
+        }
+        _hitParticle.Play();
         switch (_actualWeapon)
         {
             case Weapons.Trumpet:
@@ -246,7 +276,6 @@ public class WeaponManager : MonoBehaviour
                 break;
         }
     }
-
     private IEnumerator ShotCycles(float fireRate, int repetitions, GameObject bullet, float spread)
     {
         for (int i = 0; i < repetitions; i++)
