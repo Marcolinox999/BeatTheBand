@@ -44,13 +44,13 @@ public class AudioManager : MonoBehaviour
         sfxSource.PlayScheduled(time);
     }
 
-    public void OnClickButtonToScene(string sceneToLoad)
+    public void OnClickButtonToScene(int sceneToLoad)
     {
         buttonSceneClip.Play();
         SceneManager.LoadScene(sceneToLoad);
     }
 
-    public void OnCLickButtonToStart(string sceneToLoad)
+    public void OnCLickButtonToStart(int sceneToLoad)
     {
         buttonStartGameClip.Play();
         SceneManager.LoadScene(sceneToLoad);
