@@ -21,6 +21,7 @@ public class WeaponManager : MonoBehaviour
     private Transform hand;
     private ParticleSystem _particleSystem;
     public int weaponID = 0;
+    public int MissBeats => missBeats;
     private bool canSwitch = true;
     [SerializeField] private AudioClip switchSound;
     [Header("Trumpet")] [SerializeField] private int trumpetMiss;
@@ -45,6 +46,7 @@ public class WeaponManager : MonoBehaviour
         hand = GetComponentInChildren<Transform>();
         _crossHairRenderer = GetComponentInChildren<SpriteRenderer>();
         _particleSystem = GetComponentInChildren<ParticleSystem>();
+        missBeats = trumpetMiss;
     }
 
     private void OnEnable()
