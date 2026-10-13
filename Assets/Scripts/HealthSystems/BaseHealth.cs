@@ -11,6 +11,7 @@ public abstract class BaseHealth : MonoBehaviour, IDamageable
     [SerializeField] protected float flashTime = 0.25f;
     protected SpriteRenderer[] _spriteRenderers;
     protected Material[]_materials;
+    
 
     
     public float CurrentHealth { get; protected set; }
@@ -30,7 +31,14 @@ public abstract class BaseHealth : MonoBehaviour, IDamageable
 
     public virtual void ApplyDamage(float damage)
     {
-        SpriteDamage();
+        if (CompareTag("Player"))
+        {
+            ParticleDamage();
+        }
+        else
+        {
+            SpriteDamage();
+        }
         if (!_canTakeDamage || CurrentHealth <= 0f || damage <= 0f) return;
         CurrentHealth -= damage;
         
@@ -108,6 +116,7 @@ public abstract class BaseHealth : MonoBehaviour, IDamageable
     }
 
     protected abstract void SpriteDamage();
+    protected abstract void ParticleDamage();
     protected abstract void Die();
 
 }

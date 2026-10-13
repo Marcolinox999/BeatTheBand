@@ -43,6 +43,8 @@ public class BossBehavior : BaseHealth
     {
         CallDamageFlash();
     }
+ 
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) //IMPORTANT TO DELETE THIS IT IS JUST FOR TESTING PURPOSES
@@ -87,6 +89,10 @@ public class BossBehavior : BaseHealth
         }
     }
 
+    protected override void ParticleDamage()
+    {
+        //caca
+    }
     private void ChangePhase(int newPhase)
     {
         ChangeState(new BossTransitionState(this, newPhase));

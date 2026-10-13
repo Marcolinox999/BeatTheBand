@@ -33,11 +33,12 @@ namespace Player
         [SerializeField] private InputActionReference attackInput;
         [SerializeField] private bool pveEnabled = false;
 
-        [Header("OnMap Settings (me vas a matar Marco lo se")]
+        [Header("OnMap Settings")]
         [SerializeField] private MapPoint currentPoint;
         [SerializeField] private float moveSpeed = 10f;
         private bool _isOnMap = false;
         private Vector3 targetPosition;
+        
         
         private void OnEnable()
         {
@@ -178,7 +179,8 @@ namespace Player
             }
             
         }
-        
+
+      
     }
     
 }

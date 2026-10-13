@@ -1,14 +1,26 @@
-using System;
-using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerHealth : BaseHealth
 {
+    
+    [Header("Particles")] [SerializeField] private ParticleSystem[] playerParticles;
+    
     protected override void Start()
     {
         base.Start();
         Init();
+        playerParticles =  GetComponentsInChildren<ParticleSystem>();
+    }
+
+    protected override void ParticleDamage()
+    {
+        for (int i = 0; i < playerParticles.Length; i++)
+        {
+            if (playerParticles[i] != null)
+            {
+                playerParticles[i].Play();
+            }
+        }
     }
 
     protected override void SpriteDamage()
