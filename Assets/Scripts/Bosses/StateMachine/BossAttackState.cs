@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using Bullets;
 
@@ -6,10 +7,10 @@ public class BossAttackState : BossState
     private GameObject attack;
     private BulletPatternWeapon weapon;
 
-    public BossAttackState(
-        BossBehavior boss,
-        GameObject attack
-    ) : base(boss)
+    [Header("Vinyl")] 
+    private float vinylAttackCD = 30f;
+
+    public BossAttackState(BossBehavior boss, GameObject attack) : base(boss)
     {
         this.attack = attack;
     }
@@ -18,27 +19,37 @@ public class BossAttackState : BossState
     {
         if (attack == null)
         {
-            Debug.LogWarning(
-                "BossAttackState: el ataque es null."
-            );
-            return;
-        }
-
-        weapon =
-            attack.GetComponentInChildren<BulletPatternWeapon>(true);
-
-        if (weapon == null)
-        {
-            Debug.LogWarning(
-                $"No se encontró BulletPatternWeapon en {attack.name}."
-            );
+            EndAttack();
             return;
         }
 
         attack.SetActive(true);
 
-        weapon.PatternFinished += OnPatternFinished;
-        weapon.Play();
+        // 1. Intentamos disparar balas
+        weapon = attack.GetComponentInChildren<BulletPatternWeapon>(true);
+        if (weapon != null)
+        {
+            weapon.PatternFinished += OnPatternFinished;
+            weapon.Play();
+            return; 
+        }
+            
+        // 2. Intentamos hacer el Vinyl
+        VinylScratch vinylScratch = attack.GetComponentInChildren<VinylScratch>(true);
+        if (vinylScratch != null)
+        {
+            vinylScratch.TriggerVinylScratch();
+            boss.StartCoroutine(WaitAndFinish(vinylAttackCD));
+            return; 
+        }
+            
+        EndAttack();
+    }
+    
+    private IEnumerator WaitAndFinish(float time)
+    {
+        yield return new WaitForSeconds(time);
+        EndAttack();
     }
 
     private void OnPatternFinished()
@@ -46,12 +57,15 @@ public class BossAttackState : BossState
         if (weapon != null)
             weapon.PatternFinished -= OnPatternFinished;
 
+        EndAttack();
+    }
+    
+    private void EndAttack()
+    {
         if (attack != null)
             attack.SetActive(false);
 
-        boss.ChangeState(
-            new BossPhaseState(boss, boss.CurrentPhase)
-        );
+        boss.ChangeState(new BossPhaseState(boss, boss.CurrentPhase));
     }
 
     public override void Exit()
@@ -61,8 +75,6 @@ public class BossAttackState : BossState
             weapon.PatternFinished -= OnPatternFinished;
             weapon.Stop();
         }
-
-        if (attack != null)
-            attack.SetActive(false);
+        if (attack != null) attack.SetActive(false);
     }
 }

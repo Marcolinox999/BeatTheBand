@@ -6,10 +6,10 @@ public class BossBehavior : BaseHealth
     [Header("Phases")]
     [SerializeField] private BossPhase[] phases;
     
-    [Header("Vinyl Scratch Mechanic")]
+    /*[Header("Vinyl Scratch Mechanic")]
     [SerializeField] private float scratchDamageThreshold = 50f;
     private float accumulatedDamage = 0f;
-    [SerializeField] VinylScratch vinylScratchComponent;
+    [SerializeField] VinylScratch vinylScratchComponent;*/
     
     private int currentPhase;
     private BossStateMachine stateMachine;
@@ -32,10 +32,10 @@ public class BossBehavior : BaseHealth
         base.Start();
         Init();
         
-        if (vinylScratchComponent == null)
+        /*if (vinylScratchComponent == null)
         {
             Debug.LogError("¡Falta el componente VinylScratch en este GameObject!");
-        }
+        }*/
         stateMachine.ChangeState(new BossPhaseState(this, currentPhase));
     }
 
@@ -47,6 +47,7 @@ public class BossBehavior : BaseHealth
 
     private void Update()
     {
+        stateMachine?.Update();
         if (Input.GetKeyDown(KeyCode.Space)) //IMPORTANT TO DELETE THIS IT IS JUST FOR TESTING PURPOSES
         {
             ApplyDamage(20);
@@ -77,7 +78,7 @@ public class BossBehavior : BaseHealth
         base.ApplyDamage(damage);
         if (damage <= 0f || CurrentHealth <= 0f) return;
             
-        accumulatedDamage += damage;
+        /*accumulatedDamage += damage;
 
         if (accumulatedDamage >= scratchDamageThreshold)
         {
@@ -86,7 +87,8 @@ public class BossBehavior : BaseHealth
             {
                 vinylScratchComponent.TriggerVinylScratch();
             }
-        }
+        }*/
+        CheckPhase();
     }
 
     protected override void ParticleDamage()
