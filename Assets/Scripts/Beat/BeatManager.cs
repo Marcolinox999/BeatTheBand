@@ -105,7 +105,6 @@ public class BeatManager : MonoBehaviour
       beatIndex++;
       if (skipABeat > 0) skipABeat--;
       if (skipABeat <= 0) PRUEBA.SetActive(true);
-      Debug.Log(skipABeat);
       //Por si queremos recalibrarlo no lo voy a quitar del todo que sino luego es un dolor
       //Debug.Log(nextTimeBeat);
    }
