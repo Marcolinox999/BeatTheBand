@@ -261,6 +261,21 @@ public class WeaponManager : MonoBehaviour
     {
         BeatManager.Score score = BeatManager.instance.PrecisionCheck(missBeats);
         OnAttackScored?.Invoke(score);
+        switch (_actualWeapon)
+        {
+            case Weapons.Trumpet:
+                transform.position = trumpetSpawn.position;
+                break;
+            case Weapons.Drum:
+                transform.position = drumSpawn.position;
+                break;
+            case Weapons.Cymbals:
+                transform.position = cymbalSpawn.position;
+                break;
+            case Weapons.Accordion:
+                transform.position = accordionSpawn.position;
+                break;
+        }
         if (score == BeatManager.Score.Missed)
         {
             _main.startColor = Color.black;

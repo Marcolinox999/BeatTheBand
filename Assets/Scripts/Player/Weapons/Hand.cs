@@ -9,7 +9,6 @@ public class Hand : MonoBehaviour
     private float smoothAngle;
     public bool canMove;
     private CinemachineImpulseSource impulseSource;
-
     private float angle;
     [SerializeField] private Transform visual;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -30,7 +29,7 @@ public class Hand : MonoBehaviour
             transform.rotation = Quaternion.AngleAxis(smoothAngle, Vector3.forward);
         }
 
-        visual.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.z is < 90 and > -90 ? 0 : 180, 0);
+        visual.rotation = Quaternion.Euler(0, Direction.x > 0  ? 180 : 0, 0);
     }
     
 }
