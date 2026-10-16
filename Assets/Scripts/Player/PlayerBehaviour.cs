@@ -22,6 +22,7 @@ namespace Player
 
         [Header("References")] [SerializeField]
         private WeaponManager _weaponManager;
+        [SerializeField] private Animator animator;
         [Header("Values")]
         [SerializeField] private float speed;
         [SerializeField] private bool isDead = false;
@@ -72,6 +73,7 @@ namespace Player
             moveInput = Vector2.ClampMagnitude(moveInput, 1);
             hInput = moveInput.x;
             vInput = moveInput.y;
+            animator.SetFloat("Speed", hInput);
             transform.Translate(hInput * speed, vInput * speed, 0);
             if (isDead) _state =  States.Dead;
         }

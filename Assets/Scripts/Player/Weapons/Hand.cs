@@ -9,9 +9,8 @@ public class Hand : MonoBehaviour
     private float smoothAngle;
     public bool canMove;
     private CinemachineImpulseSource impulseSource;
-
     private float angle;
-    
+    [SerializeField] private Transform visual;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,6 +28,8 @@ public class Hand : MonoBehaviour
             smoothAngle = Mathf.LerpAngle(transform.rotation.eulerAngles.z, angle, Time.deltaTime * rotationSpeed);
             transform.rotation = Quaternion.AngleAxis(smoothAngle, Vector3.forward);
         }
+
+        visual.rotation = Quaternion.Euler(0, Direction.x > 0  ? 180 : 0, 0);
     }
     
 }

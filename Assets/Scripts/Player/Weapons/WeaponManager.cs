@@ -29,16 +29,22 @@ public class WeaponManager : MonoBehaviour
     public int MissBeats => missBeats;
     private bool canSwitch = true;
     [SerializeField] private AudioClip switchSound;
+    [SerializeField]private GameObject visual;
+    private Animator[] childAnimators;
     [Header("Trumpet")] [SerializeField] private int trumpetMiss;
     [SerializeField] private int trumpetSpread;
+    [SerializeField] private Transform trumpetSpawn;
     [Header("Drums")] [SerializeField] private int drumsMiss;
     [SerializeField] private int drumsSpread;
+    [SerializeField] private Transform drumSpawn;
     [Header("Cymbals")]  [SerializeField] private int cymbalsMiss;
     [SerializeField] private int cymbalsSpread;
+    [SerializeField] private Transform cymbalSpawn;
     private int accumulated;
     private bool canFire = false;
     [Header("Accordion")] [SerializeField] private int accordionmMiss;
     [SerializeField] private int accordionSpread;
+    [SerializeField] private Transform accordionSpawn;
     private int streak;
     [Header("CrossHairs")]
     [SerializeField] private Sprite[] crossHair;
@@ -55,6 +61,20 @@ public class WeaponManager : MonoBehaviour
         _hitParticle = GetComponentInChildren<ParticleSystem>();
         _main = _hitParticle.main;
         missBeats = trumpetMiss;
+        childAnimators = visual.GetComponentsInChildren<Animator>();
+        childAnimators = visual.GetComponentsInChildren<Animator>(true);
+        SetWeaponAnimator();
+    }
+
+    private void SetWeaponAnimator()
+    {
+        for (int i = 1; i < childAnimators.Length; i++)
+        {
+            if (childAnimators[i] != null)
+            {
+                childAnimators[i].enabled = (i == weaponID + 1);
+            }
+        }
     }
 
     private void OnEnable()
@@ -91,25 +111,31 @@ public class WeaponManager : MonoBehaviour
                     case 0:
                         missBeats = trumpetMiss;
                         _crossHairRenderer.sprite = crossHair[0];
+                        transform.position = trumpetSpawn.position;
                         _actualWeapon =  Weapons.Trumpet;
                         break;
                     case 1:
                         missBeats = drumsMiss;
                         _crossHairRenderer.sprite = crossHair[1];
+                        transform.position = drumSpawn.position;
                         _actualWeapon = Weapons.Drum;
                         break;
                     case 2:
                         missBeats = cymbalsMiss;
                         _crossHairRenderer.sprite = crossHair[2];
+                        transform.position = cymbalSpawn.position;
                         _actualWeapon = Weapons.Cymbals;
                         break;
                     case 3:
                         missBeats = accordionmMiss;
                         _crossHairRenderer.sprite = crossHair[3];
+                        transform.position = accordionSpawn.position;
                         _actualWeapon = Weapons.Accordion;
                         break;
                     
                 }
+
+                SetWeaponAnimator();
                 AudioManager.instance.PlaySFX(switchSound);
                 return;
             }
@@ -235,6 +261,21 @@ public class WeaponManager : MonoBehaviour
     {
         BeatManager.Score score = BeatManager.instance.PrecisionCheck(missBeats);
         OnAttackScored?.Invoke(score);
+        switch (_actualWeapon)
+        {
+            case Weapons.Trumpet:
+                transform.position = trumpetSpawn.position;
+                break;
+            case Weapons.Drum:
+                transform.position = drumSpawn.position;
+                break;
+            case Weapons.Cymbals:
+                transform.position = cymbalSpawn.position;
+                break;
+            case Weapons.Accordion:
+                transform.position = accordionSpawn.position;
+                break;
+        }
         if (score == BeatManager.Score.Missed)
         {
             _main.startColor = Color.black;

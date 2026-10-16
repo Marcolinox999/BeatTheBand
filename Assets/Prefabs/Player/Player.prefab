@@ -405,10 +405,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1232434639652180466}
-  - {fileID: 5771598763066904430}
-  - {fileID: 7094823144228769096}
   - {fileID: 9037811179974769651}
+  - {fileID: 7094823144228769096}
+  - {fileID: 5771598763066904430}
+  - {fileID: 1232434639652180466}
   m_Father: {fileID: 7082835829622066009}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7131483678400385957
@@ -5526,6 +5526,7 @@ MonoBehaviour:
   _actualWeapon: 0
   weaponID: 0
   switchSound: {fileID: 8300000, guid: 8ae1904831ccacc42a556fd8e0bb61e8, type: 3}
+  visual: {fileID: 0}
   trumpetMiss: 2
   trumpetSpread: 1
   drumsMiss: 3

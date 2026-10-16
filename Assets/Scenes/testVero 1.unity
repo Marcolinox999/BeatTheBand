@@ -119,6 +119,66 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &157412146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 157412147}
+  - component: {fileID: 157412148}
+  m_Layer: 0
+  m_Name: VinylScratch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &157412147
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157412146}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 289134406}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &157412148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157412146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6b0092e66c14249b3e6241e91c1846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bullets.VinylScratch
+  scratchAudioClip: {fileID: 0}
+  scratchAngle: -90
+  scratchDuration: 0.2
+  rotationSpeedPerShot: 12
+  settings:
+    numberOfBullets: 4
+    bulletSpeed: 5
+    cooldownTime: 0.2
+    angleOffset: 0
+    phaseOffset: 0
+    radialMask: 0
+    maskAngle: 360
+    doesExplode: 0
+    timeToExplode: 1
+    explosionBullets: 6
+    explosionSpeed: 3
 --- !u!1 &289134403
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &289134405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,7 +217,7 @@ MonoBehaviour:
     transitionPause: 2
     transitionEffect: {fileID: 0}
     attacks:
-    - {fileID: 1961298354}
+    - {fileID: 157412146}
   - healthThreshold: 0
     transitionPause: 0
     transitionEffect: {fileID: 0}
@@ -166,8 +226,6 @@ MonoBehaviour:
     transitionPause: 0
     transitionEffect: {fileID: 0}
     attacks: []
-  scratchDamageThreshold: 50
-  vinylScratchComponent: {fileID: 1961298355}
 --- !u!4 &289134406
 Transform:
   m_ObjectHideFlags: 0
@@ -181,7 +239,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1961298356}
+  - {fileID: 1659765925}
+  - {fileID: 157412147}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &392216029
@@ -409,7 +468,7 @@ Transform:
   m_GameObject: {fileID: 734061453}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.66, y: -1.17, z: 0}
+  m_LocalPosition: {x: -7.81, y: 3.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -451,7 +510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1053519977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,6 +860,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2102826221}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1659765923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1659765925}
+  - component: {fileID: 1659765926}
+  m_Layer: 0
+  m_Name: PianoWater
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1659765925
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659765923}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 289134406}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1659765926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659765923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc6a6fdbe19f1e248b1adde2ee077547, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bullets.BulletPatternWeapon
+  pattern: {fileID: 11400000, guid: 0b3244158c6192d49875e111bd8968bd, type: 2}
+  player: {fileID: 0}
 --- !u!4 &1826987320 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8165513407631051076, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
@@ -884,66 +989,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1961298354
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1961298356}
-  - component: {fileID: 1961298355}
-  m_Layer: 0
-  m_Name: VinylScratch
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1961298355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1961298354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae6b0092e66c14249b3e6241e91c1846, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bullets.VinylScratch
-  scratchAudioClip: {fileID: 0}
-  scratchAngle: -90
-  scratchDuration: 0.2
-  rotationSpeedPerShot: 50
-  settings:
-    numberOfBullets: 4
-    bulletSpeed: 3
-    cooldownTime: 0.05
-    angleOffset: 0
-    phaseOffset: 0
-    radialMask: 0
-    maskAngle: 360
-    doesExplode: 0
-    timeToExplode: 1
-    explosionBullets: 6
-    explosionSpeed: 3
---- !u!4 &1961298356
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1961298354}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 289134406}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2048856583
 GameObject:
@@ -1217,193 +1262,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053215682}
   m_CullTransparentMesh: 1
---- !u!1 &2094732924
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2094732926}
-  - component: {fileID: 2094732925}
-  - component: {fileID: 2094732928}
-  - component: {fileID: 2094732930}
-  - component: {fileID: 2094732931}
-  - component: {fileID: 2094732929}
-  - component: {fileID: 2094732932}
-  - component: {fileID: 2094732933}
-  - component: {fileID: 2094732934}
-  m_Layer: 0
-  m_Name: Test
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &2094732925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094732924}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdb02c5c7a1c8de4083d68f3455c1b97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bullets.RadialShotWeapon
---- !u!4 &2094732926
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094732924}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2094732928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094732924}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6264e51b6a9c22b4c89c7d37839a5aa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bullets.ParallelShotWeapon
-  numberLines: 5
-  lineSpacing: 0.5
-  bulletSpeed: 4
-  timeBetweenWaves: 0.01
---- !u!114 &2094732929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094732924}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbae889a215934444b6ba9a84d7af529, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bullets.LineShotToPlayer
---- !u!114 &2094732930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094732924}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdb02c5c7a1c8de4083d68f3455c1b97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bullets.RadialShotWeapon
---- !u!114 &2094732931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094732924}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b00257773167074f9f2948cfd48d6c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bullets.FlowerShot
---- !u!114 &2094732932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094732924}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46e7047704a111541801a52dc5f22083, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BossBehavior
-  maxHealth: 500
-  damageCooldown: 0.5
-  _flashColor: {r: 1, g: 1, b: 1, a: 1}
-  flashTime: 0.25
-  phases:
-  - healthThreshold: 0
-    transitionPause: 0
-    transitionEffect: {fileID: 0}
-    attacks: []
-  - healthThreshold: 0
-    transitionPause: 0
-    transitionEffect: {fileID: 0}
-    attacks: []
-  - healthThreshold: 0
-    transitionPause: 0
-    transitionEffect: {fileID: 0}
-    attacks: []
-  scratchDamageThreshold: 50
-  vinylScratchComponent: {fileID: 2094732933}
---- !u!114 &2094732933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094732924}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae6b0092e66c14249b3e6241e91c1846, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bullets.VinylScratch
-  scratchAudioClip: {fileID: 8300000, guid: 5b1c31d7f59b73448a8e59f1f3542d46, type: 3}
-  scratchAngle: -90
-  scratchDuration: 0.2
-  rotationSpeedPerShot: 0
-  settings:
-    numberOfBullets: 5
-    bulletSpeed: 3
-    cooldownTime: 0.2
-    angleOffset: 0
-    phaseOffset: 0
-    radialMask: 0
-    maskAngle: 360
-    doesExplode: 0
-    timeToExplode: 1
-    explosionBullets: 6
-    explosionSpeed: 3
---- !u!114 &2094732934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094732924}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbd998fe84b9e6741aa027bc1b60b556, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bullets.DualSpiral
-  rotationSpeed: 10
-  settings:
-    numberOfBullets: 8
-    bulletSpeed: 4
-    cooldownTime: 4
-    angleOffset: 0
-    phaseOffset: 0
-    radialMask: 0
-    maskAngle: 360
-    doesExplode: 0
-    timeToExplode: 1
-    explosionBullets: 6
-    explosionSpeed: 3
 --- !u!1 &2102826219
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,7 +1316,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1384542498}
-  - {fileID: 2094732926}
   - {fileID: 734061455}
   - {fileID: 289134406}
   - {fileID: 464797039}

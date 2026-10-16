@@ -24,11 +24,14 @@ namespace Bullets
         private Vector2 currentAimDirection;
 
 
-        private void Start()
+        private void Awake()
         {
-                audioSource = GetComponent<AudioSource>();
-                if (audioSource == null) audioSource = gameObject.AddComponent<AudioSource>();
-            
+            audioSource = GetComponent<AudioSource>();
+            if (audioSource == null) audioSource = gameObject.AddComponent<AudioSource>();
+
+        }
+        private void OnEnable()
+        {
                 currentAimDirection = transform.up;
                 if (settings != null && settings.cooldownTime > 0f)
                 {
