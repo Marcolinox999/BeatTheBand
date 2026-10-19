@@ -18,18 +18,10 @@ namespace Bullets
         
         [Header("Refs")]
         [SerializeField] private RadialShotSettings settings;
-        private AudioSource audioSource;
         
         private bool isScratching = false;
         private Vector2 currentAimDirection;
-
-
-        private void Awake()
-        {
-            audioSource = GetComponent<AudioSource>();
-            if (audioSource == null) audioSource = gameObject.AddComponent<AudioSource>();
-
-        }
+        
         private void OnEnable()
         {
                 currentAimDirection = transform.up;
@@ -74,7 +66,7 @@ namespace Bullets
         {
             isScratching = true;
             
-            if(scratchAudioClip != null) audioSource.PlayOneShot(scratchAudioClip);
+            if(scratchAudioClip != null) AudioManager.instance.PlaySFX(scratchAudioClip);
             
             spiralDirectionMultiplier *= -1;
             
