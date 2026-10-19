@@ -23,7 +23,6 @@ public class BeatManager : MonoBehaviour
    private double smoothedDspTime;
    private int lastFrame = -1;
    private int skipABeat = 0;
-   [SerializeField] private GameObject PRUEBA;
    public double SmoothedDspTime
    {
       get
@@ -104,7 +103,7 @@ public class BeatManager : MonoBehaviour
       OnBeat?.Invoke(beatIndex);
       beatIndex++;
       if (skipABeat > 0) skipABeat--;
-      if (skipABeat <= 0) PRUEBA.SetActive(true);
+      //if (skipABeat <= 0) PRUEBA.SetActive(true);
       //Por si queremos recalibrarlo no lo voy a quitar del todo que sino luego es un dolor
       //Debug.Log(nextTimeBeat);
    }
@@ -147,7 +146,7 @@ public class BeatManager : MonoBehaviour
       }
       else
       {
-         PRUEBA.SetActive(false);
+         //PRUEBA.SetActive(false);
          skipABeat = missbeats;
          return Score.Missed;
       }

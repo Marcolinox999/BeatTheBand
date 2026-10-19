@@ -23,6 +23,7 @@ namespace Player
         [Header("References")] [SerializeField]
         private WeaponManager _weaponManager;
         [SerializeField] private Animator animator;
+        private Rigidbody2D rb;
         [Header("Values")]
         [SerializeField] private float speed;
         [SerializeField] private bool isDead = false;
@@ -43,6 +44,7 @@ namespace Player
         
         private void OnEnable()
         {
+            rb = GetComponent<Rigidbody2D>();
             currentPoint.DeactivateLevelUI();
             movementInput.action.Enable();
             if (SceneManager.GetActiveScene().name == "Level Hub")
@@ -73,8 +75,9 @@ namespace Player
             moveInput = Vector2.ClampMagnitude(moveInput, 1);
             hInput = moveInput.x;
             vInput = moveInput.y;
-            animator.SetFloat("Speed", hInput);
-            transform.Translate(hInput * speed, vInput * speed, 0);
+            animator.SetFloat("Speed", moveInput.x != 0 || moveInput.y != 0?1:0);
+            
+            rb.AddForce(moveInput * moveSpeed);
             if (isDead) _state =  States.Dead;
         }
         
@@ -84,7 +87,6 @@ namespace Player
         {
             if (_isOnMap || currentPoint == null) return;
             Vector2 moveInput = movementInput.action.ReadValue<Vector2>();
-            Debug.Log("movementInput chose");
 
             if (moveInput.sqrMagnitude > 0.1f)
             {
@@ -94,15 +96,14 @@ namespace Player
                     if (moveInput.y > 0)
                     {
                         nextPoint = GetValidPoint(currentPoint.up);
-                        Debug.Log("moves up");
                     }
 
-                    else nextPoint = GetValidPoint(currentPoint.down); Debug.Log("moves down");
+                    else nextPoint = GetValidPoint(currentPoint.down); 
                 }
                 else
                 {
-                    if (moveInput.x > 0) {nextPoint = GetValidPoint(currentPoint.right); Debug.Log("moves right");}
-                    else nextPoint = GetValidPoint(currentPoint.left); Debug.Log("moves left");
+                    if (moveInput.x > 0) {nextPoint = GetValidPoint(currentPoint.right);}
+                    else nextPoint = GetValidPoint(currentPoint.left); 
                 }
 
                 if (nextPoint != null)
@@ -131,11 +132,9 @@ namespace Player
         {
             if (points != null && points.Length > 0)
             {
-                Debug.Log("Punto válido encontrado: " + points[0].name);
                 return points[0];
             }
-    
-            Debug.LogWarning("No hay ningún MapPoint asignado en esta dirección.");
+            
             return null;
         }
 
