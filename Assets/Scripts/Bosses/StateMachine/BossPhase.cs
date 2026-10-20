@@ -6,10 +6,12 @@ public class BossPhase
     [Header("Phase Settings")]
     public float healthThreshold;
     public float transitionPause = 1f;
-
+    public float bossSpeed;
     [Header("Transition Effect")]
     public GameObject transitionEffect;
 
     [Header("Attacks")]
     public GameObject[] attacks;
+    public float attackDuration = 2f;
+    public float waitBetweenAttacks = 3f;
 }

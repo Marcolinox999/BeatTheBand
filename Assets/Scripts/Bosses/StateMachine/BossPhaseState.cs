@@ -17,7 +17,7 @@ public class BossPhaseState : BossState
     {
         Debug.Log($"Entrando en Fase {phase}");
 
-        attacks = boss.CurrentPhaseData.attacks;
+        //attacks = boss.CurrentPhaseData.attacks;
 
         SelectAttack();
     }

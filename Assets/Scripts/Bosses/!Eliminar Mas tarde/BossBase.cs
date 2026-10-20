@@ -23,6 +23,7 @@ public class BossBase : BaseHealth
 
    private void OnEnable()
    {
+      ChangePhase(0);
       MoveChoose();
    }
    protected virtual void Update()
@@ -39,7 +40,6 @@ public class BossBase : BaseHealth
 
    protected virtual void MoveChoose()
    {
-      Debug.Log(1);
       if (attacking) return;
       useMove = Random.value < 0.5f;
       Debug.Log(useMove);
@@ -79,14 +79,14 @@ public class BossBase : BaseHealth
       Destroy(gameObject);
    }
 
-   private IEnumerator WanderAttack()
+   protected IEnumerator WanderAttack()
    {
       attacking = true;
       int randomAttack= Random.Range(0,currentPhase.attacks.Length);
       currentPhase.attacks[randomAttack].gameObject.SetActive(true);
       yield return new WaitForSeconds(attackTime);
       currentPhase.attacks[randomAttack].gameObject.SetActive(false);
-      yield return new WaitForSeconds(1);
+      yield return new WaitForSeconds(5);
       attacking = false;
       MoveChoose();
    }
