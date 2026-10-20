@@ -50,8 +50,8 @@ public class MissFeedback : MonoBehaviour
 
         _audioSource.Play();
         
-        if (_colorRoutine != null) StopCoroutine(_colorRoutine);
-        _colorRoutine = StartCoroutine(ColorRoutine(weaponManager.MissBeats));
+        if (_colorRoutine == null)
+            _colorRoutine = StartCoroutine(ColorRoutine(weaponManager.MissBeats));
 
         if (_shakeRoutine != null) StopCoroutine(_shakeRoutine);
         _shakeRoutine = StartCoroutine(ShakeRoutine());

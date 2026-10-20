@@ -8,39 +8,44 @@ using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
-    
+
     [SerializeField] private string tag1 = "Player";
     [SerializeField] private string tag2 = "Boss";
     [SerializeField] private Color talkingColor;
     [SerializeField] private Color listeningColor;
     [SerializeField] private int sceneIndex;
     public static DialogueManager Instance;
- 
+
     public Image tag1Image;
     public Image tag2Image;
     public TMP_Text characterName;
     public TMP_Text dialogueArea;
     public AudioClip music;
- 
+
     private Queue<DialogueLine> lines;
-    
+
     public bool isDialogueActive = false;
- 
+
     public float typingSpeed = 0.2f;
 
-    [Header("Audio")] [SerializeField] private AudioClip[] dialogueTypingSound;
+    [Header("Audio")]
+    [SerializeField] private AudioClip[] tag1TypingSounds; // Player voice
+    [SerializeField] private AudioClip[] tag2TypingSounds; // Boss voice
     private AudioSource audioSource;
-    
- 
+
+    // Voice used for the line that is currently being typed
+    private AudioClip[] currentTypingSounds;
+
+
     private void Awake()
     {
         if (Instance == null)
             Instance = this;
- 
+
         lines = new Queue<DialogueLine>();
-        
+
     }
- 
+
     public void StartDialogue(Dialogue dialogue)
     {
         if (isDialogueActive == false)
@@ -62,7 +67,7 @@ public class DialogueManager : MonoBehaviour
             DisplayNextDialogueLine();
         }
     }
- 
+
     public void DisplayNextDialogueLine()
     {
         if (lines.Count == 0)
@@ -70,24 +75,26 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
- 
+
         DialogueLine currentLine = lines.Dequeue();
-        
+
         characterName.text = currentLine.character.name;
         if (characterName.text == tag1)
         {
             tag2Image.color = listeningColor;
             tag1Image.color = talkingColor;
+            currentTypingSounds = tag1TypingSounds;
         }
         else
         {
             tag2Image.color = talkingColor;
-            tag1Image.color = listeningColor;  
+            tag1Image.color = listeningColor;
+            currentTypingSounds = tag2TypingSounds;
         }
 
         if (currentLine.character.portrait != tag2Image.sprite)
-        { 
-            tag2Image.sprite = currentLine.character.portrait; 
+        {
+            tag2Image.sprite = currentLine.character.portrait;
         }
 
         if (currentLine.character.name == tag1 && currentLine.character.portrait != tag1Image.sprite)
@@ -99,26 +106,30 @@ public class DialogueManager : MonoBehaviour
             tag2Image.sprite = currentLine.character.portrait;
         }
         StopAllCoroutines();
- 
+
         StartCoroutine(TypeSentence(currentLine));
     }
- 
+
     IEnumerator TypeSentence(DialogueLine dialogueLine)
     {
         dialogueArea.text = "";
         foreach (char letter in dialogueLine.line.ToCharArray())
         {
             dialogueArea.text += letter;
-           int  i= Random.Range(0, dialogueTypingSound.Length);
-           AudioManager.instance.PlayMusic(dialogueTypingSound[i]);
+
+            // Play a random sound from the current speaker's voice list
+            if (currentTypingSounds != null && currentTypingSounds.Length > 0)
+            {
+                int i = Random.Range(0, currentTypingSounds.Length);
+                AudioManager.instance.PlayMusic(currentTypingSounds[i]);
+            }
+
             yield return new WaitForSeconds(typingSpeed);
         }
     }
- 
+
     void EndDialogue()
     {
         SceneManager.LoadScene(sceneIndex);
     }
 }
-
- 
