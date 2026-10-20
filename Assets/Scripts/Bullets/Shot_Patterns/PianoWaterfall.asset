@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bullets.BulletPattern
   repetitions: 1
   angleOffsetBetweenReps: 0
+  delayBetweenReps: 0
   startWait: 0
   endWait: 0
   steps:
   - attackType: 3
+    delayAfterStep: 0
     settings:
-      numberOfBullets: 1
+      numberOfBullets: 5
       bulletSpeed: 10
       cooldownTime: 0.5
       angleOffset: 0
@@ -30,9 +32,18 @@ MonoBehaviour:
       timeToExplode: 0
       explosionBullets: 0
       explosionSpeed: 0
+    spinSpeed: 45
+    waterfallEdge: 2
+    waterfallWidth: 8
     rotation: 0
-    numberOfBullets: 0
     numberOfPetals: 0
-    bulletSpeed: 0
     coneAngle: 0
     spacing: 0
+    returnForce: 15
+    starPoints: 5
+    bulletsPerEdge: 5
+    timeToStop: 1
+    timeToGo: 1.5
+    goSpeed: 10
+    gapAngle: 45
+    cageRadius: 15

@@ -217,7 +217,7 @@ MonoBehaviour:
     transitionPause: 2
     transitionEffect: {fileID: 0}
     attacks:
-    - {fileID: 157412146}
+    - {fileID: 1659765923}
   - healthThreshold: 0
     transitionPause: 0
     transitionEffect: {fileID: 0}
@@ -468,7 +468,7 @@ Transform:
   m_GameObject: {fileID: 734061453}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.81, y: 3.95, z: 0}
+  m_LocalPosition: {x: -1.17, y: 2.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -871,7 +871,7 @@ GameObject:
   - component: {fileID: 1659765925}
   - component: {fileID: 1659765926}
   m_Layer: 0
-  m_Name: PianoWater
+  m_Name: Example
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -904,8 +904,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc6a6fdbe19f1e248b1adde2ee077547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullets.BulletPatternWeapon
-  pattern: {fileID: 11400000, guid: 0b3244158c6192d49875e111bd8968bd, type: 2}
-  player: {fileID: 0}
+  pattern: {fileID: 11400000, guid: d66ca663cc8137e46b8ea3335eb469e3, type: 2}
+  player: {fileID: 734061455}
 --- !u!4 &1826987320 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8165513407631051076, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}

@@ -13,9 +13,11 @@ public class MissFeedback : MonoBehaviour
     [SerializeField] private float shakeDuration = 0.15f;
     [SerializeField] private float shakeMagnitude = 0.1f;
     
+    [Header("Audio")]
+    [SerializeField] private AudioClip missSFX;
+    
 
     private SpriteRenderer _barSprite;
-    private AudioSource  _audioSource;
     private Transform _barTransform;
     private Vector3 _originalPosition;
     private Coroutine _colorRoutine;
@@ -24,7 +26,6 @@ public class MissFeedback : MonoBehaviour
     private void Awake()
     {       
         _barSprite = GetComponent<SpriteRenderer>();
-        _audioSource = GetComponent<AudioSource>();
         
         _barTransform = _barSprite.transform;
         _originalPosition = _barTransform.localPosition;
@@ -48,10 +49,10 @@ public class MissFeedback : MonoBehaviour
     {
         if (score != BeatManager.Score.Missed) return;
 
-        _audioSource.Play();
+        AudioManager.instance.PlaySFX(missSFX);
         
-        if (_colorRoutine != null) StopCoroutine(_colorRoutine);
-        _colorRoutine = StartCoroutine(ColorRoutine(weaponManager.MissBeats));
+        if (_colorRoutine == null)
+            _colorRoutine = StartCoroutine(ColorRoutine(weaponManager.MissBeats));
 
         if (_shakeRoutine != null) StopCoroutine(_shakeRoutine);
         _shakeRoutine = StartCoroutine(ShakeRoutine());

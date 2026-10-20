@@ -118,13 +118,14 @@ namespace Player
                 }
             }
 
-            if (Keyboard.current != null && Keyboard.current.enterKey.wasPressedThisFrame ||
-                Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
+            //PUNTO Q ME PIDE ISAAC KK
+            if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
             {
-                if (currentPoint.isLevel && !string.IsNullOrEmpty(currentPoint.sceneToLoad))
+                if (currentPoint.isLevel && !_isOnMap && !string.IsNullOrEmpty(currentPoint.sceneToLoad))
                 {
-                    SceneManager.LoadScene(currentPoint.sceneToLoad);
+                    StartCoroutine(LoadLevel(currentPoint.sceneToLoad, 2f));
                 }
+                
             }
         }
 
@@ -155,6 +156,18 @@ namespace Player
             {
                 currentPoint.ActivateLevelUI();
             }
+        }
+
+        private IEnumerator LoadLevel(string sceneName, float delayTime)
+        {
+            _isOnMap = true;
+            
+            //efectos q te salgan del culo isaac
+            
+            
+             yield return new WaitForSeconds(delayTime);
+             
+             SceneManager.LoadScene(sceneName);
         }
 
         #endregion
