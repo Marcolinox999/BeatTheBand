@@ -6,7 +6,7 @@ namespace Bullets
 {
     public static class ShotAttack
     {
-        public static void SimpleShot(Vector2 origin, Vector2 velocity, RadialShotSettings settings= null)
+        public static Bullet SimpleShot(Vector2 origin, Vector2 velocity, RadialShotSettings settings= null)
         {
             Bullet bullet = BulletPool.Instance.GetBullet();
             bullet.transform.position = origin;
@@ -20,6 +20,8 @@ namespace Bullets
             {
                 bullet.DisableExplosion();
             }
+
+            return bullet;
         }
 
         public static void RadialShot
@@ -181,19 +183,102 @@ namespace Bullets
             RadialShot(origin, dir2, settings);
         }
 
-        
-        
-        /* // Ejemplo de llamada dentro de la lógica de un enemigo
-Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+        public static void BoomerangRadial(Vector2 origin, Vector2 aimDirection, float returnForce,
+            RadialShotSettings settings)
+        {
+            float angleBetweenBullets = 360f / settings.numberOfBullets;
+            for (int i = 0; i < settings.numberOfBullets; i++)
+            {
+                Vector2 bulletDirection = aimDirection.Rotate(angleBetweenBullets * i).normalized;
+                
+                Bullet b = SimpleShot(origin, bulletDirection * settings.bulletSpeed, settings);
+                
+                b.SetupBoomerang(-bulletDirection * returnForce); 
+            }
+        }
 
-ShotAttack.ConeShotToPlayer(
-    transform.position,    // Origen (dónde está el enemigo)
-    playerPos,             // Posición actual del jugador
-    myRadialSettings,      // Tus ajustes de explosión / configuración
-    5,                     // Número de balas en el cono
-    60f,                   // Apertura del cono en grados (ej: 60 grados de abanico)
-    bulletSpeed            // Velocidad de las balas
-);*/
+        public static void StarBurst(Vector2 origin, Vector2 aimDirection, int points, int bulletsPerEdge, float speed,
+            RadialShotSettings settings = null)
+        {
+            float angleBetweenPoints = 360f / points;
+            float halfAngle = angleBetweenPoints / 2f;
+            float innerRadius = 0.4f;
+            
+            for (int i = 0; i < points; i++)
+            {
+                float currentAngle = i * angleBetweenPoints;
+                float nextAngle = currentAngle + halfAngle;
+                float prevAngle = currentAngle - halfAngle;
+                
+                Vector2 outerTip = aimDirection.Rotate(currentAngle) * speed;
+                Vector2 innerNext = aimDirection.Rotate(nextAngle) * (speed * innerRadius);
+                Vector2 innerPrev = aimDirection.Rotate(prevAngle) * (speed * innerRadius);
+                
+                for (int j = 0; j < bulletsPerEdge; j++)
+                {
+                    float t = (float)j / bulletsPerEdge;
+                    
+                    Vector2 edgeVel1 = Vector2.Lerp(outerTip, innerNext, t);
+                    SimpleShot(origin, edgeVel1, settings);
+
+                    if (j > 0)
+                    {
+                        Vector2 edgeVel2 = Vector2.Lerp(outerTip, innerPrev, t);
+                        SimpleShot(origin, edgeVel2, settings);
+                    }
+                }
+            }
+        }
+
+        public static void StopAndGoRadial(Vector2 origin, Vector2 aimDirection, float timeToStop, float timeToGo,
+            float goSpeed, RadialShotSettings settings)
+        {
+            float angleBetweenBullets = 360f / settings.numberOfBullets;
+            for (int i = 0; i < settings.numberOfBullets; i++)
+            {
+                Vector2 bulletDirection = aimDirection.Rotate(angleBetweenBullets * i).normalized;
+                
+                Bullet b = SimpleShot(origin, bulletDirection * settings.bulletSpeed, settings);
+                b.SetupStopAndGo(timeToStop, timeToGo, bulletDirection * goSpeed);
+            }
+        }
+
+        public static void CageShot(Vector2 playerPosition, float radius, float gapAngle, RadialShotSettings settings)
+        {
+            float angleBetweenBullets = 360f / settings.numberOfBullets;
+            Vector2 randomStartDir = Vector2.up.Rotate(Random.Range(0f, 360f));
+            
+            float timeToCenter = radius / settings.bulletSpeed;
+            
+            for (int i = 0; i < settings.numberOfBullets; i++)
+            {
+                float currentAngle = angleBetweenBullets * i;
+                if (currentAngle < gapAngle) continue;
+
+                Vector2 offset = randomStartDir.Rotate(currentAngle) * radius;
+                Vector2 spawnPos = playerPosition + offset;
+                
+                Vector2 bulletDir = (playerPosition - spawnPos).normalized;
+
+                Bullet b = SimpleShot(spawnPos, bulletDir * settings.bulletSpeed, settings);
+                
+                b.SetMaxLifetime(timeToCenter);
+            }
+        }
+        
+        public static void SpinningRadial(Vector2 origin, Vector2 aimDirection, float spinSpeed, RadialShotSettings settings)
+        {
+            float angleBetweenBullets = 360f / settings.numberOfBullets;
+
+            for (int i = 0; i < settings.numberOfBullets; i++)
+            {
+                float bulletDirectionAngle = angleBetweenBullets * i;
+                Vector2 bulletDirection = aimDirection.Rotate(bulletDirectionAngle).normalized;
+                
+                Bullet b = SimpleShot(origin, bulletDirection * settings.bulletSpeed, settings);
+                b.SetupSpin(spinSpeed);
+            }
+        }
         #region WeaponAttacks
 
         public static void TrumpetShot(Vector2 position, Vector2 direction, float speed)

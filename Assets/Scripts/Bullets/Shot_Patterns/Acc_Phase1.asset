@@ -12,17 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27caaf00fcafd7d4f887e7587af51c22, type: 3}
   m_Name: Acc_Phase1
   m_EditorClassIdentifier: Assembly-CSharp::Bullets.BulletPattern
-  repetitions: 10
+  repetitions: 5
   angleOffsetBetweenReps: 45
+  delayBetweenReps: 0
   startWait: 0
   endWait: 0
   steps:
   - attackType: 2
+    delayAfterStep: 2
     settings:
       numberOfBullets: 0
       bulletSpeed: 0
-      cooldownTime: 1
-      angleOffset: 0
+      cooldownTime: 4
+      angleOffset: 45
       phaseOffset: 0
       radialMask: 0
       maskAngle: 0
@@ -30,17 +32,27 @@ MonoBehaviour:
       timeToExplode: 0
       explosionBullets: 0
       explosionSpeed: 0
+    spinSpeed: 45
+    waterfallEdge: 0
+    waterfallWidth: 10
     rotation: 0
-    numberOfBullets: 75
     numberOfPetals: 3
-    bulletSpeed: 2
     coneAngle: 0
     spacing: 0
+    returnForce: 15
+    starPoints: 5
+    bulletsPerEdge: 5
+    timeToStop: 1
+    timeToGo: 1.5
+    goSpeed: 10
+    gapAngle: 45
+    cageRadius: 15
   - attackType: 0
+    delayAfterStep: 1.5
     settings:
       numberOfBullets: 40
       bulletSpeed: 2
-      cooldownTime: 0.12
+      cooldownTime: 0
       angleOffset: 0
       phaseOffset: 0
       radialMask: 0
@@ -49,9 +61,18 @@ MonoBehaviour:
       timeToExplode: 0
       explosionBullets: 0
       explosionSpeed: 0
+    spinSpeed: 45
+    waterfallEdge: 0
+    waterfallWidth: 10
     rotation: 0
-    numberOfBullets: 0
     numberOfPetals: 0
-    bulletSpeed: 0
     coneAngle: 0
     spacing: 0
+    returnForce: 15
+    starPoints: 5
+    bulletsPerEdge: 5
+    timeToStop: 1
+    timeToGo: 1.5
+    goSpeed: 10
+    gapAngle: 45
+    cageRadius: 15

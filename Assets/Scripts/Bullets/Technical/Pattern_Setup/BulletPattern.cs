@@ -10,7 +10,12 @@ namespace Bullets
         Flower,
         PianoWaterfall,
         ConeToPlayer,
-        LineToPlayer
+        LineToPlayer,
+        Boomerang,
+        StarBurst,
+        StopAndGo,
+        Cage,
+        SpinningRadial
     }
 
     [CreateAssetMenu(
@@ -141,6 +146,27 @@ namespace Bullets
 
                     ShotAttack.LineShotToPlayer(position, player.position, step.settings.numberOfBullets, step.spacing, step.settings.bulletSpeed, step.settings);
                     break;
+                
+                case AttackType.Boomerang:
+                    ShotAttack.BoomerangRadial(position, aimDirection, step.returnForce, step.settings);
+                    break;
+
+                case AttackType.StarBurst:
+                    ShotAttack.StarBurst(position, aimDirection, step.starPoints, step.bulletsPerEdge, step.settings.bulletSpeed, step.settings);
+                    break;
+
+                case AttackType.StopAndGo:
+                    ShotAttack.StopAndGoRadial(position, aimDirection, step.timeToStop, step.timeToGo, step.goSpeed, step.settings);
+                    break;
+
+                case AttackType.Cage:
+                    if (player == null) return;
+                    ShotAttack.CageShot(player.position, step.cageRadius, step.gapAngle, step.settings);
+                    break;
+                
+                case AttackType.SpinningRadial:
+                    ShotAttack.SpinningRadial(position, aimDirection, step.spinSpeed, step.settings);
+                    break;
             }
         }
     }
@@ -157,7 +183,10 @@ namespace Bullets
         
         public RadialShotSettings settings;
         
+        [Header("Spinning Radial")]
+        [Tooltip("Positivo gira anti-horario, Negativo gira horario")]
         
+        public float spinSpeed = 45f;
         [Header("PianoWaterfall")]
         public ShotAttack.WaterfallEdge waterfallEdge;
 
@@ -175,5 +204,22 @@ namespace Bullets
         
         [Header("Line")]
         public float spacing = 1f;
+        
+        [Header("Boomerang")]
+        public float returnForce = 15f;
+
+        [Header("StarBurst")]
+        public int starPoints = 5;      
+        public int bulletsPerEdge = 5;   
+
+        [Header("Stop And Go")]
+        public float timeToStop = 1f;    
+        public float timeToGo = 1.5f;   
+        public float goSpeed = 10f;    
+
+        [Header("Cage")]
+        [Range(0f, 360f)]
+        public float gapAngle = 45f;    
+        public float cageRadius = 15f;
     }
 }
