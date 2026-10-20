@@ -23,6 +23,9 @@ namespace Bullets
         public int repetitions = 1;
         [Range(-180f, 180f)]
         public float angleOffsetBetweenReps = 0f;
+        
+        public float delayBetweenReps = 0f;
+        
         public float startWait = 0f;
         public float endWait = 0f;
 
@@ -60,6 +63,16 @@ namespace Bullets
                             player,
                             aimDirection
                         );
+
+                        if (step.delayAfterStep > 0f)
+                        {
+                            yield return new WaitForSeconds(step.delayAfterStep);
+                        }
+                    }
+                    
+                    if (delayBetweenReps > 0f && repetition < repetitions - 1)
+                    {
+                        yield return new WaitForSeconds(delayBetweenReps);
                     }
                 
             }
@@ -96,13 +109,13 @@ namespace Bullets
 
                 case AttackType.Flower:
 
-                    ShotAttack.FlowerShot(position, aimDirection, step.numberOfBullets, step.numberOfPetals, step.bulletSpeed, step.settings);
+                    ShotAttack.FlowerShot(position, aimDirection, step.settings.numberOfBullets, step.numberOfPetals, step.settings.bulletSpeed, step.settings);
                     break;
 
 
                 case AttackType.PianoWaterfall:
 
-                    ShotAttack.PianoWaterfall(position, step.bulletSpeed, step.settings);
+                    ShotAttack.PianoWaterfall(position, step.settings.numberOfBullets, step.waterfallWidth, step.waterfallEdge, step.settings.bulletSpeed, step.settings);
                     break;
 
 
@@ -114,7 +127,7 @@ namespace Bullets
                         return;
                     }
 
-                    ShotAttack.ConeShotToPlayer(position, player.position, step.settings, step.numberOfBullets, step.coneAngle, step.bulletSpeed);
+                    ShotAttack.ConeShotToPlayer(position, player.position, step.settings, step.settings.numberOfBullets, step.coneAngle, step.settings.bulletSpeed);
                     break;
 
 
@@ -126,7 +139,7 @@ namespace Bullets
                         return;
                     }
 
-                    ShotAttack.LineShotToPlayer(position, player.position, step.numberOfBullets, step.spacing, step.bulletSpeed, step.settings);
+                    ShotAttack.LineShotToPlayer(position, player.position, step.settings.numberOfBullets, step.spacing, step.settings.bulletSpeed, step.settings);
                     break;
             }
         }
@@ -136,17 +149,25 @@ namespace Bullets
     [System.Serializable]
     public class BulletPatternStep
     {
+     
         public AttackType attackType;
+        
+        [Header("Cooldown")]
+        public float delayAfterStep = 0.5f;
+        
         public RadialShotSettings settings;
+        
+        
+        [Header("PianoWaterfall")]
+        public ShotAttack.WaterfallEdge waterfallEdge;
 
+        public float waterfallWidth = 10f;
 
         [Header("Spiral")]
         public float rotation = 10f;
 
         [Header("Flower")]
-        public int numberOfBullets = 12;
         public int numberOfPetals = 5; 
-        public float bulletSpeed = 5f;
 
         [Header("Cone")]
         [Range(0f, 360f)]

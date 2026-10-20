@@ -7,7 +7,7 @@ namespace Bullets
 {
     public class Bullet : MonoBehaviour
     {
-        private const float maxLifetime = 3f;
+        private const float maxLifetime = 10f;
         private float lifetime = 0f;
     
         public Vector2 Velocity;
@@ -17,6 +17,15 @@ namespace Bullets
         private float timeToExplode;
         private int explosionBulletsCount;
         private float explosionSpeedValue;
+        
+        
+        private void OnEnable()
+        {
+            lifetime = 0f;
+            willExplode = false;
+            explodeTimer = 0f;
+        }
+
         
         private void Update()
         {
@@ -39,6 +48,7 @@ namespace Bullets
            
         }
 
+     
         private void Explode()
         {
             willExplode = false;
@@ -65,7 +75,6 @@ namespace Bullets
         
         private void Disable()
         {
-            lifetime = 0f;
             gameObject.SetActive(false);
         }
         

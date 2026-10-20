@@ -118,14 +118,55 @@ namespace Bullets
         }
         
         
-        public static void PianoWaterfall(Vector2 origin, float speed,
-            RadialShotSettings settings = null)
+        public enum WaterfallEdge{Top, Bottom, Left, Right}
+        
+        public static void PianoWaterfall(Vector2 origin, int numberOfBullets, float width, WaterfallEdge edge, float speed,  RadialShotSettings settings = null)
         {
-            Vector2 leftOrigin = origin + new Vector2(-4f, 2f);
-            Vector2 rightOrigin = origin + new Vector2(4f, 2f);
-            
-            SimpleShot(leftOrigin, new Vector2(1.5f, -1f).normalized * speed, settings);
-            SimpleShot(rightOrigin, new Vector2(-1.5f, -1f).normalized * speed, settings);
+            Vector2 spawnCenter = origin;
+            Vector2 spawnDirection = Vector2.zero;
+            Vector2 shootDirection = Vector2.down;
+
+            Camera cam = Camera.main;
+            if (cam != null)
+            {
+                float camHeight = 2f * cam.orthographicSize;
+                float camWidth = camHeight * cam.aspect;
+                Vector2 camPos = cam.transform.position;
+                float outOfBoundsMargin = 2f;
+
+
+                switch (edge)
+                {
+                    case WaterfallEdge.Top:
+                        spawnCenter = new Vector2(camPos.x, camPos.y + (camHeight / 2f) + outOfBoundsMargin);
+                        spawnDirection = Vector2.right;
+                        shootDirection = Vector2.down;
+                        break;
+                    case WaterfallEdge.Bottom:
+                        spawnCenter = new Vector2(camPos.x, camPos.y - (camHeight / 2f) - outOfBoundsMargin);
+                        spawnDirection = Vector2.right;
+                        shootDirection = Vector2.up;
+                        break;
+                    case WaterfallEdge.Left:
+                        spawnCenter = new Vector2(camPos.x - (camWidth / 2f) - outOfBoundsMargin, camPos.y);
+                        spawnDirection = Vector2.up;
+                        shootDirection = Vector2.right;
+                        break;
+                    case WaterfallEdge.Right:
+                        spawnCenter = new Vector2(camPos.x + (camWidth / 2f) + outOfBoundsMargin, camPos.y);
+                        spawnDirection = Vector2.up;
+                        shootDirection = Vector2.left;
+                        break;
+                }
+
+                float spacing = numberOfBullets > 1 ? width / (numberOfBullets - 1) : 0;
+                Vector2 startPos = spawnCenter - (spawnDirection * (width / 2f));
+                for (int i = 0; i < numberOfBullets; i++)
+                {
+                    Vector2 spawnPosition = startPos + (spawnDirection * (spacing * i));
+                    SimpleShot(spawnPosition, shootDirection * speed, settings);
+                }
+            }
         }
 
        
