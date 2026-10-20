@@ -118,10 +118,9 @@ namespace Player
                 }
             }
 
-            if (Keyboard.current != null && Keyboard.current.enterKey.wasPressedThisFrame ||
-                Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
+            if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
             {
-                if (currentPoint.isLevel && !string.IsNullOrEmpty(currentPoint.sceneToLoad))
+                if (currentPoint.isLevel && !_isOnMap && !string.IsNullOrEmpty(currentPoint.sceneToLoad))
                 {
                     SceneManager.LoadScene(currentPoint.sceneToLoad);
                 }
