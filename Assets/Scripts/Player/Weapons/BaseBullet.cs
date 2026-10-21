@@ -4,7 +4,7 @@ using UnityEngine;
 public class BaseBullet : MonoBehaviour
 {
     [SerializeField] protected float speed;
-    [SerializeField] protected float damage;
+    [SerializeField] public float damage;
     [SerializeField] protected float lifetime;
 
     private float timer;
@@ -16,21 +16,6 @@ public class BaseBullet : MonoBehaviour
             Destroy(gameObject);
         }
         Movement();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Boss")
-        {
-            IDamageable damageable = other.GetComponent<IDamageable>();
-                
-            if (damageable != null)
-            {
-                damageable.ApplyDamage(damage);
-            }
-            Destroy(gameObject);
-            
-        }
     }
     protected virtual void Movement()
     {
