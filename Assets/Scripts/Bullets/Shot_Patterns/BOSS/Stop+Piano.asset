@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27caaf00fcafd7d4f887e7587af51c22, type: 3}
-  m_Name: Pattern1
+  m_Name: Stop+Piano
   m_EditorClassIdentifier: Assembly-CSharp::Bullets.BulletPattern
-  repetitions: 3
+  repetitions: 1
   angleOffsetBetweenReps: 0
-  delayBetweenReps: 2
+  delayBetweenReps: 0
   startWait: 0
   endWait: 0
   steps:
-  - attackType: 2
-    delayAfterStep: 0
+  - attackType: 8
+    delayAfterStep: 1
     settings:
-      numberOfBullets: 50
-      bulletSpeed: 3
-      cooldownTime: 3
+      numberOfBullets: 20
+      bulletSpeed: 10
+      cooldownTime: 0
       angleOffset: 0
       phaseOffset: 0
       radialMask: 0
@@ -36,14 +36,43 @@ MonoBehaviour:
     waterfallEdge: 0
     waterfallWidth: 0
     rotation: 0
-    numberOfPetals: 4
+    numberOfPetals: 0
     coneAngle: 0
     spacing: 0
     returnForce: 0
     starPoints: 0
     bulletsPerEdge: 0
-    timeToStop: 0
-    timeToGo: 0
-    goSpeed: 0
+    timeToStop: 0.3
+    timeToGo: 4
+    goSpeed: 15
+    gapAngle: 0
+    cageRadius: 0
+  - attackType: 3
+    delayAfterStep: 0
+    settings:
+      numberOfBullets: 10
+      bulletSpeed: 5
+      cooldownTime: 0.3
+      angleOffset: 0
+      phaseOffset: 0
+      radialMask: 0
+      maskAngle: 0
+      doesExplode: 0
+      timeToExplode: 0
+      explosionBullets: 0
+      explosionSpeed: 0
+    spinSpeed: 0
+    waterfallEdge: 0
+    waterfallWidth: 20
+    rotation: 0
+    numberOfPetals: 0
+    coneAngle: 0
+    spacing: 0
+    returnForce: 0
+    starPoints: 0
+    bulletsPerEdge: 0
+    timeToStop: 0.3
+    timeToGo: 4
+    goSpeed: 15
     gapAngle: 0
     cageRadius: 0
