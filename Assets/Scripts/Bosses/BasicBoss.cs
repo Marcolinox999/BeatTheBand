@@ -11,7 +11,7 @@ public class BasicBoss : BaseHealth
         phase3,
         dead
     }
-
+    private BasicMovementBoss basicBoss;
     [Header("Boss")]
     [SerializeField] private BossPhase[] phasePack;
 
@@ -25,7 +25,9 @@ public class BasicBoss : BaseHealth
         currentPhase = Phases.phase1;
         currentPack = 0;
         isDead = false;
-
+        
+        basicBoss = GetComponent<BasicMovementBoss>();
+        basicBoss.bossSpeed = phasePack[currentPack].bossSpeed;
         DisableAllAttacks();
 
         if (phasePack == null || phasePack.Length == 0)
@@ -60,7 +62,7 @@ public class BasicBoss : BaseHealth
         {
             currentPack++;
             currentPhase = (Phases)currentPack;
-
+            basicBoss.bossSpeed = phasePack[currentPack].bossSpeed;
             PhaseSwitch();
         }
         else
@@ -149,6 +151,7 @@ public class BasicBoss : BaseHealth
         if (isDead) return;
         isDead = true;
         DisableAllAttacks();
+        basicBoss.bossSpeed = 0;
         Debug.Log("Boss Dead");
     }
 }
