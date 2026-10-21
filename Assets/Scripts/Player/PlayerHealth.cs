@@ -9,11 +9,11 @@ public class PlayerHealth : BaseHealth
     {
         base.Start();
         Init();
-        playerParticles =  GetComponentsInChildren<ParticleSystem>();
     }
 
     protected override void ParticleDamage()
     {
+        Debug.Log("¡Intentando reproducir partículas!");
         for (int i = 0; i < playerParticles.Length; i++)
         {
             if (playerParticles[i] != null)
