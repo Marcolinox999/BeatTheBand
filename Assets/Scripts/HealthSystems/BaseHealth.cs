@@ -122,18 +122,20 @@ public abstract class BaseHealth : MonoBehaviour, IDamageable
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            
+            Debug.Log("Daño");
             if (CompareTag("Player"))
             {
+                if (other.GetComponent<BaseBullet>() != null) return;
                 var bullet = other.GetComponent<Bullet>();
                 ApplyDamage(bullet.damage);
-                Destroy(other.gameObject);
+                other.gameObject.SetActive(false);
             }
             else if (CompareTag("Boss"))
             {
+                if (other.GetComponent<Bullet>() != null) return;
                 var bullet = other.GetComponent<BaseBullet>();
                 ApplyDamage(bullet.damage);
-                Destroy(other.gameObject);
+                other.gameObject.SetActive(false);
             }
         }
     }

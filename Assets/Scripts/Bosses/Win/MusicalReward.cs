@@ -100,7 +100,7 @@ public class MusicalReward : BaseHealth
         AudioManager.instance.PlaySFX(clip);
     }
     
-
+/*
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (isDead || !other.CompareTag("Bullet")) return;
@@ -108,7 +108,7 @@ public class MusicalReward : BaseHealth
         ApplyKnockback(GetBulletDirection(other));
         ApplyDamage(damagePerBullet);
     }
-
+*/ 
     private Vector2 GetBulletDirection(Collider2D bullet)
     {
         if (bullet.attachedRigidbody != null && bullet.attachedRigidbody.linearVelocity.sqrMagnitude > 0.01f)
