@@ -17,4 +17,62 @@ MonoBehaviour:
   delayBetweenReps: 0
   startWait: 0
   endWait: 0
-  steps: []
+  steps:
+  - attackType: 2
+    delayAfterStep: 1.5
+    settings:
+      numberOfBullets: 20
+      bulletSpeed: 1.5
+      cooldownTime: 0
+      angleOffset: 0
+      phaseOffset: 0
+      radialMask: 0
+      maskAngle: 0
+      doesExplode: 1
+      timeToExplode: 2.5
+      explosionBullets: 6
+      explosionSpeed: 5
+    spinSpeed: 0
+    waterfallEdge: 0
+    waterfallWidth: 0
+    rotation: 0
+    numberOfPetals: 5
+    coneAngle: 0
+    spacing: 0
+    returnForce: 0
+    starPoints: 0
+    bulletsPerEdge: 0
+    timeToStop: 0
+    timeToGo: 0
+    goSpeed: 0
+    gapAngle: 0
+    cageRadius: 0
+  - attackType: 9
+    delayAfterStep: 0
+    settings:
+      numberOfBullets: 40
+      bulletSpeed: 6
+      cooldownTime: 0
+      angleOffset: 0
+      phaseOffset: 0
+      radialMask: 0
+      maskAngle: 0
+      doesExplode: 0
+      timeToExplode: 0
+      explosionBullets: 0
+      explosionSpeed: 0
+    spinSpeed: 0
+    waterfallEdge: 0
+    waterfallWidth: 0
+    rotation: 0
+    numberOfPetals: 5
+    coneAngle: 0
+    spacing: 0
+    returnForce: 0
+    starPoints: 0
+    bulletsPerEdge: 0
+    timeToStop: 0
+    timeToGo: 0
+    goSpeed: 0
+    gapAngle: 40
+    cageRadius: 15

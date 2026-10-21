@@ -17,4 +17,149 @@ MonoBehaviour:
   delayBetweenReps: 0
   startWait: 0
   endWait: 0
-  steps: []
+  steps:
+  - attackType: 3
+    delayAfterStep: 0
+    settings:
+      numberOfBullets: 15
+      bulletSpeed: 5
+      cooldownTime: 0
+      angleOffset: 0
+      phaseOffset: 0
+      radialMask: 0
+      maskAngle: 0
+      doesExplode: 0
+      timeToExplode: 0
+      explosionBullets: 0
+      explosionSpeed: 0
+    spinSpeed: 0
+    waterfallEdge: 0
+    waterfallWidth: 0
+    rotation: 0
+    numberOfPetals: 0
+    coneAngle: 0
+    spacing: 0
+    returnForce: 0
+    starPoints: 0
+    bulletsPerEdge: 0
+    timeToStop: 0
+    timeToGo: 0
+    goSpeed: 0
+    gapAngle: 0
+    cageRadius: 0
+  - attackType: 3
+    delayAfterStep: 0
+    settings:
+      numberOfBullets: 15
+      bulletSpeed: 5
+      cooldownTime: 0
+      angleOffset: 0
+      phaseOffset: 0
+      radialMask: 0
+      maskAngle: 0
+      doesExplode: 0
+      timeToExplode: 0
+      explosionBullets: 0
+      explosionSpeed: 0
+    spinSpeed: 0
+    waterfallEdge: 1
+    waterfallWidth: 0
+    rotation: 0
+    numberOfPetals: 0
+    coneAngle: 0
+    spacing: 0
+    returnForce: 0
+    starPoints: 0
+    bulletsPerEdge: 0
+    timeToStop: 0
+    timeToGo: 0
+    goSpeed: 0
+    gapAngle: 0
+    cageRadius: 0
+  - attackType: 3
+    delayAfterStep: 0
+    settings:
+      numberOfBullets: 15
+      bulletSpeed: 5
+      cooldownTime: 0
+      angleOffset: 0
+      phaseOffset: 0
+      radialMask: 0
+      maskAngle: 0
+      doesExplode: 0
+      timeToExplode: 0
+      explosionBullets: 0
+      explosionSpeed: 0
+    spinSpeed: 0
+    waterfallEdge: 2
+    waterfallWidth: 0
+    rotation: 0
+    numberOfPetals: 0
+    coneAngle: 0
+    spacing: 0
+    returnForce: 0
+    starPoints: 0
+    bulletsPerEdge: 0
+    timeToStop: 0
+    timeToGo: 0
+    goSpeed: 0
+    gapAngle: 0
+    cageRadius: 0
+  - attackType: 3
+    delayAfterStep: 1.5
+    settings:
+      numberOfBullets: 15
+      bulletSpeed: 5
+      cooldownTime: 0
+      angleOffset: 0
+      phaseOffset: 0
+      radialMask: 0
+      maskAngle: 0
+      doesExplode: 0
+      timeToExplode: 0
+      explosionBullets: 0
+      explosionSpeed: 0
+    spinSpeed: 0
+    waterfallEdge: 3
+    waterfallWidth: 0
+    rotation: 0
+    numberOfPetals: 0
+    coneAngle: 0
+    spacing: 0
+    returnForce: 0
+    starPoints: 0
+    bulletsPerEdge: 0
+    timeToStop: 0
+    timeToGo: 0
+    goSpeed: 0
+    gapAngle: 0
+    cageRadius: 0
+  - attackType: 8
+    delayAfterStep: 0
+    settings:
+      numberOfBullets: 16
+      bulletSpeed: 10
+      cooldownTime: 0
+      angleOffset: 0
+      phaseOffset: 0
+      radialMask: 0
+      maskAngle: 0
+      doesExplode: 0
+      timeToExplode: 0
+      explosionBullets: 0
+      explosionSpeed: 0
+    spinSpeed: 0
+    waterfallEdge: 3
+    waterfallWidth: 0
+    rotation: 0
+    numberOfPetals: 0
+    coneAngle: 0
+    spacing: 0
+    returnForce: 0
+    starPoints: 0
+    bulletsPerEdge: 0
+    timeToStop: 0.1
+    timeToGo: 1
+    goSpeed: 12
+    gapAngle: 0
+    cageRadius: 0
