@@ -53,6 +53,9 @@ public class WeaponManager : MonoBehaviour
 
     private int missBeats = 1;
 
+    // Raised every time the weapon is successfully switched
+    public event System.Action OnWeaponSwitched;
+
     private void Awake()
     {
         hand = GetComponentInChildren<Transform>();
@@ -137,6 +140,10 @@ public class WeaponManager : MonoBehaviour
 
                 SetWeaponAnimator();
                 AudioManager.instance.PlaySFX(switchSound);
+
+                // Notify listeners (e.g. StatVisual) that the weapon has changed
+                OnWeaponSwitched?.Invoke();
+
                 return;
             }
         }
