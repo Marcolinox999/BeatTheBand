@@ -181,70 +181,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrainEffect
       objectReference: {fileID: 0}
-    - target: {fileID: 4244914468175336042, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5508761342161633369, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
-      propertyPath: opacity
-      value: 0.021
-      objectReference: {fileID: 0}
-    - target: {fileID: 5508761342161633369, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
-      propertyPath: flickerAmount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5508761342161633369, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
-      propertyPath: grainFrames.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5508761342161633369, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
-      propertyPath: 'grainFrames.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2800000, guid: 8df2a37e7e92c7243b2703501cf07171, type: 3}
-    - target: {fileID: 5508761342161633369, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
-      propertyPath: 'grainFrames.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2800000, guid: 2d5d5c26b80b9dd43b26aaef87b71b8f, type: 3}
-    - target: {fileID: 5508761342161633369, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
-      propertyPath: 'grainFrames.Array.data[2]'
-      value: 
-      objectReference: {fileID: 2800000, guid: d7c4fa6de2eae9548bb9b03af7fb93fc, type: 3}
-    - target: {fileID: 5508761342161633369, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
-      propertyPath: 'grainFrames.Array.data[3]'
-      value: 
-      objectReference: {fileID: 2800000, guid: 8e7bd46a5ad45d54a994027da048d3f1, type: 3}
-    - target: {fileID: 5508761342161633369, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
-      propertyPath: 'grainFrames.Array.data[4]'
-      value: 
-      objectReference: {fileID: 2800000, guid: 230a780b1a27dd24695f22425790afd6, type: 3}
-    - target: {fileID: 5508761342161633369, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
-      propertyPath: 'grainFrames.Array.data[5]'
-      value: 
-      objectReference: {fileID: 2800000, guid: ce883e8143c29d0438441c0787df59e1, type: 3}
-    - target: {fileID: 5508761342161633369, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
-      propertyPath: 'grainFrames.Array.data[6]'
-      value: 
-      objectReference: {fileID: 2800000, guid: 5eecd36895e5b90498c7274ff012cd33, type: 3}
-    - target: {fileID: 5508761342161633369, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
-      propertyPath: 'grainFrames.Array.data[7]'
-      value: 
-      objectReference: {fileID: 2800000, guid: 0494f1736f2d6de4380673ae4cc18e3e, type: 3}
-    - target: {fileID: 5881213819322727286, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
-      propertyPath: m_Color.a
-      value: 0.02745098
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881213819322727286, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
-      propertyPath: m_Color.b
-      value: 0.40251565
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881213819322727286, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
-      propertyPath: m_Color.g
-      value: 0.40251565
-      objectReference: {fileID: 0}
-    - target: {fileID: 5881213819322727286, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
-      propertyPath: m_Color.r
-      value: 0.40251565
-      objectReference: {fileID: 0}
     - target: {fileID: 7062165045721911213, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -276,18 +212,6 @@ PrefabInstance:
     - target: {fileID: 7062165045721911213, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7062165045721911213, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.0096678
-      objectReference: {fileID: 0}
-    - target: {fileID: 7062165045721911213, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7062165045721911213, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.41666663
       objectReference: {fileID: 0}
     - target: {fileID: 7062165045721911213, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
       propertyPath: m_LocalPosition.x

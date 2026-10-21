@@ -15,7 +15,6 @@ namespace Player
             Walking,
             Dead,
             OnMap,
-            
         }
 
         private States _state;
@@ -24,13 +23,13 @@ namespace Player
         private WeaponManager _weaponManager;
         [SerializeField] private Animator animator;
         private Rigidbody2D rb;
+
         [Header("Values")]
-        [SerializeField] private float speed;
+        [SerializeField] private float speed = 5f;
         [SerializeField] private bool isDead = false;
-        
+
         [Header("Input")]
-        private float hInput;
-        private float vInput;
+        private Vector2 _moveInput;
         [SerializeField] private InputActionReference movementInput;
         [SerializeField] private InputActionReference attackInput;
         [SerializeField] private bool pveEnabled = false;
@@ -40,8 +39,7 @@ namespace Player
         [SerializeField] private float moveSpeed = 10f;
         private bool _isOnMap = false;
         private Vector3 targetPosition;
-        
-        
+
         private void OnEnable()
         {
             rb = GetComponent<Rigidbody2D>();
@@ -51,7 +49,7 @@ namespace Player
             {
                 _isOnMap = false;
                 _state = States.OnMap;
-                pveEnabled = false; 
+                pveEnabled = false;
             }
             else
             {
@@ -59,31 +57,40 @@ namespace Player
                 pveEnabled = true;
                 attackInput.action.Enable();
             }
-            Debug.Log("state == " +  _state);
+            Debug.Log("state == " + _state);
         }
 
         private void OnDisable()
         {
             movementInput.action.Disable();
             attackInput.action.Disable();
-
         }
 
+        // Reads input every frame; the physics are applied in FixedUpdate
         private void Movement()
         {
-            Vector2 moveInput =  movementInput.action.ReadValue<Vector2>();
-            moveInput = Vector2.ClampMagnitude(moveInput, 1);
-            hInput = moveInput.x;
-            vInput = moveInput.y;
-            animator.SetFloat("Speed", moveInput.x != 0 || moveInput.y != 0?1:0);
-            
-            rb.AddForce(moveInput * moveSpeed);
-            if (isDead) _state =  States.Dead;
+            _moveInput = Vector2.ClampMagnitude(movementInput.action.ReadValue<Vector2>(), 1f);
+            animator.SetFloat("Speed", _moveInput.sqrMagnitude > 0f ? 1 : 0);
+
+            if (isDead) _state = States.Dead;
         }
-        
+
+        private void FixedUpdate()
+        {
+            if (_state == States.Walking)
+            {
+                // Use rb.velocity on Unity versions before 6
+                rb.linearVelocity = _moveInput * speed;
+            }
+            else
+            {
+                rb.linearVelocity = Vector2.zero;
+            }
+        }
+
         #region ON MAP SELECTION MOVEMENT
-        
-          private void OnMap()
+
+        private void OnMap()
         {
             if (_isOnMap || currentPoint == null) return;
             Vector2 moveInput = movementInput.action.ReadValue<Vector2>();
@@ -97,13 +104,12 @@ namespace Player
                     {
                         nextPoint = GetValidPoint(currentPoint.up);
                     }
-
-                    else nextPoint = GetValidPoint(currentPoint.down); 
+                    else nextPoint = GetValidPoint(currentPoint.down);
                 }
                 else
                 {
-                    if (moveInput.x > 0) {nextPoint = GetValidPoint(currentPoint.right);}
-                    else nextPoint = GetValidPoint(currentPoint.left); 
+                    if (moveInput.x > 0) { nextPoint = GetValidPoint(currentPoint.right); }
+                    else nextPoint = GetValidPoint(currentPoint.left);
                 }
 
                 if (nextPoint != null)
@@ -118,14 +124,13 @@ namespace Player
                 }
             }
 
-            //PUNTO Q ME PIDE ISAAC KK
+            // Interaction point requested by Isaac
             if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
             {
                 if (currentPoint.isLevel && !_isOnMap && !string.IsNullOrEmpty(currentPoint.sceneToLoad))
                 {
                     StartCoroutine(LoadLevel(currentPoint.sceneToLoad, 2f));
                 }
-                
             }
         }
 
@@ -135,7 +140,7 @@ namespace Player
             {
                 return points[0];
             }
-            
+
             return null;
         }
 
@@ -143,7 +148,7 @@ namespace Player
         {
             _isOnMap = true;
             currentPoint.DeactivateLevelUI();
-            
+
             while (Vector3.Distance(transform.position, targetPosition) > 0.1f)
             {
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
@@ -151,7 +156,7 @@ namespace Player
             }
             transform.position = targetPosition;
             _isOnMap = false;
-            
+
             if (currentPoint.isLevel)
             {
                 currentPoint.ActivateLevelUI();
@@ -161,18 +166,16 @@ namespace Player
         private IEnumerator LoadLevel(string sceneName, float delayTime)
         {
             _isOnMap = true;
-            
-            //efectos q te salgan del culo isaac
-            
-            
-             yield return new WaitForSeconds(delayTime);
-             
-             SceneManager.LoadScene(sceneName);
+
+            // TODO: add visual effects before loading the level
+
+            yield return new WaitForSeconds(delayTime);
+
+            SceneManager.LoadScene(sceneName);
         }
 
         #endregion
-        
-        
+
         private void Update()
         {
             switch (_state)
@@ -182,7 +185,7 @@ namespace Player
                     break;
                 case States.Dead:
                     break;
-                case  States.OnMap:
+                case States.OnMap:
                     OnMap();
                     break;
             }
@@ -191,10 +194,6 @@ namespace Player
             {
                 _weaponManager.Attack();
             }
-            
         }
-
-      
     }
-    
 }
