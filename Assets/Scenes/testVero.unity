@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &289134405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,19 +155,25 @@ MonoBehaviour:
   phases:
   - healthThreshold: 500
     transitionPause: 2
-    transitionEffect: {fileID: 0}
-    attacks:
-    - {fileID: 1961298354}
-  - healthThreshold: 0
-    transitionPause: 0
+    bossSpeed: 0
     transitionEffect: {fileID: 0}
     attacks: []
+    attackDuration: 2
+    waitBetweenAttacks: 3
   - healthThreshold: 0
     transitionPause: 0
+    bossSpeed: 0
     transitionEffect: {fileID: 0}
     attacks: []
-  scratchDamageThreshold: 50
-  vinylScratchComponent: {fileID: 1961298355}
+    attackDuration: 2
+    waitBetweenAttacks: 3
+  - healthThreshold: 0
+    transitionPause: 0
+    bossSpeed: 0
+    transitionEffect: {fileID: 0}
+    attacks: []
+    attackDuration: 2
+    waitBetweenAttacks: 3
 --- !u!4 &289134406
 Transform:
   m_ObjectHideFlags: 0
@@ -182,6 +188,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1961298356}
+  - {fileID: 1908375101}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &392216029
@@ -451,7 +458,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1053519977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -677,6 +684,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8165513407631051076, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
   m_PrefabInstance: {fileID: 392216029}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1908375100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1908375101}
+  - component: {fileID: 1908375102}
+  m_Layer: 0
+  m_Name: Example1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1908375101
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908375100}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 289134406}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1908375102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908375100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc6a6fdbe19f1e248b1adde2ee077547, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bullets.BulletPatternWeapon
+  pattern: {fileID: 11400000, guid: d66ca663cc8137e46b8ea3335eb469e3, type: 2}
+  player: {fileID: 734061455}
 --- !u!1 &1950444335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1155,24 +1208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbae889a215934444b6ba9a84d7af529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullets.LineShotToPlayer
-  numberOfBullets: 1
-  lineSpacing: 0.3
-  bulletSpeed: 5
-  cooldownTime: 0.1
-  settings:
-    numberOfBullets: 10
-    bulletSpeed: 5
-    cooldownTime: 2
-    angleOffset: 0
-    phaseOffset: 0
-    radialMask: 0
-    maskAngle: 360
-    doesExplode: 0
-    timeToExplode: 1
-    explosionBullets: 6
-    explosionSpeed: 3
-  isLineShot: 0
-  playerTransform: {fileID: 734061455}
 --- !u!114 &2094732930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1216,18 +1251,25 @@ MonoBehaviour:
   phases:
   - healthThreshold: 0
     transitionPause: 0
+    bossSpeed: 0
     transitionEffect: {fileID: 0}
     attacks: []
+    attackDuration: 2
+    waitBetweenAttacks: 3
   - healthThreshold: 0
     transitionPause: 0
+    bossSpeed: 0
     transitionEffect: {fileID: 0}
     attacks: []
+    attackDuration: 2
+    waitBetweenAttacks: 3
   - healthThreshold: 0
     transitionPause: 0
+    bossSpeed: 0
     transitionEffect: {fileID: 0}
     attacks: []
-  scratchDamageThreshold: 50
-  vinylScratchComponent: {fileID: 2094732933}
+    attackDuration: 2
+    waitBetweenAttacks: 3
 --- !u!114 &2094732933
 MonoBehaviour:
   m_ObjectHideFlags: 0
