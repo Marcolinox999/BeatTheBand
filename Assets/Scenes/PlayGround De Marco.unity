@@ -207,12 +207,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 42805917}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 488235546}
+  m_Father: {fileID: 2121595768}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &42805919
 MonoBehaviour:
@@ -231,7 +231,7 @@ MonoBehaviour:
   scratchDuration: 0.2
   rotationSpeedPerShot: 0
   settings:
-    numberOfBullets: 10
+    numberOfBullets: 2
     bulletSpeed: 5
     cooldownTime: 0.5
     angleOffset: 25
@@ -522,6 +522,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 777513538}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &481944105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 481944107}
+  - component: {fileID: 481944106}
+  m_Layer: 0
+  m_Name: VinylScratch_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &481944106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481944105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6b0092e66c14249b3e6241e91c1846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bullets.VinylScratch
+  scratchAudioClip: {fileID: 8300000, guid: a6447886083644248a38b059760009e1, type: 3}
+  scratchAngle: -90
+  scratchDuration: 0.2
+  rotationSpeedPerShot: 0
+  settings:
+    numberOfBullets: 20
+    bulletSpeed: 2
+    cooldownTime: 0.5
+    angleOffset: -32
+    phaseOffset: 0.53
+    radialMask: 0
+    maskAngle: 134
+    doesExplode: 0
+    timeToExplode: 1
+    explosionBullets: 6
+    explosionSpeed: 3
+--- !u!4 &481944107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481944105}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121595768}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &488235544
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,54 +670,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.6964287, z: -0.41}
   m_LocalScale: {x: 1, y: 1.7857144, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 42805918}
+  m_Children: []
   m_Father: {fileID: 876353774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &527519815
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 527519816}
-  - component: {fileID: 527519817}
-  m_Layer: 0
-  m_Name: Test
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &527519816
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 527519815}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2121595768}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &527519817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 527519815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0099bcf7acb3db48a12ea78e759b519, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ChargeAttack
 --- !u!1 &554112430
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,37 +775,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &583124509
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 583124510}
-  m_Layer: 0
-  m_Name: Test (4)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &583124510
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583124509}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2121595768}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619594743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,37 +1165,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &866945281
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 866945282}
-  m_Layer: 0
-  m_Name: Test (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &866945282
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866945281}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2121595768}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &876353771
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,6 +1290,66 @@ Transform:
   - {fileID: 1687269145}
   - {fileID: 1556433892}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &885317213
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 885317215}
+  - component: {fileID: 885317214}
+  m_Layer: 0
+  m_Name: VinylScratch_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &885317214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885317213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6b0092e66c14249b3e6241e91c1846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bullets.VinylScratch
+  scratchAudioClip: {fileID: 8300000, guid: a6447886083644248a38b059760009e1, type: 3}
+  scratchAngle: -90
+  scratchDuration: 0.2
+  rotationSpeedPerShot: 5
+  settings:
+    numberOfBullets: 4
+    bulletSpeed: 5
+    cooldownTime: 0.5
+    angleOffset: 78
+    phaseOffset: -0.54
+    radialMask: 0
+    maskAngle: 68
+    doesExplode: 1
+    timeToExplode: 1
+    explosionBullets: 6
+    explosionSpeed: 3
+--- !u!4 &885317215
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885317213}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121595768}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &894925388
 GameObject:
@@ -2384,37 +2397,6 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
---- !u!1 &1749894729
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1749894730}
-  m_Layer: 0
-  m_Name: Test (3)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1749894730
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1749894729}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2121595768}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1773977896
 GameObject:
   m_ObjectHideFlags: 0
@@ -2682,37 +2664,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 345445243}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1807554089
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1807554090}
-  m_Layer: 0
-  m_Name: Test (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1807554090
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1807554089}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2121595768}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1809859089
 GameObject:
   m_ObjectHideFlags: 0
@@ -2743,6 +2694,126 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 777513538}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1812261317
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1812261319}
+  - component: {fileID: 1812261318}
+  m_Layer: 0
+  m_Name: VinylScratch_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1812261318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812261317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6b0092e66c14249b3e6241e91c1846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bullets.VinylScratch
+  scratchAudioClip: {fileID: 8300000, guid: a6447886083644248a38b059760009e1, type: 3}
+  scratchAngle: -90
+  scratchDuration: 0.2
+  rotationSpeedPerShot: 1
+  settings:
+    numberOfBullets: 20
+    bulletSpeed: 5
+    cooldownTime: 0.5
+    angleOffset: 80
+    phaseOffset: -0.79
+    radialMask: 0
+    maskAngle: 360
+    doesExplode: 0
+    timeToExplode: 1
+    explosionBullets: 6
+    explosionSpeed: 3
+--- !u!4 &1812261319
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812261317}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121595768}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1866396798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1866396800}
+  - component: {fileID: 1866396799}
+  m_Layer: 0
+  m_Name: VinylScratch_4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1866396799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866396798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6b0092e66c14249b3e6241e91c1846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bullets.VinylScratch
+  scratchAudioClip: {fileID: 8300000, guid: a6447886083644248a38b059760009e1, type: 3}
+  scratchAngle: -90
+  scratchDuration: 0.2
+  rotationSpeedPerShot: 45
+  settings:
+    numberOfBullets: 9
+    bulletSpeed: 1
+    cooldownTime: 0.5
+    angleOffset: 82
+    phaseOffset: -0.65
+    radialMask: 0
+    maskAngle: 360
+    doesExplode: 1
+    timeToExplode: 1
+    explosionBullets: 6
+    explosionSpeed: 3
+--- !u!4 &1866396800
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866396798}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121595768}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1930554413
 GameObject:
@@ -3172,8 +3243,8 @@ MonoBehaviour:
     bossSpeed: 2
     transitionEffect: {fileID: 0}
     attacks:
-    - {fileID: 527519815}
-    - {fileID: 866945281}
+    - {fileID: 42805917}
+    - {fileID: 481944105}
     attackDuration: 4
     waitBetweenAttacks: 2
   - healthThreshold: 50
@@ -3181,8 +3252,8 @@ MonoBehaviour:
     bossSpeed: 5
     transitionEffect: {fileID: 0}
     attacks:
-    - {fileID: 1807554089}
-    - {fileID: 1749894729}
+    - {fileID: 885317213}
+    - {fileID: 1812261317}
     attackDuration: 2
     waitBetweenAttacks: 3
   - healthThreshold: 0
@@ -3190,7 +3261,7 @@ MonoBehaviour:
     bossSpeed: 10
     transitionEffect: {fileID: 0}
     attacks:
-    - {fileID: 583124509}
+    - {fileID: 1866396798}
     attackDuration: 3
     waitBetweenAttacks: 1
 --- !u!4 &2121595768
@@ -3202,15 +3273,15 @@ Transform:
   m_GameObject: {fileID: 2121595765}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.12, y: -1.16, z: 0}
+  m_LocalPosition: {x: -4.19, y: 0.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 527519816}
-  - {fileID: 866945282}
-  - {fileID: 1807554090}
-  - {fileID: 1749894730}
-  - {fileID: 583124510}
+  - {fileID: 42805918}
+  - {fileID: 481944107}
+  - {fileID: 885317215}
+  - {fileID: 1812261319}
+  - {fileID: 1866396800}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2121595769
