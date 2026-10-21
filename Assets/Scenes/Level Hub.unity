@@ -561,7 +561,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &630928089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,6 +576,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   musicSource: {fileID: 634870722}
   sfxSource: {fileID: 946513755}
+  buttonSceneClip: {fileID: 0}
+  buttonStartGameClip: {fileID: 0}
 --- !u!4 &630928090
 Transform:
   m_ObjectHideFlags: 0
@@ -898,6 +900,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9174814193823224395, guid: 277d5a78a866c2847884c0708293867b, type: 3}
   m_PrefabInstance: {fileID: 1718387337}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &925790190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 925790192}
+  - component: {fileID: 925790191}
+  m_Layer: 0
+  m_Name: SceneLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &925790191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925790190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4928e12e895a6a2479486311f32de302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
+--- !u!4 &925790192
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925790190}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.15727, y: 0.44653, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &932944936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1159,6 +1205,7 @@ GameObject:
   - component: {fileID: 1069635350}
   - component: {fileID: 1069635349}
   - component: {fileID: 1069635348}
+  - component: {fileID: 1069635351}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1238,6 +1285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerBehaviour
   _weaponManager: {fileID: 0}
+  animator: {fileID: 0}
   speed: 3
   isDead: 0
   movementInput: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
@@ -1260,6 +1308,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1069635351
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069635347}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1129031285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1542,7 +1617,6 @@ MonoBehaviour:
   blip: {fileID: 8300000, guid: 51798f261b63e9c449e3177ae52898dd, type: 3}
   windowOfInteractions: 0.2
   audioLatencyOffset: 0
-  PRUEBA: {fileID: 0}
   perfectWindow: 0.05
   okWindow: 0.2
 --- !u!4 &1318273919
@@ -2821,3 +2895,4 @@ SceneRoots:
   - {fileID: 2080364911}
   - {fileID: 1592322208}
   - {fileID: 2069373384}
+  - {fileID: 925790192}

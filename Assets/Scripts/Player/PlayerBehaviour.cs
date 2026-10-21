@@ -171,7 +171,7 @@ namespace Player
 
             yield return new WaitForSeconds(delayTime);
 
-            SceneManager.LoadScene(sceneName);
+            SceneLoader.Instance.LoadScene(sceneName);
         }
 
         #endregion

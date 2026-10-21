@@ -13,13 +13,13 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private string tag2 = "Boss";
     [SerializeField] private Color talkingColor;
     [SerializeField] private Color listeningColor;
-    [SerializeField] private int sceneIndex;
+    [SerializeField] private int sceneToLoad = 0;
     public static DialogueManager Instance;
 
     public Image tag1Image;
     public Image tag2Image;
 
-    [Header("Idle sprites (shown while the character is not speaking)")]
+    [Header("Idle sprites")]
     [SerializeField] private Sprite tag1IdleSprite;
     [SerializeField] private Sprite tag2IdleSprite;
     public TMP_Text characterName;
@@ -168,6 +168,6 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        SceneManager.LoadScene(sceneIndex);
+        SceneLoader.Instance.LoadScene(sceneToLoad);
     }
 }

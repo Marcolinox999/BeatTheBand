@@ -60,15 +60,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void LoadLevel(string levelSceneName)
-    {
-        lastPosition = playerMap.transform.position;
-        SceneManager.LoadScene(levelSceneName);
-    }
-
     public void ReturnToMap()
     {
-        SceneManager.LoadScene(_map);
+        SceneManager.LoadScene(_map); //This might be causing issues so maybe it's best to delete it
         playerMap.transform.position = lastPosition;
     }
     
