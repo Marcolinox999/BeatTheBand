@@ -71,9 +71,16 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(_map);
         playerMap.transform.position = lastPosition;
     }
+    
+    public void CompleteLevel(int levelID)
+    {
+        if (levelID < 0 || levelID >= beatenLevels.Length) return;
+        beatenLevels[levelID] = true;
+    }
 
     public void UnlockWeapon(int weaponID)
     {
+        if (weaponID < 0 || weaponID >= unlockedWeapons.Length) return;
         unlockedWeapons[weaponID] = true;
     }
 

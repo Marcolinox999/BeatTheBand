@@ -1,75 +1,161 @@
-using System;
+using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
-
-public class MusicalReward : MonoBehaviour
+[RequireComponent(typeof(Rigidbody2D))]
+public class MusicalReward : BaseHealth
 {
-    [SerializeField] private float initialSpeed = 15;
-    
-    private Rigidbody rb;
-    private AudioSource audioSource;
-    [SerializeField] private AudioClip choque;
-    [SerializeField] private AudioClip getIt;
-    
-    private SpriteRenderer spriteRenderer;
+    [Header("Movement")]
+    [SerializeField] private float speed = 15f;
+    [Tooltip("Max random angle (degrees) added to the reflected direction on each bounce.")]
+    [SerializeField] private float maxBounceAngle = 25f;
 
-    private BossBehavior boss;
+    [Header("Damage")]
+    [SerializeField] private float damagePerBullet = 1f;
+
+    [Header("Knockback")]
+    [SerializeField] private float knockbackForce = 6f;
+    [Tooltip("How fast the ball returns to its normal speed after a knockback.")]
+    [SerializeField] private float speedRecovery = 20f;
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip[] bounceSounds;
+
+    [Header("Destruction")]
+    [SerializeField] private int levelCompleted;
+    [SerializeField] private int weaponUnlock;
+    [SerializeField] private float destroyDelay = 1.5f;
+
+    private Rigidbody2D rb;
+    private Vector2 lastVelocity;
+    private bool isDead;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
-        audioSource = GetComponent<AudioSource>();
+        rb = GetComponent<Rigidbody2D>();
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.gravityScale = 0f;
+        rb.linearDamping = 0f;
+        rb.angularDamping = 0f;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
     }
 
-    private void Start()
+    protected override void Start()
     {
-        KilledBoss();
+        base.Start();
+        Launch(RandomDirection());
     }
 
-    public void KilledBoss()
+    private void FixedUpdate()
     {
-        transform.position = boss.transform.position;
-        rb.linearVelocity = SetInicialDirection() * initialSpeed;
-    }
-
-    private Vector3 SetInicialDirection()
-    {
-        Vector3 direction;
-        var rand = Random.Range(0, 2);
-        switch (rand)
+        if (isDead) return;
+        
+        if (rb.linearVelocity.sqrMagnitude < 0.0001f)
         {
-            case 1:
-                direction = new Vector3(1, 0.5f);
-                break;
-            case 2:
-                direction = new Vector3(-1, 0.5f);
-                break;
-            case 3:
-                direction = new Vector3(1, -0.5f);
-                break;
-            case 4:
-                direction = new Vector3(-1, -0.5f);
-                break;
-            default: direction = Vector3.zero;
-                break;
+            Launch(RandomDirection());
         }
 
-        return direction;
+        float currentSpeed = rb.linearVelocity.magnitude;
+        if (!Mathf.Approximately(currentSpeed, speed))
+        {
+            float newSpeed = Mathf.MoveTowards(currentSpeed, speed, speedRecovery * Time.fixedDeltaTime);
+            rb.linearVelocity = rb.linearVelocity.normalized * newSpeed;
+        }
+
+        lastVelocity = rb.linearVelocity;
+    }
+
+    public void Launch(Vector2 direction)
+    {
+        rb.linearVelocity = direction.normalized * speed;
+    }
+
+    private Vector2 RandomDirection()
+    {
+        return Random.insideUnitCircle.normalized;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (isDead) return;
+
+        Vector2 normal = collision.GetContact(0).normal;
+        Vector2 reflected = Vector2.Reflect(lastVelocity, normal);
+
+        float randomAngle = Random.Range(-maxBounceAngle, maxBounceAngle);
+        Vector2 newDirection = Quaternion.Euler(0f, 0f, randomAngle) * (Vector3)reflected;
+
+        rb.linearVelocity = newDirection.normalized * speed;
+
+        PlayRandomBounceSound();
+    }
+
+    private void PlayRandomBounceSound()
+    {
+        if (bounceSounds == null || bounceSounds.Length == 0) return;
+
+        AudioClip clip = bounceSounds[Random.Range(0, bounceSounds.Length)];
+        AudioManager.instance.PlaySFX(clip);
     }
     
-    private void OnCollisionEnter(Collision other)
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Borders"))
+        if (isDead || !other.CompareTag("Bullet")) return;
+
+        ApplyKnockback(GetBulletDirection(other));
+        ApplyDamage(damagePerBullet);
+    }
+
+    private Vector2 GetBulletDirection(Collider2D bullet)
+    {
+        if (bullet.attachedRigidbody != null && bullet.attachedRigidbody.linearVelocity.sqrMagnitude > 0.01f)
+            return bullet.attachedRigidbody.linearVelocity.normalized;
+
+        return (transform.position - bullet.transform.position).normalized;
+    }
+
+    private void ApplyKnockback(Vector2 direction)
+    {
+        rb.AddForce(direction.normalized * knockbackForce, ForceMode2D.Impulse);
+    }
+
+    protected override void SpriteDamage()
+    {
+        CallDamageFlash();
+    }
+
+    protected override void ParticleDamage()
+    {
+        // Only called for objects tagged "Player", so unused here
+    }
+
+    protected override void Die()
+    {
+        isDead = true;
+        rb.linearVelocity = Vector2.zero;
+        StartCoroutine(DestructionSequence());
+    }
+    
+
+    private IEnumerator DestructionSequence()
+    {
+        GetComponent<Collider2D>().enabled = false;
+        if (GameManager.Instance != null)
         {
-            AudioManager.instance.PlaySFX(choque);
-        }
-        else if  (other.gameObject.CompareTag("Player"))
-        {
-            AudioManager.instance.PlaySFX(getIt);
-            Destroy(gameObject);
+            if (levelCompleted >= 0) GameManager.Instance.CompleteLevel(levelCompleted);
+            if (weaponUnlock >= 0) GameManager.Instance.UnlockWeapon(weaponUnlock);
         }
         
+        yield return new WaitForSeconds(destroyDelay);
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.ReturnToMap();
+        }
+
+        Destroy(gameObject);
     }
-    
 }
