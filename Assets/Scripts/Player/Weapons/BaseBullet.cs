@@ -18,6 +18,20 @@ public class BaseBullet : MonoBehaviour
         Movement();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Boss")
+        {
+            IDamageable damageable = other.GetComponent<IDamageable>();
+                
+            if (damageable != null)
+            {
+                damageable.ApplyDamage(damage);
+            }
+            Destroy(gameObject);
+            
+        }
+    }
     protected virtual void Movement()
     {
         transform.Translate(-transform.right * (speed * Time.deltaTime),  Space.World);
