@@ -1,0 +1,1066 @@
+fileFormatVersion: 2
+guid: aa6b78945568aa34e8eb7c25e481a1a1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9195619102550277813
+    second: OBM_AccordionUpperWall_0
+  - first:
+      213: 1412767119664459227
+    second: OBM_AccordionUpperWall_1
+  - first:
+      213: -6171020231270286497
+    second: OBM_AccordionUpperWall_2
+  - first:
+      213: -9089121006388984671
+    second: OBM_AccordionUpperWall_3
+  - first:
+      213: 1460827164749557222
+    second: OBM_AccordionUpperWall_4
+  - first:
+      213: 8820402958632856638
+    second: OBM_AccordionUpperWall_5
+  - first:
+      213: 3731493809101350003
+    second: OBM_AccordionUpperWall_6
+  - first:
+      213: -1916655368762054854
+    second: OBM_AccordionUpperWall_7
+  - first:
+      213: -8628109566537319582
+    second: OBM_AccordionUpperWall_8
+  - first:
+      213: -5779429782617922336
+    second: OBM_AccordionUpperWall_9
+  - first:
+      213: -7240631933073649615
+    second: OBM_AccordionUpperWall_10
+  - first:
+      213: -262708586665046694
+    second: OBM_AccordionUpperWall_11
+  - first:
+      213: 6554091876855825432
+    second: OBM_AccordionUpperWall_12
+  - first:
+      213: -4683514727184951452
+    second: OBM_AccordionUpperWall_13
+  - first:
+      213: -5077205110259620106
+    second: OBM_AccordionUpperWall_14
+  - first:
+      213: 6078170774534294582
+    second: OBM_AccordionUpperWall_15
+  - first:
+      213: 3326538951498449456
+    second: OBM_AccordionUpperWall_16
+  - first:
+      213: 2784135682252052371
+    second: OBM_AccordionUpperWall_17
+  - first:
+      213: -2957296466450044271
+    second: OBM_AccordionUpperWall_18
+  - first:
+      213: 8530488958227990780
+    second: OBM_AccordionUpperWall_19
+  - first:
+      213: -5449433020071093823
+    second: OBM_AccordionUpperWall_20
+  - first:
+      213: -4257081688696401424
+    second: OBM_AccordionUpperWall_21
+  - first:
+      213: 994872861904821462
+    second: OBM_AccordionUpperWall_22
+  - first:
+      213: 53164026961461522
+    second: OBM_AccordionUpperWall_23
+  - first:
+      213: -96613053885057070
+    second: OBM_AccordionUpperWall_24
+  - first:
+      213: 526444941372642429
+    second: OBM_AccordionUpperWall_25
+  - first:
+      213: -192210411406881610
+    second: OBM_AccordionUpperWall_26
+  - first:
+      213: 3158690281043052000
+    second: OBM_AccordionUpperWall_27
+  - first:
+      213: 1478374974766820631
+    second: OBM_AccordionUpperWall_28
+  - first:
+      213: -2377420830173860409
+    second: OBM_AccordionUpperWall_29
+  - first:
+      213: 4743324159570051867
+    second: OBM_AccordionUpperWall_30
+  - first:
+      213: 265361928097264776
+    second: OBM_AccordionUpperWall_31
+  - first:
+      213: 3780763673375897390
+    second: OBM_AccordionUpperWall_32
+  - first:
+      213: 6614672215121815877
+    second: OBM_AccordionUpperWall_33
+  - first:
+      213: 3787476702660135631
+    second: OBM_AccordionUpperWall_34
+  - first:
+      213: 8777067389900518032
+    second: OBM_AccordionUpperWall_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 580
+        width: 7680
+        height: 3740
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b41c1be8529926080800000000000000
+      internalID: -9195619102550277813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_1
+      rect:
+        serializedVersion: 2
+        x: 7373
+        y: 1898
+        width: 36
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdda3fdc5382b9310800000000000000
+      internalID: 1412767119664459227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_2
+      rect:
+        serializedVersion: 2
+        x: 7374
+        y: 1839
+        width: 55
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5bb26d8bc12c5aa0800000000000000
+      internalID: -6171020231270286497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_3
+      rect:
+        serializedVersion: 2
+        x: 7416
+        y: 1545
+        width: 100
+        height: 343
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a4c4a5d994fcd180800000000000000
+      internalID: -9089121006388984671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_4
+      rect:
+        serializedVersion: 2
+        x: 7425
+        y: 1521
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ed63290196e54410800000000000000
+      internalID: 1460827164749557222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_5
+      rect:
+        serializedVersion: 2
+        x: 7431
+        y: 1833
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3cad1522cd586a70800000000000000
+      internalID: 8820402958632856638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_6
+      rect:
+        serializedVersion: 2
+        x: 7437
+        y: 1469
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3742e0d59dde8c330800000000000000
+      internalID: 3731493809101350003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_7
+      rect:
+        serializedVersion: 2
+        x: 7443
+        y: 1882
+        width: 14
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a37a714d81ca665e0800000000000000
+      internalID: -1916655368762054854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_8
+      rect:
+        serializedVersion: 2
+        x: 7447
+        y: 1864
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26bb46b101cc24880800000000000000
+      internalID: -8628109566537319582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_9
+      rect:
+        serializedVersion: 2
+        x: 7455
+        y: 1839
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e4eeb2cb375bcfa0800000000000000
+      internalID: -5779429782617922336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_10
+      rect:
+        serializedVersion: 2
+        x: 7472
+        y: 1521
+        width: 208
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1309bcf8e9b148b90800000000000000
+      internalID: -7240631933073649615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_11
+      rect:
+        serializedVersion: 2
+        x: 7491
+        y: 1689
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5d826caeebaa5cf0800000000000000
+      internalID: -262708586665046694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_12
+      rect:
+        serializedVersion: 2
+        x: 7522
+        y: 1813
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 814c34146dfc4fa50800000000000000
+      internalID: 6554091876855825432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_13
+      rect:
+        serializedVersion: 2
+        x: 7527
+        y: 1811
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46794d18b20d00fb0800000000000000
+      internalID: -4683514727184951452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_14
+      rect:
+        serializedVersion: 2
+        x: 7534
+        y: 1763
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f66d273ad42a89b0800000000000000
+      internalID: -5077205110259620106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_15
+      rect:
+        serializedVersion: 2
+        x: 7543
+        y: 1647
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63c074cad100a5450800000000000000
+      internalID: 6078170774534294582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_16
+      rect:
+        serializedVersion: 2
+        x: 7551
+        y: 1635
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 032c0973d8d3a2e20800000000000000
+      internalID: 3326538951498449456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_17
+      rect:
+        serializedVersion: 2
+        x: 7553
+        y: 1579
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3979f1be6ac33a620800000000000000
+      internalID: 2784135682252052371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_18
+      rect:
+        serializedVersion: 2
+        x: 7555
+        y: 1743
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19a2abd388295f6d0800000000000000
+      internalID: -2957296466450044271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_19
+      rect:
+        serializedVersion: 2
+        x: 7560
+        y: 1857
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf84293d282626670800000000000000
+      internalID: 8530488958227990780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_20
+      rect:
+        serializedVersion: 2
+        x: 7564
+        y: 1635
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c9d0636a89bf54b0800000000000000
+      internalID: -5449433020071093823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_21
+      rect:
+        serializedVersion: 2
+        x: 7574
+        y: 1786
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f15e6552cecbe4c0800000000000000
+      internalID: -4257081688696401424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_22
+      rect:
+        serializedVersion: 2
+        x: 7576
+        y: 1798
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dc538ac89f7ecd00800000000000000
+      internalID: 994872861904821462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_23
+      rect:
+        serializedVersion: 2
+        x: 7581
+        y: 1624
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2110edd9660ecb000800000000000000
+      internalID: 53164026961461522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_24
+      rect:
+        serializedVersion: 2
+        x: 7582
+        y: 1750
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d7f38a70f2c8aef0800000000000000
+      internalID: -96613053885057070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_25
+      rect:
+        serializedVersion: 2
+        x: 7596
+        y: 1741
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d74515c82ee4e4700800000000000000
+      internalID: 526444941372642429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_26
+      rect:
+        serializedVersion: 2
+        x: 7611
+        y: 1704
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bc06f136a1255df0800000000000000
+      internalID: -192210411406881610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_27
+      rect:
+        serializedVersion: 2
+        x: 7616
+        y: 1731
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e5cc0d331ce5db20800000000000000
+      internalID: 3158690281043052000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_28
+      rect:
+        serializedVersion: 2
+        x: 7619
+        y: 1750
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71dadcfe43e348410800000000000000
+      internalID: 1478374974766820631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_29
+      rect:
+        serializedVersion: 2
+        x: 7624
+        y: 1820
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cd6fdfd954b10fd0800000000000000
+      internalID: -2377420830173860409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_30
+      rect:
+        serializedVersion: 2
+        x: 7647
+        y: 1791
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1383b1213ca3d140800000000000000
+      internalID: 4743324159570051867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_31
+      rect:
+        serializedVersion: 2
+        x: 7653
+        y: 1730
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88476258441cea300800000000000000
+      internalID: 265361928097264776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_32
+      rect:
+        serializedVersion: 2
+        x: 7655
+        y: 1949
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2775439788f77430800000000000000
+      internalID: 3780763673375897390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_33
+      rect:
+        serializedVersion: 2
+        x: 7668
+        y: 1893
+        width: 12
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5496bf765590ccb50800000000000000
+      internalID: 6614672215121815877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_34
+      rect:
+        serializedVersion: 2
+        x: 7670
+        y: 1844
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fca00218ef1df8430800000000000000
+      internalID: 3787476702660135631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OBM_AccordionUpperWall_35
+      rect:
+        serializedVersion: 2
+        x: 7670
+        y: 1726
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0927fa8c9486ec970800000000000000
+      internalID: 8777067389900518032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      OBM_AccordionUpperWall_0: -9195619102550277813
+      OBM_AccordionUpperWall_1: 1412767119664459227
+      OBM_AccordionUpperWall_10: -7240631933073649615
+      OBM_AccordionUpperWall_11: -262708586665046694
+      OBM_AccordionUpperWall_12: 6554091876855825432
+      OBM_AccordionUpperWall_13: -4683514727184951452
+      OBM_AccordionUpperWall_14: -5077205110259620106
+      OBM_AccordionUpperWall_15: 6078170774534294582
+      OBM_AccordionUpperWall_16: 3326538951498449456
+      OBM_AccordionUpperWall_17: 2784135682252052371
+      OBM_AccordionUpperWall_18: -2957296466450044271
+      OBM_AccordionUpperWall_19: 8530488958227990780
+      OBM_AccordionUpperWall_2: -6171020231270286497
+      OBM_AccordionUpperWall_20: -5449433020071093823
+      OBM_AccordionUpperWall_21: -4257081688696401424
+      OBM_AccordionUpperWall_22: 994872861904821462
+      OBM_AccordionUpperWall_23: 53164026961461522
+      OBM_AccordionUpperWall_24: -96613053885057070
+      OBM_AccordionUpperWall_25: 526444941372642429
+      OBM_AccordionUpperWall_26: -192210411406881610
+      OBM_AccordionUpperWall_27: 3158690281043052000
+      OBM_AccordionUpperWall_28: 1478374974766820631
+      OBM_AccordionUpperWall_29: -2377420830173860409
+      OBM_AccordionUpperWall_3: -9089121006388984671
+      OBM_AccordionUpperWall_30: 4743324159570051867
+      OBM_AccordionUpperWall_31: 265361928097264776
+      OBM_AccordionUpperWall_32: 3780763673375897390
+      OBM_AccordionUpperWall_33: 6614672215121815877
+      OBM_AccordionUpperWall_34: 3787476702660135631
+      OBM_AccordionUpperWall_35: 8777067389900518032
+      OBM_AccordionUpperWall_4: 1460827164749557222
+      OBM_AccordionUpperWall_5: 8820402958632856638
+      OBM_AccordionUpperWall_6: 3731493809101350003
+      OBM_AccordionUpperWall_7: -1916655368762054854
+      OBM_AccordionUpperWall_8: -8628109566537319582
+      OBM_AccordionUpperWall_9: -5779429782617922336
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
