@@ -12,6 +12,8 @@ namespace Bullets
     
         public Vector2 Velocity;
 
+        [Header("Damage")] public float damage = 1f;
+
         [Header("Rotation Variables")] private bool isSpinning = false;
         private float spinSpeed = 0f;
         
@@ -156,6 +158,22 @@ namespace Bullets
         
         #endregion
         
+        
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                IDamageable damageable = collision.GetComponent<IDamageable>();
+                
+                if (damageable != null)
+                {
+                    damageable.ApplyDamage(damage);
+                }
+                
+                Disable();
+            }
+        }
+        
         public void SetMaxLifetime(float time)
         {
             currentMaxLifetime = time;
@@ -169,4 +187,5 @@ namespace Bullets
         
         
     }
+    
 }
