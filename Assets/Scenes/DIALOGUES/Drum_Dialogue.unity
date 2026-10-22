@@ -890,9 +890,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Name
-
-'
+  m_text: (Press Space)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8913bd04a5d4249499017439b2620065, type: 2}
   m_sharedMaterial: {fileID: 9167688345330200748, guid: 8913bd04a5d4249499017439b2620065, type: 2}
@@ -1029,7 +1027,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b257318183d56614da3dd163df73572a, type: 2}
   m_sharedMaterial: {fileID: -1363086496532930639, guid: b257318183d56614da3dd163df73572a, type: 2}
