@@ -19,7 +19,8 @@ MonoBehaviour:
   endWait: 0
   steps:
   - attackType: 2
-    delayAfterStep: 1.5
+    stepRepetitions: 1
+    delayAfterStep: 1
     settings:
       numberOfBullets: 50
       bulletSpeed: 1.5
@@ -47,13 +48,14 @@ MonoBehaviour:
     goSpeed: 0
     gapAngle: 0
     cageRadius: 0
-  - attackType: 9
-    delayAfterStep: 0
+  - attackType: 1
+    stepRepetitions: 15
+    delayAfterStep: 0.1
     settings:
-      numberOfBullets: 40
+      numberOfBullets: 5
       bulletSpeed: 6
-      cooldownTime: 0
-      angleOffset: 0
+      cooldownTime: 0.2
+      angleOffset: 15
       phaseOffset: 0
       radialMask: 0
       maskAngle: 0
@@ -64,7 +66,7 @@ MonoBehaviour:
     spinSpeed: 0
     waterfallEdge: 0
     waterfallWidth: 0
-    rotation: 0
+    rotation: 15
     numberOfPetals: 5
     coneAngle: 0
     spacing: 0

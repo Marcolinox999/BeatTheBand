@@ -61,18 +61,24 @@ namespace Bullets
                     {
                         if (step == null)
                             continue;
-
-                        ExecuteStep(
-                            step,
-                            origin,
-                            player,
-                            aimDirection
-                        );
-
-                        if (step.delayAfterStep > 0f)
+                        
+                        int reps = Mathf.Max(1, step.stepRepetitions);
+                        for (int i = 0; i < reps; i++)
                         {
-                            yield return new WaitForSeconds(step.delayAfterStep);
+                            ExecuteStep(
+                                step,
+                                origin,
+                                player,
+                                aimDirection,
+                                i
+                            );
+
+                            if (step.delayAfterStep > 0f)
+                            {
+                                yield return new WaitForSeconds(step.delayAfterStep);
+                            }
                         }
+                       
                     }
                     
                     if (delayBetweenReps > 0f && repetition < repetitions - 1)
@@ -92,7 +98,8 @@ namespace Bullets
             BulletPatternStep step,
             Transform origin,
             Transform player,
-            Vector2 aimDirection)
+            Vector2 aimDirection,
+            int i)
         {
             Vector2 position = origin.position;
 
@@ -105,8 +112,9 @@ namespace Bullets
 
 
                 case AttackType.Spiral:
-
-                    Vector2 spiralDirection = aimDirection.Rotate(step.rotation);
+                    float currentRotation = step.rotation * i;
+                    
+                    Vector2 spiralDirection = aimDirection.Rotate(currentRotation);
 
                     ShotAttack.RadialShot(position, spiralDirection, step.settings);
                     break;
@@ -177,8 +185,11 @@ namespace Bullets
     {
      
         public AttackType attackType;
-        
+
+        [Header("Repetitions")] [Tooltip("How much Reps the attack takes")]
+        public int stepRepetitions = 1;
         [Header("Cooldown")]
+        [Tooltip("Cooldown from every Shot")]
         public float delayAfterStep = 0.5f;
         
         public RadialShotSettings settings;

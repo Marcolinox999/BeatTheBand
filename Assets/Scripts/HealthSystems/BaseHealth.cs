@@ -32,6 +32,8 @@ public abstract class BaseHealth : MonoBehaviour, IDamageable
 
         public virtual void ApplyDamage(float damage)
         {
+            if (!_canTakeDamage || CurrentHealth <= 0f || damage <= 0f) return;
+            
             if (CompareTag("Player"))
             {
                 ParticleDamage();
@@ -40,7 +42,6 @@ public abstract class BaseHealth : MonoBehaviour, IDamageable
             {
                 SpriteDamage();
             }
-            if (!_canTakeDamage || CurrentHealth <= 0f || damage <= 0f) return;
             CurrentHealth -= damage;
             
             if(CurrentHealth <= 0f)
@@ -122,6 +123,8 @@ public abstract class BaseHealth : MonoBehaviour, IDamageable
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            if (!_canTakeDamage) return;
+            
             Debug.Log("Daño");
             if (CompareTag("Player"))
             {

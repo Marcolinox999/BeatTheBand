@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc6a6fdbe19f1e248b1adde2ee077547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullets.BulletPatternWeapon
-  pattern: {fileID: 11400000, guid: e93fdd4992d24144b93fd3a9123f1e9d, type: 2}
+  pattern: {fileID: 11400000, guid: ba16a8ae3fa39f146ab7ad1ec9cb4da3, type: 2}
   player: {fileID: 1979836912}
 --- !u!198 &358797738 stripped
 ParticleSystem:
