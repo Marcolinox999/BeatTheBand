@@ -263,26 +263,30 @@ MonoBehaviour:
     transitionEffect: {fileID: 0}
     attacks:
     - {fileID: 6178748004194145267}
-    - {fileID: 0}
     attackDuration: 4
     waitBetweenAttacks: 2
+    movingType: 2
+    movingStyle: 1
   - healthThreshold: 50
     transitionPause: 5
     bossSpeed: 5
     transitionEffect: {fileID: 0}
     attacks:
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 6178748004194145267}
     attackDuration: 2
     waitBetweenAttacks: 3
+    movingType: 0
+    movingStyle: 1
   - healthThreshold: 0
     transitionPause: 5
     bossSpeed: 10
     transitionEffect: {fileID: 0}
     attacks:
-    - {fileID: 0}
+    - {fileID: 6178748004194145267}
     attackDuration: 3
     waitBetweenAttacks: 1
+    movingType: 1
+    movingStyle: 0
 --- !u!114 &4788519364462528332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,7 +299,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da21cedbd232fef499f89d079b926d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicMovementBoss
-  keys: []
+  keys:
+  - {fileID: 370306738857284105}
+  - {fileID: 6363350703899798810}
+  - {fileID: 1988522754531249596}
+  - {fileID: 385709852365655083}
   ptPStyle: 0
   arcHeight: 3
   sineAmplitude: 1
