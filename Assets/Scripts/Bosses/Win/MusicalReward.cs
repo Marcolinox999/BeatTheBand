@@ -27,6 +27,9 @@ public class MusicalReward : BaseHealth
     [SerializeField] private int weaponUnlock;
     [SerializeField] private float destroyDelay = 1.5f;
 
+    [Header("Level Change")] 
+    [SerializeField] private string mapSceneName;
+
     private Rigidbody2D rb;
     private Vector2 lastVelocity;
     private bool isDead;
@@ -153,7 +156,7 @@ public class MusicalReward : BaseHealth
 
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.ReturnToMap();
+            GameManager.Instance.ReturnToMap(mapSceneName);
         }
 
         Destroy(gameObject);

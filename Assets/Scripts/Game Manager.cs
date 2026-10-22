@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     public BeatManager.Score score;
     [SerializeField] private GameObject playerMap;
     [SerializeField] private string _map;
-
     
     private Vector2 lastPosition;
 
@@ -42,30 +41,37 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void PauseGame()
+    public void PauseGameIResumeGame()
     {
-        if (CurrentState != GameState.Playing)
-            return;
-
-        CurrentState = GameState.Paused;
-        Time.timeScale = 0f;
+        if (CurrentState == GameState.Paused)
+        {
+            CurrentState = GameState.Playing;
+            Time.timeScale = 1f;
+        }
+        else if (CurrentState == GameState.Playing)
+        {
+            CurrentState = GameState.Paused;
+            Time.timeScale = 0f;
+        }
     }
-
-    public void ResumeGame()
+    public void ReturnToMap(string mapName)
     {
-        if (CurrentState != GameState.Paused)
-            return;
-
-        CurrentState = GameState.Playing;
-        Time.timeScale = 1f;
-    }
-
-    public void ReturnToMap()
-    {
-        SceneManager.LoadScene(_map); //This might be causing issues so maybe it's best to delete it
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+        SceneManager.LoadScene(mapName); //te lo he cambiado para que se pueda elegir si volver al mapa o al menu
         playerMap.transform.position = lastPosition;
     }
-    
+
+    public void ReloadScene()
+    {
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     public void CompleteLevel(int levelID)
     {
         if (levelID < 0 || levelID >= beatenLevels.Length) return;

@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bullets.BulletPattern
   repetitions: 8
   angleOffsetBetweenReps: 0
-  delayBetweenReps: 0.8
+  delayBetweenReps: 0.1
   startWait: 0
   endWait: 0
   steps:
   - attackType: 1
-    delayAfterStep: 0.3
+    delayAfterStep: 0.8
     settings:
-      numberOfBullets: 4
+      numberOfBullets: 8
       bulletSpeed: 5
-      cooldownTime: 0.2
-      angleOffset: 0
+      cooldownTime: 0.1
+      angleOffset: 45
       phaseOffset: 0
       radialMask: 0
       maskAngle: 0

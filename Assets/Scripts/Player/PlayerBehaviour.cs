@@ -40,9 +40,13 @@ namespace Player
         private bool _isOnMap = false;
         private Vector3 targetPosition;
 
-        private void OnEnable()
+        private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
+        }
+
+        private void OnEnable()
+        {
             currentPoint.DeactivateLevelUI();
             movementInput.action.Enable();
             if (SceneManager.GetActiveScene().name == "Level Hub")
