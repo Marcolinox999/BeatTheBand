@@ -1724,33 +1724,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1166524813186987410, guid: 2d6dbeae960eca846866b986e2821e79, type: 3}
-      propertyPath: speed
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3440990219525106819, guid: 2d6dbeae960eca846866b986e2821e79, type: 3}
       propertyPath: m_Name
       value: InstrumentBall
-      objectReference: {fileID: 0}
-    - target: {fileID: 3440990219525106819, guid: 2d6dbeae960eca846866b986e2821e79, type: 3}
-      propertyPath: m_TagString
-      value: Boss
-      objectReference: {fileID: 0}
-    - target: {fileID: 6844020846155147802, guid: 2d6dbeae960eca846866b986e2821e79, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8627163457525609343, guid: 2d6dbeae960eca846866b986e2821e79, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.9241
-      objectReference: {fileID: 0}
-    - target: {fileID: 8627163457525609343, guid: 2d6dbeae960eca846866b986e2821e79, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.9241
-      objectReference: {fileID: 0}
-    - target: {fileID: 8627163457525609343, guid: 2d6dbeae960eca846866b986e2821e79, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.38482
       objectReference: {fileID: 0}
     - target: {fileID: 8627163457525609343, guid: 2d6dbeae960eca846866b986e2821e79, type: 3}
       propertyPath: m_LocalPosition.x

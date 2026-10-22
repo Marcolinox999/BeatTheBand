@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4367384472082157908}
   m_Layer: 0
   m_Name: InstrumentBall
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.25, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 1.9241, y: 1.9241, z: 0.38482}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,7 +51,7 @@ MonoBehaviour:
   damageCooldown: 0
   _flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashTime: 0.25
-  speed: 15
+  speed: 2
   maxBounceAngle: 25
   damagePerBullet: 1
   knockbackForce: 6

@@ -48,4 +48,4 @@ MonoBehaviour:
   beatenLevels: 000000
   score: 0
   playerMap: {fileID: 0}
-  _map: 
+  _map: Level Hub

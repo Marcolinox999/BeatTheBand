@@ -181,6 +181,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrainEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 5508761342161633369, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
+      propertyPath: opacity
+      value: 0.072
+      objectReference: {fileID: 0}
     - target: {fileID: 7062165045721911213, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -809,7 +813,7 @@ MonoBehaviour:
   tag1: Tiziano Buccini
   tag2: Brunella Bellows
   talkingColor: {r: 1, g: 1, b: 1, a: 1}
-  listeningColor: {r: 0.26415092, g: 0.25667492, b: 0.25667492, a: 0.7921569}
+  listeningColor: {r: 0.44025147, g: 0.40840936, b: 0.40840936, a: 0.7058824}
   sceneToLoad: 0
   tag1Image: {fileID: 410441910}
   tag2Image: {fileID: 390727181}
