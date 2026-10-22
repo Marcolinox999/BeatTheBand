@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 1;
         }
+        Instance.CurrentState = GameState.Playing;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void CompleteLevel(int levelID)

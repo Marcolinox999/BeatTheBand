@@ -47,7 +47,11 @@ namespace Player
 
         private void OnEnable()
         {
-            currentPoint.DeactivateLevelUI();
+            if (currentPoint != null)
+            {
+                currentPoint.DeactivateLevelUI();
+            }
+            Debug.LogError("No point");
             movementInput.action.Enable();
             if (SceneManager.GetActiveScene().name == "Level Hub")
             {
@@ -194,7 +198,13 @@ namespace Player
                     break;
             }
 
-            if (attackInput.action.WasPressedThisFrame() && pveEnabled)
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                GameManager.Instance.PauseGameIResumeGame();
+                
+            }
+
+            if (attackInput.action.WasPressedThisFrame() && pveEnabled && GameManager.Instance.CurrentState == GameManager.GameState.Playing)
             {
                 _weaponManager.Attack();
             }
