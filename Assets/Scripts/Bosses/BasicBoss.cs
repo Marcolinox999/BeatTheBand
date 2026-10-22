@@ -74,6 +74,7 @@ public class BasicBoss : BaseHealth
 
     private void PhaseSwitch()
     {
+        basicBoss.MovemeventSwitch(phasePack[currentPack].movingType, phasePack[currentPack].movingStyle);
         switch (currentPhase)
         {
             case Phases.phase1:

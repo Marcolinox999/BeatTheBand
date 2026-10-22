@@ -13,10 +13,29 @@ public class BasicMovementBoss : MonoBehaviour
         Jmp,
         Sty
     }
+    private enum PtPStyle
+    {
+        Normal,
+        Accelerate,
+        Decelerate,
+        Arc,
+        Sinusoidal
+    }
     private MovType currentType;
     [Header("Boss Point to Point")]
     [SerializeField] Transform[] keys;
     int currentKey = 0;
+    [Header("Point To Point Style")]
+    [SerializeField] private PtPStyle ptPStyle = PtPStyle.Normal;
+
+    [SerializeField] private float arcHeight = 3f;
+    [SerializeField] private float sineAmplitude = 1f;
+    [SerializeField] private float sineCycles = 2f;
+    private Vector3 ptpStart;
+    private Vector3 ptpTarget;
+    private float ptpElapsed;
+    private float ptpDuration;
+    private bool ptpInitialized;
     [Header("Boss Jumps")]
     [SerializeField] private float jumpRadius = 4f;
     [SerializeField] private float jumpHeight = 2f;
@@ -55,6 +74,41 @@ public class BasicMovementBoss : MonoBehaviour
                 Stay();
                 break;
             
+        }
+    }
+
+    public void MovemeventSwitch(int movType, int style = 0)
+    {
+        switch (movType)
+        {
+            case 0:
+                currentType = MovType.PtP;
+                break;
+            case 1:
+                currentType = MovType.Jmp;
+                break;
+            case 2:
+                currentType = MovType.Sty;
+                break;
+        }
+
+        switch (style)
+        {
+            case 0:
+                ptPStyle = PtPStyle.Normal;
+                break;
+            case 1:
+                ptPStyle = PtPStyle.Accelerate;
+                break;
+            case 2:
+                ptPStyle = PtPStyle.Decelerate;
+                break;
+            case 3:
+                ptPStyle = PtPStyle.Arc;
+                break;
+            case 4:
+                ptPStyle = PtPStyle.Sinusoidal;
+                break;
         }
     }
 
@@ -132,12 +186,101 @@ public class BasicMovementBoss : MonoBehaviour
 
     private void PointToPoint()
     {
-        if (Vector3.Distance(transform.position, keys[currentKey].position) < 0.01f)
-        { currentKey++;
-            if (currentKey >= keys.Length)
-                currentKey = 0;
+        //Lo voy a documentar porque es largo
+        if (keys == null || keys.Length == 0) return;
+
+    // Empieza el trayecto 
+    if (!ptpInitialized)
+    {
+        currentKey = Mathf.Clamp(currentKey, 0, keys.Length - 1);
+
+        ptpStart = transform.position;
+        ptpTarget = keys[currentKey].position;
+
+        float distance = Vector3.Distance(ptpStart, ptpTarget);
+
+        if (distance < 0.01f)
+        {
+            NextKey();
+            return;
         }
-        transform.position = Vector3.MoveTowards(transform.position, keys[currentKey].position,bossSpeed *Time.deltaTime
-        );
+        ptpDuration = distance / Mathf.Max(bossSpeed, 0.01f);
+        ptpElapsed = 0f;
+        ptpInitialized = true;
     }
+
+    ptpElapsed += Time.deltaTime;
+
+    float t = Mathf.Clamp01(ptpElapsed / ptpDuration);
+
+    //Aqui esta la magia, el progreso va a ser la forma en la que cada funcion asume la variable y la transforma en un movimiento de distinta forma
+    float progress = t;
+
+        switch (ptPStyle) 
+        {
+        
+            case PtPStyle.Normal:
+            // simplemente va de un punto a otro
+            progress = t;
+            break;
+
+        
+            case PtPStyle.Accelerate:
+            // haciendo t*t hace se vaya haciendo cada vez mas rapido a medida que t sube
+            progress = t * t;
+            break;
+
+        
+            case PtPStyle.Decelerate:
+            // empieza todo lo rapido que  puede y luego va bajando 
+            progress = 1f - Mathf.Pow(1f - t, 2f);
+            break;
+
+        
+            case PtPStyle.Arc:
+            // va haciendo una especie de avance suave
+            progress = t * t * (3f - 2f * t);
+            break;
+
+        
+            case PtPStyle.Sinusoidal:
+            // igual que al principio porq eso se hace despues
+            progress = t;
+            break;
+        }
+
+        Vector3 position = Vector3.Lerp(ptpStart, ptpTarget, progress);
+
+    //Aqui esta la formula del arco
+    if (ptPStyle == PtPStyle.Arc)
+    { 
+        position.y += Mathf.Sin(t * Mathf.PI) * arcHeight;
+    }
+    // Aquii tambien se hace el movimiento del sinusoidal
+    if (ptPStyle == PtPStyle.Sinusoidal)
+    {
+        Vector3 direction = (ptpTarget - ptpStart).normalized;
+        Vector3 perpendicular = new Vector3(-direction.y, direction.x, 0f);
+
+        position += perpendicular * (Mathf.Sin(t * sineCycles * Mathf.PI * 2f) * sineAmplitude);
+    }
+
+    transform.position = position;
+    
+    if (t >= 1f)
+    {
+        transform.position = ptpTarget;
+        NextKey();
+    }
+}
+
+private void NextKey()
+{
+    currentKey++;
+
+    if (currentKey >= keys.Length)
+        currentKey = 0;
+
+    ptpInitialized = false;
+}
 }
