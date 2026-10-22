@@ -15,6 +15,11 @@ namespace Bullets
 
         public event Action PatternFinished;
 
+        private void OnEnable()
+        {
+            Play();
+        }
+
         public void Play()
         {
             Stop();

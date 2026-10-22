@@ -21,7 +21,7 @@ MonoBehaviour:
   - attackType: 2
     delayAfterStep: 1.5
     settings:
-      numberOfBullets: 20
+      numberOfBullets: 50
       bulletSpeed: 1.5
       cooldownTime: 0
       angleOffset: 0
@@ -30,13 +30,13 @@ MonoBehaviour:
       maskAngle: 0
       doesExplode: 1
       timeToExplode: 2.5
-      explosionBullets: 6
+      explosionBullets: 3
       explosionSpeed: 5
     spinSpeed: 0
     waterfallEdge: 0
     waterfallWidth: 0
     rotation: 0
-    numberOfPetals: 5
+    numberOfPetals: 3
     coneAngle: 0
     spacing: 0
     returnForce: 0
@@ -58,9 +58,9 @@ MonoBehaviour:
       radialMask: 0
       maskAngle: 0
       doesExplode: 0
-      timeToExplode: 0
-      explosionBullets: 0
-      explosionSpeed: 0
+      timeToExplode: 5
+      explosionBullets: 3
+      explosionSpeed: 10
     spinSpeed: 0
     waterfallEdge: 0
     waterfallWidth: 0
