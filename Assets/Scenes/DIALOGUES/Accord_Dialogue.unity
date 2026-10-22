@@ -175,15 +175,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 729004439}
+    m_TransformParent: {fileID: 1433215838}
     m_Modifications:
     - target: {fileID: 4244914468175336042, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
       propertyPath: m_Name
       value: GrainEffect
-      objectReference: {fileID: 0}
-    - target: {fileID: 5508761342161633369, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
-      propertyPath: opacity
-      value: 0.072
       objectReference: {fileID: 0}
     - target: {fileID: 7062165045721911213, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
       propertyPath: m_Pivot.x
@@ -211,11 +207,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7062165045721911213, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 699.9999
       objectReference: {fileID: 0}
     - target: {fileID: 7062165045721911213, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 349.99994
       objectReference: {fileID: 0}
     - target: {fileID: 7062165045721911213, guid: c33b1ea5fd6224e498d0660915f4559b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -452,7 +448,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1433215838}
-  - {fileID: 882317284}
   m_Father: {fileID: 1631467666}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -768,6 +763,7 @@ RectTransform:
   - {fileID: 1323329226}
   - {fileID: 1491390599}
   - {fileID: 1577727786}
+  - {fileID: 882317284}
   m_Father: {fileID: 729004439}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -790,14 +786,59 @@ MonoBehaviour:
   dialogue:
     dialogueLines:
     - character:
+        name: Brunella Bellows
+        portrait: {fileID: 21300000, guid: 7c5bd809b4771d54dbc91b471853f816, type: 3}
+      line: ".... ... .. (Tiziano? It\u2019s been so long since I last heard that
+        soothing melody...)"
+    - character:
         name: Tiziano Buccini
         portrait: {fileID: 21300000, guid: 59b9bc854a770a244bf250243c77f3b9, type: 3}
-      line: "Little slut, come fight me\t"
+      line: "I did come back, but do not expect anything new, at least I\u2019ll
+        save you from feeling left down again"
     - character:
         name: Brunella Bellows
         portrait: {fileID: 21300000, guid: 7c5bd809b4771d54dbc91b471853f816, type: 3}
-      line: Motherfucking hoe I have to go because if we had to rely on your fat
-        ass moving we would be here forever
+      line: ... .. ... .... (Never felt left down since I always believed in you)
+    - character:
+        name: Tiziano Buccini
+        portrait: {fileID: 21300000, guid: 59b9bc854a770a244bf250243c77f3b9, type: 3}
+      line: 'Cut it out! Look at yourself, in this fancy place now, where are those
+        lonely and narrow streets that made your talent flow? '
+    - character:
+        name: Tiziano Buccini
+        portrait: {fileID: 21300000, guid: 59b9bc854a770a244bf250243c77f3b9, type: 3}
+      line: All of them replaced by ovation castles and praise towers. You ended
+        up in the very place I thought we would reach together someday!
+    - character:
+        name: Brunella Bellows
+        portrait: {fileID: 21300000, guid: 7c5bd809b4771d54dbc91b471853f816, type: 3}
+      line: ....... ... .. (My body might be here, but my soul never left the very
+        breeze that carried our tunes through every canal)
+    - character:
+        name: Brunella Bellows
+        portrait: {fileID: 21300000, guid: 7c5bd809b4771d54dbc91b471853f816, type: 3}
+      line: ... .... .. (Bringing myself to let you go was hard, but the deep desires
+        of a person cannot be stopped)
+    - character:
+        name: Brunella Bellows
+        portrait: {fileID: 21300000, guid: 7c5bd809b4771d54dbc91b471853f816, type: 3}
+      line: .... ... .......  (And I knew that the talent and ideas that were brewing
+        behind those golden notes did not belong in the same place as my beloved
+        alleys)
+    - character:
+        name: Tiziano Buccini
+        portrait: {fileID: 21300000, guid: 59b9bc854a770a244bf250243c77f3b9, type: 3}
+      line: "Ranting about all that won\u2019t change the facts, it won\u2019t change
+        that you let me leave to get rid of me and get everything for yourself!"
+    - character:
+        name: Brunella Bellows
+        portrait: {fileID: 21300000, guid: 7c5bd809b4771d54dbc91b471853f816, type: 3}
+      line: ... .... ..... (It saddens me to hear your lament and me being the one
+        to blame, I know that your world is crumbling down...)
+    - character:
+        name: Brunella Bellows
+        portrait: {fileID: 21300000, guid: 7c5bd809b4771d54dbc91b471853f816, type: 3}
+      line: "... (But I won\u2019t allow you to take mine...)"
 --- !u!114 &1433215840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -893,9 +934,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Name
-
-'
+  m_text: (Press Space)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8913bd04a5d4249499017439b2620065, type: 2}
   m_sharedMaterial: {fileID: 9167688345330200748, guid: 8913bd04a5d4249499017439b2620065, type: 2}
@@ -1032,7 +1071,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b257318183d56614da3dd163df73572a, type: 2}
   m_sharedMaterial: {fileID: -1363086496532930639, guid: b257318183d56614da3dd163df73572a, type: 2}
