@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 4244914468175336042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0096678, y: 1, z: 0.41666663}
+  m_LocalScale: {x: 1.0096678, y: 1, z: 0.4166666}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -96,5 +96,5 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 5eecd36895e5b90498c7274ff012cd33, type: 3}
   - {fileID: 2800000, guid: 0494f1736f2d6de4380673ae4cc18e3e, type: 3}
   framesPerSecond: 12
-  opacity: 0.021
+  opacity: 0.04
   flickerAmount: 0
