@@ -1,4 +1,7 @@
+using System;
 using System.Collections;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using UnityEngine.SceneManagement;
@@ -19,6 +22,10 @@ public class MusicalReward : BaseHealth
     [Tooltip("How fast the ball returns to its normal speed after a knockback.")]
     [SerializeField] private float speedRecovery = 20f;
 
+    private float normalScale;
+    [SerializeField] private float bouncyScale;
+    private bool scaling;
+    private bool knockbacking;
     [Header("Audio")]
     [SerializeField] private AudioClip[] bounceSounds;
 
@@ -43,6 +50,7 @@ public class MusicalReward : BaseHealth
         rb.angularDamping = 0f;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        normalScale = rb.transform.localScale.x;
     }
 
     protected override void Start()
@@ -83,7 +91,7 @@ public class MusicalReward : BaseHealth
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (isDead) return;
-
+        knockbacking = true;
         Vector2 normal = collision.GetContact(0).normal;
         Vector2 reflected = Vector2.Reflect(lastVelocity, normal);
 
@@ -160,5 +168,30 @@ public class MusicalReward : BaseHealth
         }
 
         Destroy(gameObject);
+    }
+
+    private void Update()
+    {
+        if (!knockbacking) return;
+        if (scaling)
+        {
+            float actualScale = math.lerp(transform.localScale.x, bouncyScale, 7 * Time.fixedDeltaTime);
+            transform.localScale = new Vector3(actualScale, actualScale, actualScale);
+        }
+        else
+        {
+            float actualScale = math.lerp(transform.localScale.x, normalScale, 7 * Time.fixedDeltaTime);
+            transform.localScale = new Vector3(actualScale, actualScale, actualScale);
+        }
+
+        if (transform.localScale.x - bouncyScale <= 0.001f)
+        {
+            scaling = false;
+        }
+        else if (normalScale -transform.localScale.x <= 0.001f)
+        {
+            scaling = true;
+            knockbacking = false;
+        }
     }
 }

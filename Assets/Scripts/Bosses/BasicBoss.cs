@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -160,5 +161,13 @@ public class BasicBoss : BaseHealth
         Instantiate(instrumentBall, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<PlayerHealth>()?.ApplyDamage(1);
+        }
     }
 }
