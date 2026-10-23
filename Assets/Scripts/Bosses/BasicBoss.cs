@@ -20,6 +20,9 @@ public class BasicBoss : BaseHealth
     private bool isDead;
     private Coroutine attackCoroutine;
 
+    [Header("Instrument Ball")]
+    [SerializeField] private GameObject instrumentBall;
+
     private void OnEnable()
     {
         currentPhase = Phases.phase1;
@@ -154,5 +157,8 @@ public class BasicBoss : BaseHealth
         DisableAllAttacks();
         basicBoss.bossSpeed = 0;
         Debug.Log("Boss Dead");
+        Instantiate(instrumentBall, transform.position, Quaternion.identity);
+        gameObject.SetActive(false);
+        
     }
 }

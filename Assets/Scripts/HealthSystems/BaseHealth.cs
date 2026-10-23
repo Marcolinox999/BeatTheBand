@@ -125,7 +125,6 @@ public abstract class BaseHealth : MonoBehaviour, IDamageable
         {
             if (!_canTakeDamage) return;
             
-            Debug.Log("Daño");
             if (CompareTag("Player"))
             {
                 if (other.GetComponent<BaseBullet>() != null) return;

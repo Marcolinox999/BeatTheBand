@@ -114,7 +114,7 @@ public class BasicMovementBoss : MonoBehaviour
 
     private void Stay()
     {
-        throw new NotImplementedException();
+        
     }
 
     private void Jump()

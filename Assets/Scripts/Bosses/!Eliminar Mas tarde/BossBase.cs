@@ -28,13 +28,13 @@ public class BossBase : BaseHealth
    }
    protected virtual void Update()
    {
+      if (CurrentHealth <= 0 /*&& !attacking*/)
+      {
+         Die();
+      }
       if (CurrentHealth <= currentPhase.healthThreshold)
       {
          ChangePhase(phaseIndex+1);
-      }
-      if (CurrentHealth <= 0 && !attacking)
-      {
-         Die();
       }
    }
 
@@ -75,6 +75,7 @@ public class BossBase : BaseHealth
 
    protected override void Die()
    {
+      Debug.Log("Muere");
       //Muere
       Destroy(gameObject);
    }

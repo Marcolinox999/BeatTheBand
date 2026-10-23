@@ -4332,6 +4332,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2314275580658992295, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
+      propertyPath: instrumentBall
+      value: 
+      objectReference: {fileID: 3440990219525106819, guid: 2d6dbeae960eca846866b986e2821e79, type: 3}
+    - target: {fileID: 2314275580658992295, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
+      propertyPath: phasePack.Array.data[0].movingType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314275580658992295, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
+      propertyPath: phasePack.Array.data[2].movingType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314275580658992295, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
+      propertyPath: phasePack.Array.data[0].movingStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314275580658992295, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
+      propertyPath: phasePack.Array.data[1].movingStyle
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314275580658992295, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
+      propertyPath: phasePack.Array.data[2].movingStyle
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3965885835782480312, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
       propertyPath: m_Name
       value: --Boss--
@@ -4376,6 +4400,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7864949298843030827, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 312869185}
+    - target: {fileID: 7864949298843030827, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
+      propertyPath: pattern
+      value: 
+      objectReference: {fileID: 11400000, guid: e93fdd4992d24144b93fd3a9123f1e9d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
