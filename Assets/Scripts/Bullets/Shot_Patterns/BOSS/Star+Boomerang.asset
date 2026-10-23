@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Star+Boomerang
   m_EditorClassIdentifier: Assembly-CSharp::Bullets.BulletPattern
   repetitions: 2
-  angleOffsetBetweenReps: 0
-  delayBetweenReps: 4
+  angleOffsetBetweenReps: 45
+  delayBetweenReps: 0.3
   startWait: 0
   endWait: 0
   steps:
   - attackType: 7
+    stepRepetitions: 1
     delayAfterStep: 1
     settings:
       numberOfBullets: 0
@@ -48,7 +49,8 @@ MonoBehaviour:
     gapAngle: 0
     cageRadius: 0
   - attackType: 6
-    delayAfterStep: 0
+    stepRepetitions: 1
+    delayAfterStep: 1
     settings:
       numberOfBullets: 20
       bulletSpeed: 8

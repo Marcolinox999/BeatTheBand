@@ -19,7 +19,8 @@ MonoBehaviour:
   endWait: 0
   steps:
   - attackType: 8
-    delayAfterStep: 0.5
+    stepRepetitions: 1
+    delayAfterStep: 0.2
     settings:
       numberOfBullets: 20
       bulletSpeed: 10
@@ -42,13 +43,14 @@ MonoBehaviour:
     returnForce: 0
     starPoints: 0
     bulletsPerEdge: 0
-    timeToStop: 0.2
+    timeToStop: 0.1
     timeToGo: 3
     goSpeed: 8
     gapAngle: 0
     cageRadius: 0
   - attackType: 8
-    delayAfterStep: 0.5
+    stepRepetitions: 1
+    delayAfterStep: 0.3
     settings:
       numberOfBullets: 25
       bulletSpeed: 10
@@ -71,12 +73,13 @@ MonoBehaviour:
     returnForce: 0
     starPoints: 0
     bulletsPerEdge: 0
-    timeToStop: 0.4
+    timeToStop: 0.2
     timeToGo: 2
     goSpeed: 8
     gapAngle: 0
     cageRadius: 0
   - attackType: 8
+    stepRepetitions: 1
     delayAfterStep: 0
     settings:
       numberOfBullets: 30
@@ -86,10 +89,10 @@ MonoBehaviour:
       phaseOffset: 0
       radialMask: 0
       maskAngle: 0
-      doesExplode: 0
-      timeToExplode: 0
-      explosionBullets: 0
-      explosionSpeed: 0
+      doesExplode: 1
+      timeToExplode: 3
+      explosionBullets: 3
+      explosionSpeed: 10
     spinSpeed: 0
     waterfallEdge: 0
     waterfallWidth: 0
@@ -100,7 +103,7 @@ MonoBehaviour:
     returnForce: 0
     starPoints: 0
     bulletsPerEdge: 0
-    timeToStop: 0.6
+    timeToStop: 0.4
     timeToGo: 1
     goSpeed: 8
     gapAngle: 0

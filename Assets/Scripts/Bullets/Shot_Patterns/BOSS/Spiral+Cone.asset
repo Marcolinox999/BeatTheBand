@@ -13,18 +13,19 @@ MonoBehaviour:
   m_Name: Spiral+Cone
   m_EditorClassIdentifier: Assembly-CSharp::Bullets.BulletPattern
   repetitions: 8
-  angleOffsetBetweenReps: 0
+  angleOffsetBetweenReps: 45
   delayBetweenReps: 0.1
   startWait: 0
   endWait: 0
   steps:
   - attackType: 1
-    delayAfterStep: 0.8
+    stepRepetitions: 15
+    delayAfterStep: 0.1
     settings:
       numberOfBullets: 8
       bulletSpeed: 5
       cooldownTime: 0.1
-      angleOffset: 45
+      angleOffset: 0
       phaseOffset: 0
       radialMask: 0
       maskAngle: 0
@@ -48,6 +49,7 @@ MonoBehaviour:
     gapAngle: 0
     cageRadius: 0
   - attackType: 4
+    stepRepetitions: 1
     delayAfterStep: 0
     settings:
       numberOfBullets: 3

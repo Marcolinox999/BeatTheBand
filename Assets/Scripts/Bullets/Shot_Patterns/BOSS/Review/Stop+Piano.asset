@@ -19,7 +19,8 @@ MonoBehaviour:
   endWait: 0
   steps:
   - attackType: 8
-    delayAfterStep: 1
+    stepRepetitions: 1
+    delayAfterStep: 0.2
     settings:
       numberOfBullets: 20
       bulletSpeed: 10
@@ -48,7 +49,8 @@ MonoBehaviour:
     gapAngle: 0
     cageRadius: 0
   - attackType: 3
-    delayAfterStep: 0
+    stepRepetitions: 20
+    delayAfterStep: 0.1
     settings:
       numberOfBullets: 10
       bulletSpeed: 5

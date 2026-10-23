@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bullets.BulletPattern
   repetitions: 5
   angleOffsetBetweenReps: 0
-  delayBetweenReps: 1
+  delayBetweenReps: 0.4
   startWait: 0
   endWait: 0
   steps:
   - attackType: 10
+    stepRepetitions: 1
     delayAfterStep: 0.1
     settings:
       numberOfBullets: 8
@@ -48,6 +49,7 @@ MonoBehaviour:
     gapAngle: 0
     cageRadius: 0
   - attackType: 10
+    stepRepetitions: 1
     delayAfterStep: 0.1
     settings:
       numberOfBullets: 8
@@ -62,6 +64,216 @@ MonoBehaviour:
       explosionBullets: 0
       explosionSpeed: 0
     spinSpeed: -60
+    waterfallEdge: 0
+    waterfallWidth: 0
+    rotation: 0
+    numberOfPetals: 0
+    coneAngle: 0
+    spacing: 0
+    returnForce: 0
+    starPoints: 0
+    bulletsPerEdge: 0
+    timeToStop: 0
+    timeToGo: 0
+    goSpeed: 0
+    gapAngle: 0
+    cageRadius: 0
+  - attackType: 0
+    stepRepetitions: 10
+    delayAfterStep: 0.1
+    settings:
+      numberOfBullets: 8
+      bulletSpeed: 9
+      cooldownTime: 0
+      angleOffset: 0
+      phaseOffset: 0
+      radialMask: 0
+      maskAngle: 0
+      doesExplode: 0
+      timeToExplode: 0
+      explosionBullets: 0
+      explosionSpeed: 0
+    spinSpeed: 0
+    waterfallEdge: 0
+    waterfallWidth: 0
+    rotation: 0
+    numberOfPetals: 0
+    coneAngle: 0
+    spacing: 0
+    returnForce: 0
+    starPoints: 0
+    bulletsPerEdge: 0
+    timeToStop: 0
+    timeToGo: 0
+    goSpeed: 0
+    gapAngle: 0
+    cageRadius: 0
+  - attackType: 10
+    stepRepetitions: 1
+    delayAfterStep: 0.1
+    settings:
+      numberOfBullets: 8
+      bulletSpeed: 5
+      cooldownTime: 0
+      angleOffset: 15
+      phaseOffset: 0
+      radialMask: 0
+      maskAngle: 0
+      doesExplode: 0
+      timeToExplode: 0
+      explosionBullets: 0
+      explosionSpeed: 0
+    spinSpeed: 60
+    waterfallEdge: 0
+    waterfallWidth: 0
+    rotation: 0
+    numberOfPetals: 0
+    coneAngle: 0
+    spacing: 0
+    returnForce: 0
+    starPoints: 0
+    bulletsPerEdge: 0
+    timeToStop: 0
+    timeToGo: 0
+    goSpeed: 0
+    gapAngle: 0
+    cageRadius: 0
+  - attackType: 10
+    stepRepetitions: 1
+    delayAfterStep: 0.1
+    settings:
+      numberOfBullets: 8
+      bulletSpeed: 5
+      cooldownTime: 0
+      angleOffset: -15
+      phaseOffset: 0
+      radialMask: 0
+      maskAngle: 0
+      doesExplode: 0
+      timeToExplode: 0
+      explosionBullets: 0
+      explosionSpeed: 0
+    spinSpeed: -60
+    waterfallEdge: 0
+    waterfallWidth: 0
+    rotation: 0
+    numberOfPetals: 0
+    coneAngle: 0
+    spacing: 0
+    returnForce: 0
+    starPoints: 0
+    bulletsPerEdge: 0
+    timeToStop: 0
+    timeToGo: 0
+    goSpeed: 0
+    gapAngle: 0
+    cageRadius: 0
+  - attackType: 0
+    stepRepetitions: 10
+    delayAfterStep: 0.1
+    settings:
+      numberOfBullets: 8
+      bulletSpeed: 9
+      cooldownTime: 0
+      angleOffset: 35
+      phaseOffset: 0
+      radialMask: 0
+      maskAngle: 0
+      doesExplode: 0
+      timeToExplode: 0
+      explosionBullets: 0
+      explosionSpeed: 0
+    spinSpeed: 0
+    waterfallEdge: 0
+    waterfallWidth: 0
+    rotation: 0
+    numberOfPetals: 0
+    coneAngle: 0
+    spacing: 0
+    returnForce: 0
+    starPoints: 0
+    bulletsPerEdge: 0
+    timeToStop: 0
+    timeToGo: 0
+    goSpeed: 0
+    gapAngle: 0
+    cageRadius: 0
+  - attackType: 10
+    stepRepetitions: 1
+    delayAfterStep: 0.1
+    settings:
+      numberOfBullets: 8
+      bulletSpeed: 5
+      cooldownTime: 0
+      angleOffset: 15
+      phaseOffset: 0
+      radialMask: 0
+      maskAngle: 0
+      doesExplode: 0
+      timeToExplode: 0
+      explosionBullets: 0
+      explosionSpeed: 0
+    spinSpeed: 60
+    waterfallEdge: 0
+    waterfallWidth: 0
+    rotation: 0
+    numberOfPetals: 0
+    coneAngle: 0
+    spacing: 0
+    returnForce: 0
+    starPoints: 0
+    bulletsPerEdge: 0
+    timeToStop: 0
+    timeToGo: 0
+    goSpeed: 0
+    gapAngle: 0
+    cageRadius: 0
+  - attackType: 10
+    stepRepetitions: 1
+    delayAfterStep: 0.1
+    settings:
+      numberOfBullets: 8
+      bulletSpeed: 5
+      cooldownTime: 0
+      angleOffset: -15
+      phaseOffset: 0
+      radialMask: 0
+      maskAngle: 0
+      doesExplode: 0
+      timeToExplode: 0
+      explosionBullets: 0
+      explosionSpeed: 0
+    spinSpeed: -60
+    waterfallEdge: 0
+    waterfallWidth: 0
+    rotation: 0
+    numberOfPetals: 0
+    coneAngle: 0
+    spacing: 0
+    returnForce: 0
+    starPoints: 0
+    bulletsPerEdge: 0
+    timeToStop: 0
+    timeToGo: 0
+    goSpeed: 0
+    gapAngle: 0
+    cageRadius: 0
+  - attackType: 0
+    stepRepetitions: 30
+    delayAfterStep: 0.1
+    settings:
+      numberOfBullets: 8
+      bulletSpeed: 9
+      cooldownTime: 0
+      angleOffset: -35
+      phaseOffset: 0
+      radialMask: 0
+      maskAngle: 0
+      doesExplode: 0
+      timeToExplode: 0
+      explosionBullets: 0
+      explosionSpeed: 0
+    spinSpeed: 0
     waterfallEdge: 0
     waterfallWidth: 0
     rotation: 0
