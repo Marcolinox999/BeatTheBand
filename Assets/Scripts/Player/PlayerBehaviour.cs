@@ -51,7 +51,8 @@ namespace Player
             {
                 currentPoint.DeactivateLevelUI();
             }
-            Debug.LogError("No point");
+            else
+                Debug.Log("No point");
             movementInput.action.Enable();
             if (SceneManager.GetActiveScene().name == "Level Hub")
             {
@@ -85,9 +86,9 @@ namespace Player
 
         private void FixedUpdate()
         {
+            if (rb.bodyType == RigidbodyType2D.Static) return;
             if (_state == States.Walking)
             {
-                // Use rb.velocity on Unity versions before 6
                 rb.linearVelocity = _moveInput * speed;
             }
             else
