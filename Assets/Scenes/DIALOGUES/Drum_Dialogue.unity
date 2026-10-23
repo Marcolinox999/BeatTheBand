@@ -786,7 +786,7 @@ MonoBehaviour:
   dialogue:
     dialogueLines:
     - character:
-        name: Tiziano Buccini
+        name: Tiziano Buccina
         portrait: {fileID: 21300000, guid: 59b9bc854a770a244bf250243c77f3b9, type: 3}
       line: "Little slut, come fight me\t"
     - character:
@@ -806,7 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64a3f0075f7e0143ac83ed21419e659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
-  tag1: Tiziano Buccini
+  tag1: Tiziano Buccina
   tag2: Cornelius Batter
   talkingColor: {r: 1, g: 1, b: 1, a: 1}
   listeningColor: {r: 0.26415092, g: 0.25667492, b: 0.25667492, a: 0.7921569}
