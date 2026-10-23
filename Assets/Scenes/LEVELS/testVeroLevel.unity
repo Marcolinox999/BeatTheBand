@@ -339,6 +339,7 @@ MonoBehaviour:
   damagePerBullet: 1
   knockbackForce: 6
   speedRecovery: 20
+  bouncyScale: 0
   bounceSounds: []
   levelCompleted: 0
   weaponUnlock: 0
@@ -1123,6 +1124,7 @@ MonoBehaviour:
     waitBetweenAttacks: 0
     movingType: 0
     movingStyle: 0
+  instrumentBall: {fileID: 0}
 --- !u!114 &1333706976
 MonoBehaviour:
   m_ObjectHideFlags: 0
