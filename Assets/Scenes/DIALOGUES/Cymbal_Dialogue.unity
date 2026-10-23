@@ -504,8 +504,8 @@ Canvas:
   m_GameObject: {fileID: 729004438}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 2025653525}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -515,7 +515,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1258807667
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &882317284 stripped
@@ -790,7 +790,7 @@ MonoBehaviour:
         portrait: {fileID: 21300000, guid: ae2c531f9e965a24385f7f4556e2ad55, type: 3}
       line: Oo-oh! Mr. Doot, long time no see, thought that you had blew ower!
     - character:
-        name: Tiziano Buccini
+        name: Tiziano Buccina
         portrait: {fileID: 21300000, guid: 59b9bc854a770a244bf250243c77f3b9, type: 3}
       line: Already told you that my name is TIZIANO, and I'm not escaping from anybody,
         I was indeed looking for you
@@ -799,7 +799,7 @@ MonoBehaviour:
         portrait: {fileID: 21300000, guid: ae2c531f9e965a24385f7f4556e2ad55, type: 3}
       line: So, wanna chimp around like we used to? Man now we talking Big cheese!
     - character:
-        name: Tiziano Buccini
+        name: Tiziano Buccina
         portrait: {fileID: 21300000, guid: 59b9bc854a770a244bf250243c77f3b9, type: 3}
       line: I did not come to horse around again, to think that I thought that I
         would prove something by teaching you...
@@ -809,19 +809,19 @@ MonoBehaviour:
       line: Proved that you were rockin', and I could betcha' some lettuce that if
         we jammed right now, someone here would make a palooka out of himself!
     - character:
-        name: Tiziano Buccini
+        name: Tiziano Buccina
         portrait: {fileID: 21300000, guid: 59b9bc854a770a244bf250243c77f3b9, type: 3}
       line: Playful and full of yourself, as when I mentored you, but now I've got
         no obligation to protect you.
     - character:
-        name: Tiziano Buccini
+        name: Tiziano Buccina
         portrait: {fileID: 21300000, guid: 59b9bc854a770a244bf250243c77f3b9, type: 3}
       line: So now, for you to understand me, I'll "take you for a ride"
     - character:
         name: Entellus Sizzle
         portrait: {fileID: 21300000, guid: ae2c531f9e965a24385f7f4556e2ad55, type: 3}
       line: Now you putting a squeeze on me ho-oh? Fire your heat then, but we better
-        be finished before the bulls show up! Go Bananas Don Buccini!
+        be finished before the bulls show up! Go Bananas Don Buccina!
 --- !u!114 &1433215840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -834,7 +834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64a3f0075f7e0143ac83ed21419e659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
-  tag1: Tiziano Buccini
+  tag1: Tiziano Buccina
   tag2: Cornelius Batter
   talkingColor: {r: 1, g: 1, b: 1, a: 1}
   listeningColor: {r: 0.26415092, g: 0.25667492, b: 0.25667492, a: 0.7921569}
