@@ -625,7 +625,7 @@ PrefabInstance:
     - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: levelPanel
       value: 
-      objectReference: {fileID: 1759952613}
+      objectReference: {fileID: 1746200168}
     - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: sceneToLoad
       value: Cymbals
@@ -769,7 +769,7 @@ PrefabInstance:
     - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: levelPanel
       value: 
-      objectReference: {fileID: 1759952613}
+      objectReference: {fileID: 367854789}
     - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: sceneToLoad
       value: Drums
