@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc6a6fdbe19f1e248b1adde2ee077547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullets.BulletPatternWeapon
-  pattern: {fileID: 11400000, guid: ba16a8ae3fa39f146ab7ad1ec9cb4da3, type: 2}
+  pattern: {fileID: 11400000, guid: c7bbd042cecb5b2468daadf1add0ba72, type: 2}
   player: {fileID: 1979836912}
 --- !u!198 &358797738 stripped
 ParticleSystem:
@@ -343,6 +343,7 @@ MonoBehaviour:
   levelCompleted: 0
   weaponUnlock: 0
   destroyDelay: 1.5
+  mapSceneName: 
 --- !u!4 &598658916
 Transform:
   m_ObjectHideFlags: 0
@@ -1120,6 +1121,8 @@ MonoBehaviour:
     - {fileID: 154846972}
     attackDuration: 10
     waitBetweenAttacks: 0
+    movingType: 0
+    movingStyle: 0
 --- !u!114 &1333706976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1133,6 +1136,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicMovementBoss
   keys: []
+  ptPStyle: 0
+  arcHeight: 3
+  sineAmplitude: 1
+  sineCycles: 2
   jumpRadius: 4
   jumpHeight: 2
   jumpDuration: 0.5
