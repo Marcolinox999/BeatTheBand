@@ -851,12 +851,49 @@ MonoBehaviour:
     - character:
         name: Tiziano Buccina
         portrait: {fileID: 21300000, guid: 59b9bc854a770a244bf250243c77f3b9, type: 3}
-      line: "Little slut, come fight me\t"
+      line: We meet again, old man...
     - character:
         name: Cornelius Batter
         portrait: {fileID: 21300000, guid: 0d67f248ad53d584084ea9ee45821472, type: 3}
-      line: Motherfucking hoe I have to go because if we had to rely on your fat
-        ass moving we would be here forever
+      line: "Indeed, we do, would love to say that it\u2019s a pleasure, but I can
+        tell that you aint coming to recover your spot in the band."
+    - character:
+        name: Tiziano Buccina
+        portrait: {fileID: 21300000, guid: 59b9bc854a770a244bf250243c77f3b9, type: 3}
+      line: "I can see that despite that trunk of yours which you refer to as head
+        isn\u2019t hollow after all."
+    - character:
+        name: Cornelius Batter
+        portrait: {fileID: 21300000, guid: 0d67f248ad53d584084ea9ee45821472, type: 3}
+      line: You seem to be pretty full too.
+    - character:
+        name: Tiziano Buccina
+        portrait: {fileID: 21300000, guid: 59b9bc854a770a244bf250243c77f3b9, type: 3}
+      line: Of desires to be the greatest I can by myself, without needing others
+        to rely on for my lack of talent, as you.
+    - character:
+        name: Cornelius Batter
+        portrait: {fileID: 21300000, guid: 0d67f248ad53d584084ea9ee45821472, type: 3}
+      line: Lone hunters like you become easy preys when the flock groups up.
+    - character:
+        name: Tiziano Buccina
+        portrait: {fileID: 21300000, guid: 59b9bc854a770a244bf250243c77f3b9, type: 3}
+      line: Pathetic that you compare yourself with a mere sheep, shows your weakness
+        and that I showed up at the right time.
+    - character:
+        name: Tiziano Buccina
+        portrait: {fileID: 21300000, guid: 59b9bc854a770a244bf250243c77f3b9, type: 3}
+      line: "But anyways I don\u2019t want to talk until both of us rot, come at
+        me fossil!"
+    - character:
+        name: Cornelius Batter
+        portrait: {fileID: 21300000, guid: 0d67f248ad53d584084ea9ee45821472, type: 3}
+      line: "If it depended on your ability to move I\u2019d be waiting here for
+        a while anyways... "
+    - character:
+        name: Cornelius Batter
+        portrait: {fileID: 21300000, guid: 0d67f248ad53d584084ea9ee45821472, type: 3}
+      line: You seem to be pretty full too.
 --- !u!114 &1433215840
 MonoBehaviour:
   m_ObjectHideFlags: 0
