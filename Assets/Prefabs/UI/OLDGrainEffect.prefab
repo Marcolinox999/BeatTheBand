@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4244914468175336042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7062165045721911213}
+  - component: {fileID: 5927674137228005016}
+  - component: {fileID: 5881213819322727286}
+  - component: {fileID: 5508761342161633369}
+  m_Layer: 5
+  m_Name: OLDGrainEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7062165045721911213
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4244914468175336042}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 2.2261047}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5927674137228005016
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4244914468175336042}
+  m_CullTransparentMesh: 1
+--- !u!114 &5881213819322727286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4244914468175336042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.40251565, g: 0.40251565, b: 0.40251565, a: 0.02745098}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!114 &5508761342161633369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4244914468175336042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2595f3514b4addf498069839dcdce57e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FilmGrainOverlay
+  targetImage: {fileID: 5881213819322727286}
+  grainFrames:
+  - {fileID: 2800000, guid: 8df2a37e7e92c7243b2703501cf07171, type: 3}
+  - {fileID: 2800000, guid: 2d5d5c26b80b9dd43b26aaef87b71b8f, type: 3}
+  - {fileID: 2800000, guid: d7c4fa6de2eae9548bb9b03af7fb93fc, type: 3}
+  - {fileID: 2800000, guid: 8e7bd46a5ad45d54a994027da048d3f1, type: 3}
+  - {fileID: 2800000, guid: 230a780b1a27dd24695f22425790afd6, type: 3}
+  - {fileID: 2800000, guid: ce883e8143c29d0438441c0787df59e1, type: 3}
+  - {fileID: 2800000, guid: 5eecd36895e5b90498c7274ff012cd33, type: 3}
+  - {fileID: 2800000, guid: 0494f1736f2d6de4380673ae4cc18e3e, type: 3}
+  framesPerSecond: 12
+  opacity: 0.11
+  flickerAmount: 0
