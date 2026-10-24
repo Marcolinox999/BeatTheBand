@@ -38,26 +38,7 @@ namespace Bullets
         
         private void OnEnable()
         {
-            currentMaxLifetime = 15f;
-            lifetime = 0f;
-            
-            isSpinning = false;
-            spinSpeed = 0f;
-            
-            willExplode = false;
-            explodeTimer = 0f;
-            
-            isBoomerang = false;
-            acceleration = Vector2.zero;
-            
-            isStopAndGo = false;
-            stopTimer = 0f;
-            
-            isSpinning = false;
-            spinSpeed = 0f;
-            
-            hasStopped = false;
-            hasGone = false;
+            ResetBehaviours();
         }
 
 
@@ -107,6 +88,30 @@ namespace Bullets
                     Explode();
                 }
             }
+        }
+
+        public void ResetBehaviours()
+        {
+            currentMaxLifetime = 15f;
+            lifetime = 0f;
+            
+            isSpinning = false;
+            spinSpeed = 0f;
+            
+            willExplode = false;
+            explodeTimer = 0f;
+            
+            isBoomerang = false;
+            acceleration = Vector2.zero;
+            
+            isStopAndGo = false;
+            stopTimer = 0f;
+            
+            isSpinning = false;
+            spinSpeed = 0f;
+            
+            hasStopped = false;
+            hasGone = false;
         }
 
 
