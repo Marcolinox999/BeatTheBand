@@ -149,9 +149,13 @@ MonoBehaviour:
   damagePerBullet: 1
   knockbackForce: 6
   speedRecovery: 20
-  bouncyScale: 0
+  bouncyScale: 0.2
   bounceSounds:
-  - {fileID: 8300000, guid: 32e51eef91f442643bbdb46278c599b8, type: 3}
+  - {fileID: 8300000, guid: d8164a01008d76841b9589638774f3e4, type: 3}
+  - {fileID: 8300000, guid: 2bfba0c22a601894d8f4892cf99e7232, type: 3}
+  - {fileID: 8300000, guid: 16e65d9168da1474faf7ad4953fa76e0, type: 3}
+  - {fileID: 8300000, guid: 3218ce02278e4144abd2b43173cf21a4, type: 3}
+  - {fileID: 8300000, guid: e06493f3560ef474d8ff2301a51cf30c, type: 3}
   levelCompleted: 0
   weaponUnlock: 0
   destroyDelay: 1.5

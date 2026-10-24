@@ -299,7 +299,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 7119909175832645542}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da21cedbd232fef499f89d079b926d91, type: 3}
   m_Name: 
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 7119909175832645542}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b84b6c7673261354aa49a84b2fb7f6f0, type: 3}
   m_Name: 
@@ -548,7 +548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BeatManager
   BPM: 100
-  blip: {fileID: 8300000, guid: 51798f261b63e9c449e3177ae52898dd, type: 3}
+  blip: []
   windowOfInteractions: 0.2
   audioLatencyOffset: 0.08
   perfectWindow: 0.05
@@ -580,6 +580,30 @@ PrefabInstance:
       propertyPath: bouncyScale
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 1166524813186987410, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: bounceSounds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166524813186987410, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: 'bounceSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: d8164a01008d76841b9589638774f3e4, type: 3}
+    - target: {fileID: 1166524813186987410, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: 'bounceSounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 2bfba0c22a601894d8f4892cf99e7232, type: 3}
+    - target: {fileID: 1166524813186987410, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: 'bounceSounds.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 16e65d9168da1474faf7ad4953fa76e0, type: 3}
+    - target: {fileID: 1166524813186987410, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: 'bounceSounds.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 3218ce02278e4144abd2b43173cf21a4, type: 3}
+    - target: {fileID: 1166524813186987410, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: 'bounceSounds.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8300000, guid: e06493f3560ef474d8ff2301a51cf30c, type: 3}
     - target: {fileID: 3440990219525106819, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
       propertyPath: m_Name
       value: InstrumentBall Drums
@@ -4638,6 +4662,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2314275580658992295, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314275580658992295, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
       propertyPath: instrumentBall
       value: 
       objectReference: {fileID: 3440990219525106819, guid: 2d6dbeae960eca846866b986e2821e79, type: 3}
@@ -4664,6 +4692,14 @@ PrefabInstance:
     - target: {fileID: 3965885835782480312, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
       propertyPath: m_Name
       value: --Boss--
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788519364462528332, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6178748004194145267, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6356782740713017638, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4712,7 +4748,7 @@ PrefabInstance:
     - target: {fileID: 7864949298843030827, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
       propertyPath: pattern
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 1d50e01563e2c9343ab2b7584ccba4f2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

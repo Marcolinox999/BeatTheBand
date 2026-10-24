@@ -1499,7 +1499,7 @@ MonoBehaviour:
   - timeBetweenBursts: {x: 1, y: 3}
     burstDuration: {x: 0.4, y: 2.03}
     staticVolume: 0
-    musicDuck: 0.2
+    musicDuck: 1
   - timeBetweenBursts: {x: 2, y: 3}
     burstDuration: {x: 0.4, y: 0.6}
     staticVolume: 0.3
@@ -1508,10 +1508,10 @@ MonoBehaviour:
     burstDuration: {x: 0.2, y: 0.6}
     staticVolume: 0.5
     musicDuck: 0.401
-  - timeBetweenBursts: {x: 1, y: 3}
-    burstDuration: {x: 0.4, y: 2.03}
+  - timeBetweenBursts: {x: 1, y: 1}
+    burstDuration: {x: 2, y: 2}
     staticVolume: 1
-    musicDuck: 0.2
+    musicDuck: 0
 --- !u!4 &1402332059
 Transform:
   m_ObjectHideFlags: 0

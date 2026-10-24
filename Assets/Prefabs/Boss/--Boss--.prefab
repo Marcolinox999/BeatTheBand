@@ -719,7 +719,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7834657240725355470}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b84b6c7673261354aa49a84b2fb7f6f0, type: 3}
   m_Name: 
@@ -737,8 +737,8 @@ MonoBehaviour:
     - {fileID: 6178748004194145267}
     attackDuration: 4
     waitBetweenAttacks: 2
-    movingType: 2
-    movingStyle: 1
+    movingType: 0
+    movingStyle: 0
   - healthThreshold: 50
     transitionPause: 5
     bossSpeed: 5
@@ -748,7 +748,7 @@ MonoBehaviour:
     attackDuration: 2
     waitBetweenAttacks: 3
     movingType: 0
-    movingStyle: 1
+    movingStyle: 3
   - healthThreshold: 0
     transitionPause: 5
     bossSpeed: 10
@@ -757,9 +757,9 @@ MonoBehaviour:
     - {fileID: 6178748004194145267}
     attackDuration: 3
     waitBetweenAttacks: 1
-    movingType: 1
-    movingStyle: 0
-  instrumentBall: {fileID: 0}
+    movingType: 0
+    movingStyle: 4
+  instrumentBall: {fileID: 3440990219525106819, guid: 2d6dbeae960eca846866b986e2821e79, type: 3}
 --- !u!114 &4788519364462528332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,7 +767,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7834657240725355470}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da21cedbd232fef499f89d079b926d91, type: 3}
   m_Name: 
