@@ -168,6 +168,6 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        SceneLoader.Instance.LoadScene(sceneToLoad);
+        GameManager.Instance.LoadScene(sceneToLoad);
     }
 }

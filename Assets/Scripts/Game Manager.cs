@@ -54,15 +54,6 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
         }
     }
-    public void ReturnToMap(string mapName)
-    {
-        if (Time.timeScale == 0)
-        {
-            Time.timeScale = 1;
-        }
-        SceneManager.LoadScene(mapName); //te lo he cambiado para que se pueda elegir si volver al mapa o al menu
-        playerMap.transform.position = lastPosition;
-    }
 
     public void ReloadScene()
     {
@@ -88,5 +79,25 @@ public class GameManager : MonoBehaviour
     public void UpdateScore(int score)
     {
         
+    }
+    
+    public void LoadScene(string sceneName)
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+    }
+
+    public void LoadScene(int buildIndex)
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(buildIndex);
+    }
+    
+    public void ReturnToMap(string mapName)
+    {
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+        SceneManager.LoadScene(mapName); //te lo he cambiado para que se pueda elegir si volver al mapa o al menu
+        playerMap.transform.position = lastPosition;
     }
 }
