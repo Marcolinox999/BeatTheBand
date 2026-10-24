@@ -15,8 +15,10 @@ public class GameManager : MonoBehaviour
     public bool[] unlockedWeapons = new bool[4];
     public bool[] beatenLevels = new bool[3];
     public BeatManager.Score score;
+    private Animator animator;
     [SerializeField] private GameObject playerMap;
     [SerializeField] private string _map;
+    public string desiredLevel;
     
     private Vector2 lastPosition;
 
@@ -27,10 +29,9 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
+        animator = GameObject.FindGameObjectsWithTag("Transition")[0].GetComponent<Animator>();
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
         CurrentState = GameState.Playing;
         unlockedWeapons[0] = true;
     }
@@ -83,12 +84,28 @@ public class GameManager : MonoBehaviour
     
     public void LoadScene(string sceneName)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        desiredLevel = sceneName;
+        TransitionInLevel();
     }
 
-    public void LoadScene(int buildIndex)
+    private void TransitionInLevel()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(buildIndex);
+        if (animator != null)
+            animator.Play("Trans_Out");
+    }
+
+    public void TransitionOutLevel()
+    {
+        if (animator != null)
+            animator.Play("Trans_In");
+        SceneManager.LoadScene(desiredLevel);
+        animator = GameObject.FindGameObjectsWithTag("Transition")[0].GetComponent<Animator>();
+        
+    }
+
+    public void LoadScenebyInt(int buildIndex)
+    {
+        SceneManager.LoadScene(buildIndex);
     }
     
     public void ReturnToMap(string mapName)
@@ -97,7 +114,8 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 1;
         }
-        SceneManager.LoadScene(mapName); //te lo he cambiado para que se pueda elegir si volver al mapa o al menu
+        LoadScene(mapName); //te lo he cambiado para que se pueda elegir si volver al mapa o al menu
         playerMap.transform.position = lastPosition;
     }
+    
 }
