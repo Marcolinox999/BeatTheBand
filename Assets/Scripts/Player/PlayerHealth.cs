@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : BaseHealth
 {
     
     [Header("Particles")] [SerializeField] private ParticleSystem[] playerParticles;
+    [SerializeField] private string mapName;
     
     protected override void Start()
     {
@@ -30,7 +32,7 @@ public class PlayerHealth : BaseHealth
     
     protected override void Die()
     {
-         Debug.Log("Player has died");
+        GameManager.Instance.LoadScene(mapName);
     }
 
     private void Update()
