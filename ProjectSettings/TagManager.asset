@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Boss
   - PlayerBullet
+  - PlayerLimits
   layers:
   - Default
   - TransparentFX
@@ -54,6 +55,9 @@ TagManager:
     locked: 0
   - name: Bullets
     uniqueID: 3286731819
+    locked: 0
+  - name: Particles
+    uniqueID: 1150910211
     locked: 0
   - name: UI
     uniqueID: 3036159629

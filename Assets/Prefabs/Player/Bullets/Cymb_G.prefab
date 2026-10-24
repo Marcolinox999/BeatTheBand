@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1596648764422642728}
   - component: {fileID: 1401349706417448837}
   - component: {fileID: -4880587495726155996}
-  - component: {fileID: -5713054862351720480}
+  - component: {fileID: 8407733274891360787}
   m_Layer: 0
-  m_Name: TrumpetBullet
+  m_Name: Cymb_G
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,8 +83,8 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0.95093346, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: bdd834f4c6edf114185810d6276aaf03, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   speed: 5
   damage: 10
   lifetime: 5
---- !u!58 &-5713054862351720480
+--- !u!58 &8407733274891360787
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
