@@ -1,10 +1,11 @@
 using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BeatManager : MonoBehaviour
 {
    [Range(30f, 240f)] public float BPM;
-   [SerializeField] private AudioClip blip;
+   [SerializeField] private AudioClip[] blip;
    [SerializeField, Range(0.01f, 1f)] private float windowOfInteractions;
    public static BeatManager instance;
    private double nextTimeBeat;
@@ -23,6 +24,7 @@ public class BeatManager : MonoBehaviour
    private double smoothedDspTime;
    private int lastFrame = -1;
    private int skipABeat = 0;
+   private int currentBlip = 0;
    public double SmoothedDspTime
    {
       get
@@ -61,6 +63,7 @@ public class BeatManager : MonoBehaviour
 
    private void Awake()
    {
+      currentBlip = 0;
       if (instance == null)
       {
          instance = this;
@@ -99,7 +102,8 @@ public class BeatManager : MonoBehaviour
 
    private void Beat()
    {
-      AudioManager.instance.PlayScheduledBeat(blip,intervalTime);
+      currentBlip = (currentBlip + 1) % blip.Length;
+      AudioManager.instance.PlayScheduledBeat(blip[currentBlip],intervalTime);
       OnBeat?.Invoke(beatIndex);
       beatIndex++;
       if (skipABeat > 0) skipABeat--;

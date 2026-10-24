@@ -185,6 +185,87 @@ Transform:
   - {fileID: 1590413881}
   m_Father: {fileID: 1786835977}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &363493223
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1166524813186987410, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: bounceSounds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166524813186987410, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: 'bounceSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: d8164a01008d76841b9589638774f3e4, type: 3}
+    - target: {fileID: 1166524813186987410, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: 'bounceSounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 2bfba0c22a601894d8f4892cf99e7232, type: 3}
+    - target: {fileID: 1166524813186987410, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: 'bounceSounds.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 16e65d9168da1474faf7ad4953fa76e0, type: 3}
+    - target: {fileID: 1166524813186987410, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: 'bounceSounds.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 3218ce02278e4144abd2b43173cf21a4, type: 3}
+    - target: {fileID: 1166524813186987410, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: 'bounceSounds.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8300000, guid: e06493f3560ef474d8ff2301a51cf30c, type: 3}
+    - target: {fileID: 3440990219525106819, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: m_Name
+      value: InstrumentBall Drums
+      objectReference: {fileID: 0}
+    - target: {fileID: 8627163457525609343, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.62067
+      objectReference: {fileID: 0}
+    - target: {fileID: 8627163457525609343, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.86923
+      objectReference: {fileID: 0}
+    - target: {fileID: 8627163457525609343, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8627163457525609343, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8627163457525609343, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8627163457525609343, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8627163457525609343, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8627163457525609343, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8627163457525609343, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8627163457525609343, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 613fe647c1dd2ea449d1bf70f1271cc1, type: 3}
 --- !u!1 &498424030
 GameObject:
   m_ObjectHideFlags: 0
@@ -2876,3 +2957,4 @@ SceneRoots:
   - {fileID: 944280540}
   - {fileID: 1369114712}
   - {fileID: 1799028668}
+  - {fileID: 363493223}

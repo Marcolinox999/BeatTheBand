@@ -45,7 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BeatManager
   BPM: 100
-  blip: {fileID: 8300000, guid: 51798f261b63e9c449e3177ae52898dd, type: 3}
+  blip:
+  - {fileID: 8300000, guid: 12a492532deeb5c4d9e209711a5730c4, type: 3}
+  - {fileID: 8300000, guid: 8d16356af3013314cb906ae5b1b1b244, type: 3}
+  - {fileID: 8300000, guid: c50d3e19352fd5b43a9d6db260c373ec, type: 3}
+  - {fileID: 8300000, guid: 8d16356af3013314cb906ae5b1b1b244, type: 3}
   windowOfInteractions: 0.2
   audioLatencyOffset: 0.08
   perfectWindow: 0.05
