@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5e518558d77354c4dafa446111088998
+guid: c6c707e615ef4e14c8aeefe47a057a1d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4440421516983806712
-    second: 8f9ed0d3-5484-4da8-96ae-554d9e31adea_0
+      213: 7979419438038648046
+    second: Trump_P_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 8f9ed0d3-5484-4da8-96ae-554d9e31adea_0
+      name: Trump_P_0
       rect:
         serializedVersion: 2
-        x: 84
-        y: 31
-        width: 929
-        height: 1569
+        x: 0
+        y: 84
+        width: 1569
+        height: 929
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 805dd2b18247062c0800000000000000
-      internalID: -4440421516983806712
+      spriteID: ee4042eb3b79cbe60800000000000000
+      internalID: 7979419438038648046
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      8f9ed0d3-5484-4da8-96ae-554d9e31adea_0: -4440421516983806712
+      Trump_P_0: 7979419438038648046
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
