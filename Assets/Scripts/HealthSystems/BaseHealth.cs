@@ -56,6 +56,16 @@ public abstract class BaseHealth : MonoBehaviour, IDamageable
             
         }
 
+        public virtual void Heal(float amount)
+        {
+            if (!_canTakeDamage || CurrentHealth <= 0f || amount <= 0f) return;
+            CurrentHealth += amount;
+            if (CurrentHealth > maxHealth)
+            {
+                CurrentHealth = maxHealth;
+            }
+        }
+
         #region DAMAGE FLASH
 
         private IEnumerator DamageFlasher()
