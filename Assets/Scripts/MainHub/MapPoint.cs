@@ -18,6 +18,7 @@
         [Header("MapPoint Options")] public bool isLevel;
         public bool isCorner;
         public bool isWarpPoint;
+        public bool isFinal;
 
         [Header("Warp Options")] public bool autoWarp;
         public bool hasWarped;
