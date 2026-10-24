@@ -30,7 +30,7 @@ public class PlayerHealth : BaseHealth
     
     protected override void Die()
     {
-        Debug.Log("Player has died");
+         Debug.Log("Player has died");
     }
 
     private void Update()

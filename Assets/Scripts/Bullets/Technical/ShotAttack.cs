@@ -6,12 +6,31 @@ namespace Bullets
 {
     public static class ShotAttack
     {
-        public static Bullet SimpleShot(Vector2 origin, Vector2 velocity, RadialShotSettings settings= null)
+        private static bool isWaterfallCached = false;
+        private static float cachedCamHeight;
+        private static float cachedCamWidth;
+        private static Vector2 cachedCamPos;
+
+        public static void InitializeWaterfallBounds()
+        {
+            Camera cam = Camera.main;
+            if (cam != null)
+            {
+                cachedCamHeight = 2f * cam.orthographicSize;
+                cachedCamWidth = cachedCamHeight * cam.aspect;
+                cachedCamPos = cam.transform.position;
+                isWaterfallCached = true;
+            }
+        }
+
+        public static Bullet SimpleShot(Vector2 origin, Vector2 velocity, RadialShotSettings settings = null)
         {
             Bullet bullet = BulletPool.Instance.GetBullet();
+            bullet.ResetBehaviours();
+
             bullet.transform.position = origin;
             bullet.Velocity = velocity;
-            
+
             if (settings != null && settings.doesExplode)
             {
                 bullet.SetupExplosion(settings.timeToExplode, settings.explosionBullets, settings.explosionSpeed);
@@ -29,41 +48,43 @@ namespace Bullets
         {
             float angleBetweenBullets = 360f / settings.numberOfBullets;
 
-            if(settings.angleOffset != 0f || settings.phaseOffset != 0f)
+            if (settings.angleOffset != 0f || settings.phaseOffset != 0f)
                 aimDirection = aimDirection.Rotate(settings.angleOffset + (settings.phaseOffset * angleBetweenBullets));
-        
+
             for (int i = 0; i < settings.numberOfBullets; i++)
             {
                 float bulletDirectionAngle = angleBetweenBullets * i;
 
                 if (settings.radialMask && bulletDirectionAngle > settings.maskAngle)
                     break;
-            
+
                 Vector2 bulletDirection = aimDirection.Rotate(bulletDirectionAngle);
                 SimpleShot(origin, bulletDirection * settings.bulletSpeed, settings);
             }
         }
+
         public static void FlowerShot(Vector2 origin, Vector2 aimDirection, int numberOfBullets, float numberPetals,
             float baseSpeed, RadialShotSettings settings = null)
         {
-            float angleSpeed = 360f/numberOfBullets;
-            for (int i = 0;  i < numberOfBullets; i++)
+            float angleSpeed = 360f / numberOfBullets;
+            for (int i = 0; i < numberOfBullets; i++)
             {
                 float angle = i * angleSpeed;
-                float rad =  Mathf.Deg2Rad * angle;
-                
+                float rad = Mathf.Deg2Rad * angle;
+
                 float speedMultiplier = Mathf.Cos(numberPetals * rad);
                 float currentSpeed = baseSpeed * (0.4f + 0.6f * Mathf.Abs(speedMultiplier));
-                
-                if(currentSpeed  < 0.5f) currentSpeed = 0.5f;  
-                
-                
+
+                if (currentSpeed < 0.5f) currentSpeed = 0.5f;
+
+
                 Vector2 bulletDirection = aimDirection.Rotate(angle);
                 SimpleShot(origin, bulletDirection * currentSpeed, settings);
             }
         }
 
-        public static void ParallelShot(Vector2 center, Vector2 aimDirection, int numberLines, float spacing, float speed)
+        public static void ParallelShot(Vector2 center, Vector2 aimDirection, int numberLines, float spacing,
+            float speed)
         {
             Vector2 rightDirection = aimDirection.Rotate(-90f).normalized;
             float totalWidth = (numberLines - 1) * spacing;
@@ -85,15 +106,17 @@ namespace Bullets
                 SimpleShot(origin, bulletDirection * speed, null);
             }
         }
-        public static void ConeShotToPlayer(Vector2 origin, Vector2 targetPosition, RadialShotSettings settings, int numberOfBullets, float coneAngle, float speed)
+
+        public static void ConeShotToPlayer(Vector2 origin, Vector2 targetPosition, RadialShotSettings settings,
+            int numberOfBullets, float coneAngle, float speed)
         {
             Vector2 aimDirection = (targetPosition - origin).normalized;
-            
+
             if (numberOfBullets == 1)
             {
-                SimpleShot(origin, aimDirection * speed,settings);
+                SimpleShot(origin, aimDirection * speed, settings);
             }
-            
+
             float halfCone = coneAngle * 0.5f;
             float angleStep = coneAngle / (numberOfBullets - 1);
             for (int i = 0; i < numberOfBullets; i++)
@@ -105,7 +128,7 @@ namespace Bullets
         }
 
         public static void LineShotToPlayer(Vector2 origin, Vector2 targetPosition,
-            int numberOfBullets,float spacing, float speed, RadialShotSettings settings = null)
+            int numberOfBullets, float spacing, float speed, RadialShotSettings settings = null)
         {
             Vector2 aimDirection = (targetPosition - origin).normalized;
             Vector2 rightDirection = aimDirection.Rotate(-90f).normalized;
@@ -118,61 +141,66 @@ namespace Bullets
                 SimpleShot(spawnPosition, aimDirection * speed, settings);
             }
         }
-        
-        
-        public enum WaterfallEdge{Top, Bottom, Left, Right}
-        
-        public static void PianoWaterfall(Vector2 origin, int numberOfBullets, float width, WaterfallEdge edge, float speed,  RadialShotSettings settings = null)
+
+
+        public enum WaterfallEdge
         {
+            Top,
+            Bottom,
+            Left,
+            Right
+        }
+
+        public static void PianoWaterfall(Vector2 origin, int numberOfBullets, float width, WaterfallEdge edge,
+            float speed, RadialShotSettings settings = null)
+        {
+            if (!isWaterfallCached)
+            {
+                InitializeWaterfallBounds();
+            }
+
+            if (!isWaterfallCached) return;
+
             Vector2 spawnCenter = origin;
             Vector2 spawnDirection = Vector2.zero;
             Vector2 shootDirection = Vector2.down;
+            float outOfBoundsMargin = 2f;
 
-            Camera cam = Camera.main;
-            if (cam != null)
+
+            switch (edge)
             {
-                float camHeight = 2f * cam.orthographicSize;
-                float camWidth = camHeight * cam.aspect;
-                Vector2 camPos = cam.transform.position;
-                float outOfBoundsMargin = 2f;
-
-
-                switch (edge)
-                {
-                    case WaterfallEdge.Top:
-                        spawnCenter = new Vector2(camPos.x, camPos.y + (camHeight / 2f) + outOfBoundsMargin);
-                        spawnDirection = Vector2.right;
-                        shootDirection = Vector2.down;
-                        break;
-                    case WaterfallEdge.Bottom:
-                        spawnCenter = new Vector2(camPos.x, camPos.y - (camHeight / 2f) - outOfBoundsMargin);
-                        spawnDirection = Vector2.right;
-                        shootDirection = Vector2.up;
-                        break;
-                    case WaterfallEdge.Left:
-                        spawnCenter = new Vector2(camPos.x - (camWidth / 2f) - outOfBoundsMargin, camPos.y);
-                        spawnDirection = Vector2.up;
-                        shootDirection = Vector2.right;
-                        break;
-                    case WaterfallEdge.Right:
-                        spawnCenter = new Vector2(camPos.x + (camWidth / 2f) + outOfBoundsMargin, camPos.y);
-                        spawnDirection = Vector2.up;
-                        shootDirection = Vector2.left;
-                        break;
-                }
-
-                float spacing = numberOfBullets > 1 ? width / (numberOfBullets - 1) : 0;
-                Vector2 startPos = spawnCenter - (spawnDirection * (width / 2f));
-                for (int i = 0; i < numberOfBullets; i++)
-                {
-                    Vector2 spawnPosition = startPos + (spawnDirection * (spacing * i));
-                    SimpleShot(spawnPosition, shootDirection * speed, settings);
-                }
+                case WaterfallEdge.Top:
+                    spawnCenter = new Vector2(cachedCamPos.x, cachedCamPos.y + (cachedCamHeight / 2f) + outOfBoundsMargin);
+                    spawnDirection = Vector2.right;
+                    shootDirection = Vector2.down;
+                    break;
+                case WaterfallEdge.Bottom:
+                    spawnCenter = new Vector2(cachedCamPos.x, cachedCamPos.y - (cachedCamHeight / 2f) - outOfBoundsMargin);
+                    spawnDirection = Vector2.right;
+                    shootDirection = Vector2.up;
+                    break;
+                case WaterfallEdge.Left:
+                    spawnCenter = new Vector2(cachedCamPos.x - (cachedCamWidth / 2f) - outOfBoundsMargin, cachedCamPos.y);
+                    spawnDirection = Vector2.up;
+                    shootDirection = Vector2.right;
+                    break;
+                case WaterfallEdge.Right:
+                    spawnCenter = new Vector2(cachedCamPos.x + (cachedCamWidth / 2f) + outOfBoundsMargin, cachedCamPos.y);
+                    spawnDirection = Vector2.up;
+                    shootDirection = Vector2.left;
+                    break;
             }
+
+            float spacing = numberOfBullets > 1 ? width / (numberOfBullets - 1) : 0;
+            Vector2 startPos = spawnCenter - (spawnDirection * (width / 2f));
+            for (int i = 0; i < numberOfBullets; i++)
+            {
+                Vector2 spawnPosition = startPos + (spawnDirection * (spacing * i));
+                SimpleShot(spawnPosition, shootDirection * speed, settings);
+            }
+        
         }
-
-       
-
+        
         public static void DualSpiral(Vector2 origin, Vector2 aimDirection, float angle1, float angle2,
             RadialShotSettings settings = null)
         {
