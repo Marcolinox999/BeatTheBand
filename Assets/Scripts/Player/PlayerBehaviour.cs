@@ -136,10 +136,26 @@ namespace Player
             // Interaction point requested by Isaac
             if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
             {
-                if (currentPoint.isLevel && !_isOnMap && !string.IsNullOrEmpty(currentPoint.sceneToLoad))
+                if (currentPoint.isLevel && !_isOnMap && !string.IsNullOrEmpty(currentPoint.sceneToLoad) && currentPoint.isFinal)
                 {
-                    StartCoroutine(LoadLevel(currentPoint.sceneToLoad, 2f));
+                    if (GameManager.Instance.beatenLevels[1] && GameManager.Instance.beatenLevels[2] &&
+                        GameManager.Instance.beatenLevels[3])
+                    {
+                        StartCoroutine(LoadLevel(currentPoint.sceneToLoad, 2f));
+                    }
+                    else
+                    {
+                        return;
+                    }
                 }
+                else
+                {
+                    if (currentPoint.isLevel && !_isOnMap && !string.IsNullOrEmpty(currentPoint.sceneToLoad))
+                    {
+                        StartCoroutine(LoadLevel(currentPoint.sceneToLoad, 2f));
+                    }
+                }
+                
             }
         }
 
