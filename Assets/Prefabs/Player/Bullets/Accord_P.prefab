@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BaseBullet
   speed: 5
-  damage: 4
+  damage: 2
   lifetime: 4
 --- !u!58 &-8379959939407312068
 CircleCollider2D:
