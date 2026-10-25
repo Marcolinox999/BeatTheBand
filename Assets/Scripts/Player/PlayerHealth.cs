@@ -32,7 +32,8 @@ public class PlayerHealth : BaseHealth
     
     protected override void Die()
     {
-        GameManager.Instance.bossLeftHealth = boss.CurrentHealth;
+        if (boss != null)
+            GameManager.Instance.bossLeftHealth = boss.CurrentHealth;
         GameManager.Instance.LoadScene(mapName);
     }
 

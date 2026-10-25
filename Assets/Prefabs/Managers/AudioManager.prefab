@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a807de243dd18ae46bd063f46f806a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  musicChange: 0
   musicSource: {fileID: 949321605723408067}
   sfxSource: {fileID: 308545754446199572}
   buttonSceneClip: {fileID: 0}
@@ -93,11 +94,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 92d00e13e158d8647b1fefb777b011e7, type: 3}
+  m_Resource: {fileID: 8300000, guid: c50a746115946f241a9574575337cb75, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

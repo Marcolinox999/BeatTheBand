@@ -116,7 +116,8 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1;
         }
         LoadScene(mapName); //te lo he cambiado para que se pueda elegir si volver al mapa o al menu
-        playerMap.transform.position = lastPosition;
+        if (playerMap!= null)
+            playerMap.transform.position = lastPosition;
     }
     
 }

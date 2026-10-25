@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a807de243dd18ae46bd063f46f806a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  musicChange: 0
   musicSource: {fileID: 1246148286}
   sfxSource: {fileID: 1960290517}
   buttonSceneClip: {fileID: 0}
@@ -737,10 +738,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -757,8 +758,8 @@ Canvas:
   m_GameObject: {fileID: 1138179942}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 2025653525}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1122,7 +1123,7 @@ MonoBehaviour:
   tag2: Brunella Bellows
   talkingColor: {r: 1, g: 1, b: 1, a: 1}
   listeningColor: {r: 0.44025147, g: 0.40840936, b: 0.40840936, a: 0.7058824}
-  sceneToLoad: 5
+  sceneToLoad: 6
   tag1Image: {fileID: 410441910}
   tag2Image: {fileID: 390727181}
   tag1IdleSprite: {fileID: 21300000, guid: 76079328c9c15ca4db548df121d4fe3b, type: 3}

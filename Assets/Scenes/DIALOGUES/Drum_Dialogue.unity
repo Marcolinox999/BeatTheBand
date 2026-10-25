@@ -911,7 +911,7 @@ MonoBehaviour:
   tag2: Cornelius Batter
   talkingColor: {r: 1, g: 1, b: 1, a: 1}
   listeningColor: {r: 0.26415092, g: 0.25667492, b: 0.25667492, a: 0.7921569}
-  sceneToLoad: 0
+  sceneToLoad: 5
   tag1Image: {fileID: 410441910}
   tag2Image: {fileID: 390727181}
   tag1IdleSprite: {fileID: 21300000, guid: 76079328c9c15ca4db548df121d4fe3b, type: 3}
@@ -1457,7 +1457,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1486,7 +1486,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1083
   m_TargetDisplay: 0
 --- !u!224 &1941566749
 RectTransform:
@@ -1859,7 +1859,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
