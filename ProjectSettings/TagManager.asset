@@ -57,6 +57,9 @@ TagManager:
   - name: Foreground
     uniqueID: 3086401925
     locked: 0
+  - name: Boss
+    uniqueID: 3707325899
+    locked: 0
   - name: Bullets
     uniqueID: 3286731819
     locked: 0
