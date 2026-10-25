@@ -119,5 +119,11 @@ public class GameManager : MonoBehaviour
         if (playerMap!= null)
             playerMap.transform.position = lastPosition;
     }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit Game");
+        Application.Quit();
+    }
     
 }

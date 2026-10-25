@@ -45,20 +45,22 @@ public class BeatSquashStretch : MonoBehaviour
         spriteRenderer.sprite = normalLevel;
 
         bpm = BeatManager.instance.BPM;
-        
+
         hasWaited = !waitOneBeatBeforeStart;
         isStretched = true;
     }
 
     private void Update()
     {
-        if (GameManager.Instance.beatenLevels[levelNumber])
+        if (!GameManager.Instance.beatenLevels[levelNumber])
         {
+            spriteRenderer.sprite = BWLevel;
+
             Bounce();
         }
         else
         {
-            spriteRenderer.sprite = BWLevel;
+            spriteRenderer.sprite = normalLevel;
 
             ResetTransform();
             currentMultiplier = Vector2.one;

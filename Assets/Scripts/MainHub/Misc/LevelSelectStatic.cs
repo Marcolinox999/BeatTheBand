@@ -32,10 +32,23 @@ public class MenuStaticInterruptions : MonoBehaviour
 
     private void Awake()
     {
-        musicSource = GameObject.FindGameObjectWithTag("musicSource").GetComponent<AudioSource>();
+        GameObject musicObject = GameObject.FindGameObjectWithTag("musicSource");
+
+        if (musicObject == null)
+        {
+            Debug.LogError("No object with tag 'musicSource'");
+            return;
+        }
+
+        musicSource = musicObject.GetComponentInChildren<AudioSource>();
+
+        if (musicSource == null)
+            Debug.LogError("No AudioSource found on ");
     }
     private void Start()
     {
+        if (musicSource == null || staticSource == null) return;
+
         baseMusicVolume = musicSource.volume;
         staticSource.loop = true;
         staticSource.volume = 0f;

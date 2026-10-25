@@ -34,4 +34,9 @@ public class UIGManagerLink : MonoBehaviour
     {
         GameManager.Instance.ReloadScene();
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
