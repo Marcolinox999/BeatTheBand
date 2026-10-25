@@ -2240,6 +2240,10 @@ PrefabInstance:
       propertyPath: 'keys.Array.data[6]'
       value: 
       objectReference: {fileID: 680623171}
+    - target: {fileID: 4788519364462528332, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
+      propertyPath: obstacleLayers.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4889164348810323977, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
       propertyPath: player
       value: 
@@ -3806,6 +3810,10 @@ PrefabInstance:
     - target: {fileID: 3305189300054772393, guid: 0e2a15af51732a143aad68f88e84e3d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6495664956299830752, guid: 0e2a15af51732a143aad68f88e84e3d0, type: 3}
+      propertyPath: initialPoolSize
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
