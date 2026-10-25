@@ -2085,6 +2085,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2314275580658992295, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
+      propertyPath: damageCooldown
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314275580658992295, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
       propertyPath: instrumentBall
       value: 
       objectReference: {fileID: 8941411920227522469, guid: 52c2bd90f57beb94ba455b51d94378e4, type: 3}
