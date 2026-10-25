@@ -65,7 +65,7 @@ public class AudioManager : MonoBehaviour
 
         musicSource.Stop();
         musicSource.clip = song;
-        musicSource.loop = false;
+        //musicSource.loop = false;
 
         double startTime = AudioSettings.dspTime + 0.2;
 
