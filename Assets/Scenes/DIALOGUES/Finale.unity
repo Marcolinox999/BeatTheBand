@@ -1031,6 +1031,7 @@ GameObject:
   - component: {fileID: 1433215838}
   - component: {fileID: 1433215840}
   - component: {fileID: 1433215839}
+  - component: {fileID: 1433215841}
   m_Layer: 5
   m_Name: Dialogue system
   m_TagString: Untagged
@@ -1158,6 +1159,21 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9975b1d225b4ba04b8591b6636a42b4a, type: 3}
   - {fileID: 8300000, guid: 51faac5d16826964fa13eece75491c29, type: 3}
   lettersPerSound: 3
+--- !u!114 &1433215841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433215837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3177afbe1502484d86046385723c976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicSceneConfig
+  music: {fileID: 8300000, guid: f62b9c2c909916e4b9e200c94b5bcd2d, type: 3}
+  bpm: 120
+  firstBeatOffset: 0
 --- !u!1 &1491390598
 GameObject:
   m_ObjectHideFlags: 0

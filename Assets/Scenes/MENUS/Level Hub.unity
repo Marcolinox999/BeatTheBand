@@ -206,8 +206,8 @@ MonoBehaviour:
   alternateStretchSquash: 0
   waitOneBeatBeforeStart: 0
   particles: {fileID: 0}
-  normalLevel: {fileID: 21300000, guid: 706c83ade20d8be4398d1bcc5667e7b2, type: 3}
-  BWLevel: {fileID: 21300000, guid: 7211b8a798010044ab5cc45d04014490, type: 3}
+  normalLevel: {fileID: 21300000, guid: 7211b8a798010044ab5cc45d04014490, type: 3}
+  BWLevel: {fileID: 21300000, guid: 706c83ade20d8be4398d1bcc5667e7b2, type: 3}
   levelNumber: 1
 --- !u!212 &173156722
 SpriteRenderer:
@@ -877,8 +877,8 @@ MonoBehaviour:
   alternateStretchSquash: 0
   waitOneBeatBeforeStart: 0
   particles: {fileID: 0}
-  normalLevel: {fileID: 21300000, guid: 706c83ade20d8be4398d1bcc5667e7b2, type: 3}
-  BWLevel: {fileID: 21300000, guid: 7211b8a798010044ab5cc45d04014490, type: 3}
+  normalLevel: {fileID: 21300000, guid: 7211b8a798010044ab5cc45d04014490, type: 3}
+  BWLevel: {fileID: 21300000, guid: 706c83ade20d8be4398d1bcc5667e7b2, type: 3}
   levelNumber: 2
 --- !u!212 &649364631
 SpriteRenderer:
@@ -983,7 +983,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 606792335778894445, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: m_Radius
-      value: 0.64
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: isLevel
@@ -1856,7 +1856,7 @@ MonoBehaviour:
     burstDuration: {x: 0.2, y: 0.6}
     staticVolume: 0.5
     musicDuck: 0.401
-  - timeBetweenBursts: {x: 1, y: 1}
+  - timeBetweenBursts: {x: 0, y: 0}
     burstDuration: {x: 2, y: 2}
     staticVolume: 1
     musicDuck: 0
@@ -1928,8 +1928,8 @@ MonoBehaviour:
   alternateStretchSquash: 0
   waitOneBeatBeforeStart: 0
   particles: {fileID: 0}
-  normalLevel: {fileID: 21300000, guid: 706c83ade20d8be4398d1bcc5667e7b2, type: 3}
-  BWLevel: {fileID: 21300000, guid: 7211b8a798010044ab5cc45d04014490, type: 3}
+  normalLevel: {fileID: 21300000, guid: 7211b8a798010044ab5cc45d04014490, type: 3}
+  BWLevel: {fileID: 21300000, guid: 706c83ade20d8be4398d1bcc5667e7b2, type: 3}
   levelNumber: 0
 --- !u!212 &1405237228
 SpriteRenderer:
@@ -2145,13 +2145,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 456788877}
     m_Modifications:
+    - target: {fileID: 606792335778894445, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: m_Radius
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: isFinal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: isLevel
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: isCorner
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: levelName
+      value: Finale
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: levelIndex
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
+      propertyPath: sceneToLoad
+      value: Finale
       objectReference: {fileID: 0}
     - target: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
       propertyPath: up.Array.size
@@ -2500,7 +2520,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.4
+  orthographic size: 4.39
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2525,7 +2545,7 @@ Transform:
   m_GameObject: {fileID: 1717993375}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6488864, y: 2.126326, z: -29.230888}
+  m_LocalPosition: {x: -0.25421, y: -0.7420098, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2824,6 +2844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1779863048}
   - component: {fileID: 1779863050}
+  - component: {fileID: 1779863051}
   - component: {fileID: 1779863049}
   m_Layer: 0
   m_Name: CinemachineCamera
@@ -2841,7 +2862,7 @@ Transform:
   m_GameObject: {fileID: 1779863047}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6488864, y: 2.126326, z: -29.230888}
+  m_LocalPosition: {x: -0.25421, y: -0.7420098, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2892,7 +2913,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 60
-    OrthographicSize: 3.4
+    OrthographicSize: 4.39
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -2910,6 +2931,25 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
+--- !u!114 &1779863051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779863047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b617507da6d07e749b7efdb34e1173e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineFollow
+  TrackerSettings:
+    BindingMode: 4
+    PositionDamping: {x: 1, y: 1, z: 1}
+    AngularDampingMode: 0
+    RotationDamping: {x: 1, y: 1, z: 1}
+    QuaternionDamping: 1
+  FollowOffset: {x: 0, y: 3.01, z: -10}
 --- !u!114 &1797467745 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1873147222024542147, guid: 277d5a78a866c2847884c0708293867b, type: 3}
