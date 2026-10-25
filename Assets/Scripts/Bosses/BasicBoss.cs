@@ -145,7 +145,7 @@ public class BasicBoss : BaseHealth
     protected override void SpriteDamage()
     {
         if (isDead) return;
-        CurrentHealth -= 10;
+        CallDamageFlash();
         CheckPhaseTransition();
     }
     protected override void ParticleDamage()
