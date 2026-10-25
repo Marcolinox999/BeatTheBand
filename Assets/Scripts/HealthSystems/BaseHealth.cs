@@ -70,38 +70,33 @@ public abstract class BaseHealth : MonoBehaviour, IDamageable
 
         private IEnumerator DamageFlasher()
         {
-            //SET THE COLOR
-            SetFlashColor();
-            //LERP THE FLASH AMOUNT
-            float currentFlashAmount = 0f;
-            float elapsedTime = 0f;
-            while(elapsedTime < flashTime)
+            Color[] originalColors = new Color[_spriteRenderers.Length];
+            for (int i = 0; i < _spriteRenderers.Length; i++)
             {
-                //ITERATE ELAPSED TIME
+                originalColors[i] = _spriteRenderers[i].color;
+                _spriteRenderers[i].color = _flashColor; 
+            }
+            
+            float elapsedTime = 0f;
+            while (elapsedTime < flashTime)
+            {
                 elapsedTime += Time.deltaTime;
-                //LERP FLASH AMOUNT
-                currentFlashAmount = Mathf.Lerp(1f, 0f, elapsedTime / flashTime);
-                SetFlashAmount(currentFlashAmount);
+
+                for (int i = 0; i < _spriteRenderers.Length; i++)
+                {
+                    _spriteRenderers[i].color = Color.Lerp(_flashColor, originalColors[i], elapsedTime / flashTime);
+                }
+
                 yield return null;
+            }
+
+            for (int i = 0; i < _spriteRenderers.Length; i++)
+            {
+                _spriteRenderers[i].color = originalColors[i];
             }
 
         }
         
-        private void SetFlashAmount(float amount)
-        {
-            for (int i = 0; i < _materials.Length; i++)
-            {
-                _materials[i].SetFloat("_FlashAmount", amount);
-            }
-        }
-
-        private void SetFlashColor()
-        {
-            for (int i = 0; i < _materials.Length; i++)
-            {
-                _materials[i].SetColor("_FlashColor", _flashColor);
-            }
-        }
 
         protected void CallDamageFlash()
         {

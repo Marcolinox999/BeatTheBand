@@ -145,7 +145,7 @@ public class BasicBoss : BaseHealth
     protected override void SpriteDamage()
     {
         if (isDead) return;
-        CurrentHealth -= 10;
+        CallDamageFlash();
         CheckPhaseTransition();
     }
     protected override void ParticleDamage()
@@ -159,6 +159,7 @@ public class BasicBoss : BaseHealth
         basicBoss.bossSpeed = 0;
         Debug.Log("Boss Dead");
         Instantiate(instrumentBall, transform.position, Quaternion.identity);
+        Debug.Log("Ball Spawned");
         gameObject.SetActive(false);
         
     }
