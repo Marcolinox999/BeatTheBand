@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MENUS/Main Menu.unity
+    guid: 76d1fb6c5c9a69e4babd567611a95373
+  - enabled: 1
     path: Assets/Scenes/MENUS/Level Hub.unity
     guid: 9201803f48f2b8e49a11a05d30387baf
   - enabled: 1
@@ -26,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LEVELS/FINAL/Cymbal_Level.unity
     guid: 633bd66140912004291ad338dfe34250
+  - enabled: 1
+    path: Assets/Scenes/MENUS/Game Over.unity
+    guid: e11de69ff2693cc46a512cff1561eb46
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
