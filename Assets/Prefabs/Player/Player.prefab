@@ -355,6 +355,7 @@ MonoBehaviour:
   - {fileID: 4290160201787101369}
   - {fileID: 7652525672339871724}
   - {fileID: 7123629665076350593}
+  mapName: Level Hub
 --- !u!50 &3286618622399576044
 Rigidbody2D:
   serializedVersion: 5
@@ -6118,11 +6119,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8165513407631051076, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.9157
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8165513407631051076, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.89676
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8165513407631051076, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
       propertyPath: m_LocalPosition.z
