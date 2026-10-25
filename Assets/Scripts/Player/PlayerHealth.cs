@@ -5,8 +5,8 @@ public class PlayerHealth : BaseHealth
 {
     
     [Header("Particles")] [SerializeField] private ParticleSystem[] playerParticles;
-    [SerializeField] private string mapName;
-    
+    [SerializeField] private string mapName = "Game Over";
+    [SerializeField] private BasicBoss boss;
     protected override void Start()
     {
         base.Start();
@@ -32,6 +32,7 @@ public class PlayerHealth : BaseHealth
     
     protected override void Die()
     {
+        GameManager.Instance.bossLeftHealth = boss.CurrentHealth;
         GameManager.Instance.LoadScene(mapName);
     }
 

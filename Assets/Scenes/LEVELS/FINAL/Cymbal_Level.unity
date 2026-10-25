@@ -193,6 +193,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2314275580658992295, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
+      propertyPath: maxHealth
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314275580658992295, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
+      propertyPath: phasePack.Array.data[0].healthThreshold
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2314275580658992295, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
+      propertyPath: phasePack.Array.data[1].healthThreshold
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 3965885835782480312, guid: b661d966906cdd548a3dc4f79276e022, type: 3}
       propertyPath: m_Name
       value: --Boss--
@@ -1451,6 +1463,14 @@ PrefabInstance:
     - target: {fileID: 3384923022016058360, guid: 4c24e206b1a816041a7292dfa8faa42b, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709574020361400045, guid: 4c24e206b1a816041a7292dfa8faa42b, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 369911703}
+    - target: {fileID: 5709574020361400045, guid: 4c24e206b1a816041a7292dfa8faa42b, type: 3}
+      propertyPath: mapName
+      value: Game Over
       objectReference: {fileID: 0}
     - target: {fileID: 7082835829622066009, guid: 4c24e206b1a816041a7292dfa8faa42b, type: 3}
       propertyPath: m_LocalPosition.x
