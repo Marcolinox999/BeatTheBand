@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject playerMap;
     [SerializeField] private string _map;
     public string desiredLevel;
+    public float bossLeftHealth;
     
     private Vector2 lastPosition;
 
