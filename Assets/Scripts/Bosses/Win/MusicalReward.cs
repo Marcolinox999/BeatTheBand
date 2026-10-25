@@ -14,9 +14,6 @@ public class MusicalReward : BaseHealth
     [Tooltip("Max random angle (degrees) added to the reflected direction on each bounce.")]
     [SerializeField] private float maxBounceAngle = 25f;
 
-    [Header("Damage")]
-    [SerializeField] private float damagePerBullet = 1f;
-
     [Header("Knockback")]
     [SerializeField] private float knockbackForce = 6f;
     [Tooltip("How fast the ball returns to its normal speed after a knockback.")]

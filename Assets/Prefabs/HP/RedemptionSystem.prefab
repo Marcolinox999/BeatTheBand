@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a0d900dad6c67d44baa7a77494300dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RedemptionSystem
-  timeToHeal: 10
+  timeToHeal: 5
   healAmount: 1
   healingRadius: 1.94
   playerLayer:
@@ -54,7 +54,7 @@ MonoBehaviour:
     m_Bits: 1
   growingIndicator: {fileID: 3298811032614452221}
   fixedIndicator: {fileID: 7732983585092917176}
-  maxScale: {x: 2, y: 2, z: 1}
+  maxScale: {x: 1, y: 1, z: 1}
 --- !u!1 &1564660665908090846
 GameObject:
   m_ObjectHideFlags: 0

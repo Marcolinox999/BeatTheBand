@@ -7,6 +7,9 @@ public abstract class BaseHealth : MonoBehaviour, IDamageable
     {
         [SerializeField] protected float maxHealth;
         [SerializeField] protected float damageCooldown;
+        
+        protected Color[] _originalColors;
+        private Coroutine _flashCoroutine;
 
         [SerializeField] protected Color _flashColor = Color.white;
         [SerializeField] protected float flashTime = 0.25f;
@@ -70,42 +73,41 @@ public abstract class BaseHealth : MonoBehaviour, IDamageable
 
         private IEnumerator DamageFlasher()
         {
-            //SET THE COLOR
-            SetFlashColor();
-            //LERP THE FLASH AMOUNT
-            float currentFlashAmount = 0f;
+         
+            for (int i = 0; i < _spriteRenderers.Length; i++)
+            {
+                _spriteRenderers[i].color = _flashColor; 
+            }
+        
             float elapsedTime = 0f;
             while(elapsedTime < flashTime)
             {
-                //ITERATE ELAPSED TIME
                 elapsedTime += Time.deltaTime;
-                //LERP FLASH AMOUNT
-                currentFlashAmount = Mathf.Lerp(1f, 0f, elapsedTime / flashTime);
-                SetFlashAmount(currentFlashAmount);
+    
+
+                for (int i = 0; i < _spriteRenderers.Length; i++)
+                {
+                    _spriteRenderers[i].color = Color.Lerp(_flashColor, _originalColors[i], elapsedTime / flashTime);
+                }
+            
                 yield return null;
             }
-
+            
+            for (int i = 0; i < _spriteRenderers.Length; i++)
+            {
+                _spriteRenderers[i].color = _originalColors[i];
+            }
         }
         
-        private void SetFlashAmount(float amount)
-        {
-            for (int i = 0; i < _materials.Length; i++)
-            {
-                _materials[i].SetFloat("_FlashAmount", amount);
-            }
-        }
-
-        private void SetFlashColor()
-        {
-            for (int i = 0; i < _materials.Length; i++)
-            {
-                _materials[i].SetColor("_FlashColor", _flashColor);
-            }
-        }
-
+        
         protected void CallDamageFlash()
         {
-            StartCoroutine(DamageFlasher());
+            if (_flashCoroutine != null)
+            {
+                StopCoroutine(_flashCoroutine);
+            }
+            
+            _flashCoroutine = StartCoroutine(DamageFlasher());
         }
 
 
@@ -113,9 +115,11 @@ public abstract class BaseHealth : MonoBehaviour, IDamageable
         
         protected void Init()
         {
+            _originalColors = new Color[_spriteRenderers.Length];
             for (int i = 0; i < _spriteRenderers.Length; i++)
             {
                 _materials[i] = _spriteRenderers[i].material;
+                _originalColors[i] = _spriteRenderers[i].color;
             }
         }
         

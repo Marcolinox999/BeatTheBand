@@ -231,14 +231,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8237211cc23b2114db3c57359b0c6feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicalReward
-  maxHealth: 1
+  maxHealth: 150
   damageCooldown: 0
   _flashColor: {r: 0, g: 0.6560173, b: 1, a: 1}
   flashTime: 0.25
-  speed: 2
-  maxBounceAngle: 25
-  damagePerBullet: 1
-  knockbackForce: 6
+  speed: 6.5
+  maxBounceAngle: 35
+  knockbackForce: 20
   speedRecovery: 20
   bouncyScale: 0.2
   bounceSounds:
@@ -247,8 +246,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 16e65d9168da1474faf7ad4953fa76e0, type: 3}
   - {fileID: 8300000, guid: 3218ce02278e4144abd2b43173cf21a4, type: 3}
   - {fileID: 8300000, guid: e06493f3560ef474d8ff2301a51cf30c, type: 3}
-  levelCompleted: 0
-  weaponUnlock: 0
+  levelCompleted: 2
+  weaponUnlock: 3
   destroyDelay: 1.5
   mapSceneName: Level Hub
 --- !u!212 &2525170529839304173
