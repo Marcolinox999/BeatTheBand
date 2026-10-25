@@ -158,7 +158,7 @@ public class BasicBoss : BaseHealth
         DisableAllAttacks();
         basicBoss.bossSpeed = 0;
         Debug.Log("Boss Dead");
-        Instantiate(instrumentBall, transform.position, Quaternion.identity);
+        Instantiate(instrumentBall, Vector3.zero,Quaternion.identity);
         gameObject.SetActive(false);
         
     }
