@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public bool[] unlockedWeapons = new bool[4];
     public bool[] beatenLevels = new bool[3];
     public BeatManager.Score score;
-    private Animator animator;
+    public Animator animator;
     [SerializeField] private GameObject playerMap;
     [SerializeField] private string _map;
     public string desiredLevel;
@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        animator = GameObject.FindGameObjectsWithTag("Transition")[0].GetComponent<Animator>();
+        //animator = GameObject.FindGameObjectsWithTag("Transition")[0].GetComponent<Animator>();
         Instance = this;
         DontDestroyOnLoad(gameObject);
         CurrentState = GameState.Playing;
@@ -97,11 +97,15 @@ public class GameManager : MonoBehaviour
 
     public void TransitionOutLevel()
     {
+        Debug.Log("TRANSITION OUT EJECUTADO: " + desiredLevel);
+
         if (animator != null)
             animator.Play("Trans_In");
+
         SceneManager.LoadScene(desiredLevel);
-        animator = GameObject.FindGameObjectsWithTag("Transition")[0].GetComponent<Animator>();
-        
+
+        animator = GameObject.FindGameObjectsWithTag("Transition")[0]
+            .GetComponent<Animator>();
     }
 
     public void LoadScenebyInt(int buildIndex)
@@ -125,5 +129,29 @@ public class GameManager : MonoBehaviour
         Debug.Log("Quit Game");
         Application.Quit();
     }
-    
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        GameObject transitionObject = GameObject.FindGameObjectWithTag("Transition");
+
+        if (transitionObject != null)
+        {
+            animator = transitionObject.GetComponent<Animator>();
+            Debug.Log("Animator de transición actualizado en: " + scene.name);
+        }
+        else
+        {
+            animator = null;
+            Debug.LogWarning("No se encontró el objeto Transition en: " + scene.name);
+        }
+    }
 }

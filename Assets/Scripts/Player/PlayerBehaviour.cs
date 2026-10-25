@@ -134,13 +134,15 @@ namespace Player
             }
 
             // Interaction point requested by Isaac
-            if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if (currentPoint.isLevel && !_isOnMap && !string.IsNullOrEmpty(currentPoint.sceneToLoad) && currentPoint.isFinal)
                 {
+
                     if (GameManager.Instance.beatenLevels[1] && GameManager.Instance.beatenLevels[2] &&
                         GameManager.Instance.beatenLevels[0])
                     {
+
                         StartCoroutine(LoadLevel(currentPoint.sceneToLoad, 2f));
                     }
                     else
@@ -150,6 +152,7 @@ namespace Player
                 }
                 else
                 {
+
                     if (currentPoint.isLevel && !_isOnMap && !string.IsNullOrEmpty(currentPoint.sceneToLoad))
                     {
                         StartCoroutine(LoadLevel(currentPoint.sceneToLoad, 2f));
@@ -190,13 +193,17 @@ namespace Player
 
         private IEnumerator LoadLevel(string sceneName, float delayTime)
         {
-            _isOnMap = true;
+            Debug.Log("LoadLevel iniciada: " + sceneName);
 
-            // TODO: add visual effects before loading the level
+            _isOnMap = true;
 
             yield return new WaitForSeconds(delayTime);
 
+            Debug.Log("Fin de la espera. Cargando: " + sceneName);
+
             GameManager.Instance.LoadScene(sceneName);
+
+            Debug.Log("Se ha llamado a GameManager.LoadScene");
         }
 
         #endregion
@@ -215,7 +222,7 @@ namespace Player
                     break;
             }
 
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) && pveEnabled)
             {
                 GameManager.Instance.PauseGameIResumeGame();
             }

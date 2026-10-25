@@ -47,12 +47,6 @@ public class BasicBoss : BaseHealth
         if (isDead)
             return;
 
-        // Solo para probar el jefe.
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ApplyDamage(10);
-        }
-
         CheckPhaseTransition();
     }
 
