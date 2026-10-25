@@ -356,6 +356,7 @@ MonoBehaviour:
   - {fileID: 7652525672339871724}
   - {fileID: 7123629665076350593}
   mapName: Level Hub
+  boss: {fileID: 0}
 --- !u!50 &3286618622399576044
 Rigidbody2D:
   serializedVersion: 5
@@ -5912,7 +5913,7 @@ SpriteRenderer:
   m_Size: {x: 0.68266666, y: 0.68266666}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!95 &9073051745942867985
 Animator:
@@ -6097,10 +6098,46 @@ PrefabInstance:
       propertyPath: lengthInSec
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 809878649569607649, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2527767020078713928, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2527767020078713928, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1150910211
+      objectReference: {fileID: 0}
+    - target: {fileID: 3032882046147928707, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3032882046147928707, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1150910211
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345774661420136058, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345774661420136058, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3621346942484130653, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
       propertyPath: m_Name
       value: Player_DMG
       objectReference: {fileID: 0}
+    - target: {fileID: 4932155452654785310, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4932155452654785310, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5938214767511642585, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
       propertyPath: looping
       value: 0
@@ -6109,6 +6146,10 @@ PrefabInstance:
       propertyPath: lengthInSec
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 5938214767511642585, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6523404839990147252, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
       propertyPath: looping
       value: 0
@@ -6116,6 +6157,18 @@ PrefabInstance:
     - target: {fileID: 6523404839990147252, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
       propertyPath: lengthInSec
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6523404839990147252, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333443252629210637, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333443252629210637, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1150910211
       objectReference: {fileID: 0}
     - target: {fileID: 8165513407631051076, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6156,6 +6209,14 @@ PrefabInstance:
     - target: {fileID: 8165513407631051076, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386717511767661866, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386717511767661866, guid: 38385710f1f19cb4e9e5c08ce297801f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
