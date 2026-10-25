@@ -244,7 +244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3980416881378928749, guid: dd7079d2bb6d3184da4c0d2a9d0b08b5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000030517578
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3980416881378928749, guid: dd7079d2bb6d3184da4c0d2a9d0b08b5, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -942,7 +942,7 @@ MonoBehaviour:
   tag2: Cornelius Batter
   talkingColor: {r: 1, g: 1, b: 1, a: 1}
   listeningColor: {r: 0.26415092, g: 0.25667492, b: 0.25667492, a: 0.7921569}
-  sceneToLoad: 0
+  sceneToLoad: 7
   tag1Image: {fileID: 410441910}
   tag2Image: {fileID: 390727181}
   tag1IdleSprite: {fileID: 21300000, guid: 76079328c9c15ca4db548df121d4fe3b, type: 3}
@@ -1787,7 +1787,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
