@@ -25,6 +25,8 @@ public class BeatManager : MonoBehaviour
    private int lastFrame = -1;
    private int skipABeat = 0;
    private int currentBlip = 0;
+   private double nextBeatToSchedule;
+   private double scheduleAheadTime = 0.1;
    public double SmoothedDspTime
    {
       get
@@ -88,16 +90,47 @@ public class BeatManager : MonoBehaviour
    }
    private void CalculateTheBeat()
    {
-      intervalTime = 60 / BPM;
+      intervalTime = 60.0 / BPM;
+      
    }
 
    private void Update()
    {
-      if (AudioSettings.dspTime >= nextTimeBeat)
+      double dspTime = AudioSettings.dspTime;
+
+      while (nextBeatToSchedule < dspTime + scheduleAheadTime)
       {
-         Beat();
-         nextTimeBeat += intervalTime; 
+         if (nextBeatToSchedule >= startDspTime)
+            ScheduleBlip(nextBeatToSchedule);
+
+         nextBeatToSchedule += intervalTime;
       }
+
+      while (dspTime >= nextTimeBeat)
+      {
+         OnBeat?.Invoke(beatIndex);
+         beatIndex++;
+
+         if (skipABeat > 0)
+            skipABeat--;
+
+         nextTimeBeat += intervalTime;
+      }
+
+   }
+
+   private void ScheduleBlip(double beatTime)
+   {
+      if (blip == null || blip.Length == 0)
+         return;
+
+      currentBlip = (currentBlip + 1) % blip.Length;
+
+      AudioManager.instance.PlayScheduledBeat(
+         blip[currentBlip],
+         beatTime
+      );
+
    }
 
    private void Beat()
@@ -109,7 +142,7 @@ public class BeatManager : MonoBehaviour
       if (skipABeat > 0) skipABeat--;
       //if (skipABeat <= 0) PRUEBA.SetActive(true);
       //Por si queremos recalibrarlo no lo voy a quitar del todo que sino luego es un dolor
-      //Debug.Log(nextTimeBeat);
+      Debug.Log(nextTimeBeat);
    }
    //Recordadme que borre esto jajaaj pero es liada y por si lo tocamos en el futuro lo voy a ir documentando (terrible codigo)
    public bool CanAttack()
@@ -155,4 +188,22 @@ public class BeatManager : MonoBehaviour
          return Score.Missed;
       }
    }
+   public void StartBeatSync(float bpm, double musicStartTime)
+   {
+      BPM = bpm;
+      CalculateTheBeat();
+
+      startDspTime = musicStartTime;
+      nextTimeBeat = musicStartTime;
+      nextBeatToSchedule = musicStartTime;
+
+      beatIndex = 0;
+
+      double dsp = AudioSettings.dspTime;
+      lastDspTime = dsp;
+      lastRealTime = Time.realtimeSinceStartupAsDouble;
+      smoothedDspTime = dsp;
+
+   }
+   
 }

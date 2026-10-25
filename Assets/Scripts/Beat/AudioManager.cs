@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
+    public bool musicChange;
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private AudioSource buttonSceneClip;
@@ -17,7 +18,7 @@ public class AudioManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            //Its not going to be destroyed
+            //It's not going to be destroyed
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -38,10 +39,12 @@ public class AudioManager : MonoBehaviour
         musicSource.Play();
     }
 
-    public void PlayScheduledBeat(AudioClip clipToPlay, double time)
+    public void PlayScheduledBeat(AudioClip clipToPlay, double dspTime)
     {
-        sfxSource.clip = clipToPlay;
-        sfxSource.PlayScheduled(time);
+        if (clipToPlay == null)
+            return;
+
+        sfxSource.PlayOneShot(clipToPlay, 0f); // No uses esta línea.
     }
 
     public void OnClickButtonToScene(int sceneToLoad)
@@ -55,4 +58,23 @@ public class AudioManager : MonoBehaviour
         buttonStartGameClip.Play();
         SceneManager.LoadScene(sceneToLoad);
     }
+    public void PlaySongSynced(AudioClip song, float bpm, float firstBeatOffset = 0f)
+    {
+        if (song == null || bpm <= 0f)
+            return;
+
+        musicSource.Stop();
+        musicSource.clip = song;
+        musicSource.loop = false;
+
+        double startTime = AudioSettings.dspTime + 0.2;
+
+        musicSource.PlayScheduled(startTime);
+
+        BeatManager.instance.StartBeatSync(
+            bpm,
+            startTime + firstBeatOffset
+        );
+    }
+    
 }
