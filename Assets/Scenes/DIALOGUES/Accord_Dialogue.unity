@@ -1122,7 +1122,7 @@ MonoBehaviour:
   tag2: Brunella Bellows
   talkingColor: {r: 1, g: 1, b: 1, a: 1}
   listeningColor: {r: 0.44025147, g: 0.40840936, b: 0.40840936, a: 0.7058824}
-  sceneToLoad: 0
+  sceneToLoad: 5
   tag1Image: {fileID: 410441910}
   tag2Image: {fileID: 390727181}
   tag1IdleSprite: {fileID: 21300000, guid: 76079328c9c15ca4db548df121d4fe3b, type: 3}

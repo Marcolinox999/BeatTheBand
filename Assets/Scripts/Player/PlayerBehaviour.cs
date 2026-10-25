@@ -139,7 +139,7 @@ namespace Player
                 if (currentPoint.isLevel && !_isOnMap && !string.IsNullOrEmpty(currentPoint.sceneToLoad) && currentPoint.isFinal)
                 {
                     if (GameManager.Instance.beatenLevels[1] && GameManager.Instance.beatenLevels[2] &&
-                        GameManager.Instance.beatenLevels[3])
+                        GameManager.Instance.beatenLevels[0])
                     {
                         StartCoroutine(LoadLevel(currentPoint.sceneToLoad, 2f));
                     }
@@ -218,7 +218,6 @@ namespace Player
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 GameManager.Instance.PauseGameIResumeGame();
-                
             }
 
             if (attackInput.action.WasPressedThisFrame() && pveEnabled && GameManager.Instance.CurrentState == GameManager.GameState.Playing)

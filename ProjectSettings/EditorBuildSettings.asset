@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Level Hub.unity
+    path: Assets/Scenes/MENUS/Level Hub.unity
     guid: 9201803f48f2b8e49a11a05d30387baf
   - enabled: 1
     path: Assets/Scenes/DIALOGUES/Drum_Dialogue.unity
@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DIALOGUES/Cymbal_Dialogue.unity
     guid: 3e59f441c08a1e14db4c5af7d12f46d7
+  - enabled: 1
+    path: Assets/Scenes/LEVELS/FINAL/Drum_Level.unity
+    guid: 71ff80befab72b746b4dd12a5bb94ffc
   - enabled: 1
     path: Assets/Scenes/LEVELS/FINAL/Accord_Level.unity
     guid: ceb8e24970759de409d028664f73b4b0
