@@ -1702,7 +1702,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5709574020361400045, guid: 4c24e206b1a816041a7292dfa8faa42b, type: 3}
   m_PrefabInstance: {fileID: 1369114712}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1897300444}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5df9f62a585e4d4894b0c43c18c4af4, type: 3}
@@ -1713,7 +1713,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 511247670244104891, guid: 4c24e206b1a816041a7292dfa8faa42b, type: 3}
   m_PrefabInstance: {fileID: 1369114712}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1897300444}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6473fc6443469a488e679472d1d2125, type: 3}
@@ -1866,6 +1866,10 @@ PrefabInstance:
     - target: {fileID: 2936876092624644533, guid: 93425f41aa037034fa41a3db750937a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915352421516408210, guid: 93425f41aa037034fa41a3db750937a2, type: 3}
+      propertyPath: sceneName
+      value: Level Hub
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2526,6 +2530,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3980416881378928749, guid: dd7079d2bb6d3184da4c0d2a9d0b08b5, type: 3}
   m_PrefabInstance: {fileID: 5745591361023687529}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1897300444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3384923022016058360, guid: 4c24e206b1a816041a7292dfa8faa42b, type: 3}
+  m_PrefabInstance: {fileID: 1369114712}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1900770372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2717,6 +2726,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1125862803864095991, guid: 97a0ffeab96f53f47a7a895bdb6349bb, type: 3}
+      propertyPath: playerMap
+      value: 
+      objectReference: {fileID: 1897300444}
     - target: {fileID: 4346157484992128105, guid: 97a0ffeab96f53f47a7a895bdb6349bb, type: 3}
       propertyPath: m_Name
       value: GameManager
