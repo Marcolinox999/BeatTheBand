@@ -41,6 +41,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Floor
+    uniqueID: 1208878287
+    locked: 0
   - name: Background
     uniqueID: 948299355
     locked: 0
