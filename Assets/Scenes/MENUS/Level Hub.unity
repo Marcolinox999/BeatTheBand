@@ -614,7 +614,7 @@ MonoBehaviour:
   particles: {fileID: 0}
   normalLevel: {fileID: 21300000, guid: 7211b8a798010044ab5cc45d04014490, type: 3}
   BWLevel: {fileID: 21300000, guid: 706c83ade20d8be4398d1bcc5667e7b2, type: 3}
-  levelNumber: 1
+  levelNumber: 2
   useColors: 0
   notBeatenColor: {r: 1, g: 1, b: 1, a: 1}
   beatenColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2653,7 +2653,7 @@ Transform:
   m_GameObject: {fileID: 649364628}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.466385, y: 1.2331443, z: 0}
+  m_LocalPosition: {x: 10.68, y: -0.27, z: 0}
   m_LocalScale: {x: 0.84186065, y: 0.84186065, z: 0.84186065}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2681,7 +2681,7 @@ MonoBehaviour:
   particles: {fileID: 0}
   normalLevel: {fileID: 21300000, guid: 7211b8a798010044ab5cc45d04014490, type: 3}
   BWLevel: {fileID: 21300000, guid: 706c83ade20d8be4398d1bcc5667e7b2, type: 3}
-  levelNumber: 2
+  levelNumber: 1
   useColors: 0
   notBeatenColor: {r: 1, g: 1, b: 1, a: 1}
   beatenColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2732,9 +2732,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 1314954869
-  m_SortingLayer: -1
-  m_SortingOrder: 0
+  m_SortingLayerID: -1208565371
+  m_SortingLayer: 1
+  m_SortingOrder: 1066
   m_MaskInteraction: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5436,7 +5436,7 @@ Transform:
   m_GameObject: {fileID: 1405237225}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.0966067, y: 6.56549, z: 0}
+  m_LocalPosition: {x: -0.2, y: 6.4, z: 0}
   m_LocalScale: {x: 0.84186065, y: 0.84186065, z: 0.84186065}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5515,8 +5515,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 1314954869
-  m_SortingLayer: -1
+  m_SortingLayerID: 948299355
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 0}
