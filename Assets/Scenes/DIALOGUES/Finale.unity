@@ -181,6 +181,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BurntEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 1271475626920517843, guid: dd7079d2bb6d3184da4c0d2a9d0b08b5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3980416881378928749, guid: dd7079d2bb6d3184da4c0d2a9d0b08b5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -300,7 +304,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 222, y: 93}
+  m_AnchoredPosition: {x: 565, y: 93}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &390727181
@@ -375,7 +379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -230, y: 66.2}
+  m_AnchoredPosition: {x: -560, y: 66.2}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &410441910
@@ -415,6 +419,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410441908}
+  m_CullTransparentMesh: 1
+--- !u!1 &479883502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 479883503}
+  - component: {fileID: 479883505}
+  - component: {fileID: 479883504}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &479883503
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479883502}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1433215838}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -123}
+  m_SizeDelta: {x: 801.08, y: 208.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &479883504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479883502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8779e00b07274e149a70893f2831b891, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &479883505
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479883502}
   m_CullTransparentMesh: 1
 --- !u!1001 &480242069
 PrefabInstance:
@@ -920,81 +999,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 33832092}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1323329225
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1323329226}
-  - component: {fileID: 1323329228}
-  - component: {fileID: 1323329227}
-  m_Layer: 5
-  m_Name: Background
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1323329226
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323329225}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1433215838}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.8196, y: -157.51505}
-  m_SizeDelta: {x: 806.286, y: 141.0301}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1323329227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323329225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5ae462a275ce8fb45b491679f63338b5, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1323329228
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323329225}
-  m_CullTransparentMesh: 1
 --- !u!1 &1433215837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,8 +1031,8 @@ RectTransform:
   m_Children:
   - {fileID: 410441909}
   - {fileID: 390727180}
+  - {fileID: 479883503}
   - {fileID: 1759977159}
-  - {fileID: 1323329226}
   - {fileID: 1491390599}
   - {fileID: 1577727786}
   m_Father: {fileID: 729004439}
@@ -1053,59 +1057,34 @@ MonoBehaviour:
   dialogue:
     dialogueLines:
     - character:
-        name: Brunella Bellows
-        portrait: {fileID: 21300000, guid: 7c5bd809b4771d54dbc91b471853f816, type: 3}
-      line: ".... ... .. (Tiziano? It\u2019s been so long since I last heard that
-        soothing melody...)"
+        name: Tiziano Buccina
+        portrait: {fileID: 21300000, guid: 7aad5d78ccd88b446864123cad728d24, type: 3}
+      line: 'As Tiziano, with the weight of every melody in the town on his back,
+        climbed his way up to the most acoustic bandstand in Stringville, a triumphant
+        grin slowly grew on his face. '
     - character:
         name: Tiziano Buccina
-        portrait: {fileID: 21300000, guid: 59b9bc854a770a244bf250243c77f3b9, type: 3}
-      line: "I did come back, but do not expect anything new, at least I\u2019ll
-        save you from feeling left down again"
-    - character:
-        name: Brunella Bellows
-        portrait: {fileID: 21300000, guid: 7c5bd809b4771d54dbc91b471853f816, type: 3}
-      line: ... .. ... .... (Never felt left down since I always believed in you)
+        portrait: {fileID: 21300000, guid: 7aad5d78ccd88b446864123cad728d24, type: 3}
+      line: 'Thinking about every failed concert, every failed attempt to get public
+        to hear him, every laughter that he had to bear to get to this moment...
+        It made every Tiziano''s step lighter and the remaining distance to it''s
+        destiny feel like an eternity. '
     - character:
         name: Tiziano Buccina
-        portrait: {fileID: 21300000, guid: 59b9bc854a770a244bf250243c77f3b9, type: 3}
-      line: 'Cut it out! Look at yourself, in this fancy place now, where are those
-        lonely and narrow streets that made your talent flow? '
+        portrait: {fileID: 21300000, guid: 7aad5d78ccd88b446864123cad728d24, type: 3}
+      line: 'But once and for all, now at the bandstand, Tiziano started his performance,
+        the greatest ever heard, his magnum opus. And every sound traveled through
+        every street, canal and alley, dragging anyone who still wanted to live with
+        rythm in their body towards Tiziano''s chord hurricane. '
     - character:
         name: Tiziano Buccina
-        portrait: {fileID: 21300000, guid: 59b9bc854a770a244bf250243c77f3b9, type: 3}
-      line: All of them replaced by ovation castles and praise towers. You ended
-        up in the very place I thought we would reach together someday!
+        portrait: {fileID: 21300000, guid: 7aad5d78ccd88b446864123cad728d24, type: 3}
+      line: 'Leaving, at last, the conductor of the world''s symphony, with everyone
+        at his feet, craving for every single note that he could give them. '
     - character:
         name: Brunella Bellows
-        portrait: {fileID: 21300000, guid: 7c5bd809b4771d54dbc91b471853f816, type: 3}
-      line: ....... ... .. (My body might be here, but my soul never left the very
-        breeze that carried our tunes through every canal)
-    - character:
-        name: Brunella Bellows
-        portrait: {fileID: 21300000, guid: 7c5bd809b4771d54dbc91b471853f816, type: 3}
-      line: ... .... .. (Bringing myself to let you go was hard, but the deep desires
-        of a person cannot be stopped)
-    - character:
-        name: Brunella Bellows
-        portrait: {fileID: 21300000, guid: 7c5bd809b4771d54dbc91b471853f816, type: 3}
-      line: .... ... .......  (And I knew that the talent and ideas that were brewing
-        behind those golden notes did not belong in the same place as my beloved
-        alleys)
-    - character:
-        name: Tiziano Buccina
-        portrait: {fileID: 21300000, guid: 59b9bc854a770a244bf250243c77f3b9, type: 3}
-      line: "Ranting about all that won\u2019t change the facts, it won\u2019t change
-        that you let me leave to get rid of me and get everything for yourself!"
-    - character:
-        name: Brunella Bellows
-        portrait: {fileID: 21300000, guid: 7c5bd809b4771d54dbc91b471853f816, type: 3}
-      line: ... .... ..... (It saddens me to hear your lament and me being the one
-        to blame, I know that your world is crumbling down...)
-    - character:
-        name: Brunella Bellows
-        portrait: {fileID: 21300000, guid: 7c5bd809b4771d54dbc91b471853f816, type: 3}
-      line: "... (But I won\u2019t allow you to take mine...)"
+        portrait: {fileID: 21300000, guid: 7aad5d78ccd88b446864123cad728d24, type: 3}
+      line: The End.
 --- !u!114 &1433215840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1122,7 +1101,7 @@ MonoBehaviour:
   tag2: Brunella Bellows
   talkingColor: {r: 1, g: 1, b: 1, a: 1}
   listeningColor: {r: 0.44025147, g: 0.40840936, b: 0.40840936, a: 0.7058824}
-  sceneToLoad: 5
+  sceneToLoad: 0
   tag1Image: {fileID: 410441910}
   tag2Image: {fileID: 390727181}
   tag1IdleSprite: {fileID: 21300000, guid: 76079328c9c15ca4db548df121d4fe3b, type: 3}
@@ -1133,16 +1112,30 @@ MonoBehaviour:
   isDialogueActive: 0
   typingSpeed: 0.04
   tag1TypingSounds:
+  - {fileID: 8300000, guid: 32e51eef91f442643bbdb46278c599b8, type: 3}
+  - {fileID: 8300000, guid: c50a746115946f241a9574575337cb75, type: 3}
+  - {fileID: 8300000, guid: 1b7e5c04d354a4b4fa82b1d027dd1d63, type: 3}
+  - {fileID: 8300000, guid: e4f87cb0643b8e74ca1f5269fe5d36c7, type: 3}
+  - {fileID: 8300000, guid: 1a2c34d0e28ad4543a3bdfc553a77e43, type: 3}
+  - {fileID: 8300000, guid: e63909ad56798184289fb321688a73ac, type: 3}
+  - {fileID: 8300000, guid: 0e48f6e2debb3754c912f1ec85819f0a, type: 3}
+  - {fileID: 8300000, guid: d47c851086788054f8d9a4e818841c61, type: 3}
+  - {fileID: 8300000, guid: 93c789f05d3e705429b7f31738c97ca5, type: 3}
+  - {fileID: 8300000, guid: 9e4e841799d694241bf5e9116818821b, type: 3}
+  - {fileID: 8300000, guid: bee1b0cd1a4f6d347a29829acf7345f1, type: 3}
+  - {fileID: 8300000, guid: 6099a0931395ab44abd76752acf3a97b, type: 3}
+  - {fileID: 8300000, guid: 4ada7dbfac51d5b4b8f491154536242a, type: 3}
   - {fileID: 8300000, guid: d6bc20b289d875542af4500fa84762f2, type: 3}
   - {fileID: 8300000, guid: 09b7d8134176df24e96dc16e977f3bcc, type: 3}
   - {fileID: 8300000, guid: 47aeae2368807b24f977473730a71271, type: 3}
   - {fileID: 8300000, guid: 9975b1d225b4ba04b8591b6636a42b4a, type: 3}
   - {fileID: 8300000, guid: 51faac5d16826964fa13eece75491c29, type: 3}
   tag2TypingSounds:
-  - {fileID: 8300000, guid: 32e51eef91f442643bbdb46278c599b8, type: 3}
-  - {fileID: 8300000, guid: c50a746115946f241a9574575337cb75, type: 3}
-  - {fileID: 8300000, guid: 1b7e5c04d354a4b4fa82b1d027dd1d63, type: 3}
-  - {fileID: 8300000, guid: e4f87cb0643b8e74ca1f5269fe5d36c7, type: 3}
+  - {fileID: 8300000, guid: d6bc20b289d875542af4500fa84762f2, type: 3}
+  - {fileID: 8300000, guid: 09b7d8134176df24e96dc16e977f3bcc, type: 3}
+  - {fileID: 8300000, guid: 47aeae2368807b24f977473730a71271, type: 3}
+  - {fileID: 8300000, guid: 9975b1d225b4ba04b8591b6636a42b4a, type: 3}
+  - {fileID: 8300000, guid: 51faac5d16826964fa13eece75491c29, type: 3}
   lettersPerSound: 3
 --- !u!1 &1491390598
 GameObject:
@@ -1178,7 +1171,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -61}
+  m_AnchoredPosition: {x: 0, y: -515}
   m_SizeDelta: {x: 343.0536, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1491390600
@@ -1315,8 +1308,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -112}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0.86, y: -123.67}
+  m_SizeDelta: {x: 632.17, y: 101.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1577727787
 MonoBehaviour:
@@ -1365,8 +1358,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1404,7 +1397,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -216.25974, y: 15.10341, z: -208.44247, w: -72.94992}
+  m_margin: {x: -11.7153015, y: -7.3207626, z: -9.535675, w: -5.373768}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1484,7 +1477,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.8196, y: -68.2}
+  m_AnchoredPosition: {x: 0.8196, y: -517}
   m_SizeDelta: {x: 806.286, y: 141.0301}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1759977160
@@ -1592,7 +1585,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 6104302f2c2041742bf5d94bc7750f5e, type: 3}
-  m_Color: {r: 0.98742133, g: 0.5496023, b: 0.5496023, a: 0.003921569}
+  m_Color: {r: 0.51572317, g: 0.51572317, b: 0.51572317, a: 0.003921569}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
