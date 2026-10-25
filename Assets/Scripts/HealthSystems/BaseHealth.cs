@@ -149,8 +149,11 @@ public abstract class BaseHealth : MonoBehaviour, IDamageable
             {
                 if (other.GetComponent<Bullet>() != null) return;
                 var bullet = other.GetComponent<BaseBullet>();
-                ApplyDamage(bullet.damage);
-                other.gameObject.SetActive(false);
+                if (bullet != null)
+                {
+                    ApplyDamage(bullet.damage);
+                    other.gameObject.SetActive(false);
+                }
             }
         }
     }

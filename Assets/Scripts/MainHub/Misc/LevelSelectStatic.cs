@@ -16,7 +16,7 @@ public class MenuStaticInterruptions : MonoBehaviour
     }
 
     [Header("Audio")]
-    [SerializeField] private AudioSource musicSource;
+    private AudioSource musicSource;
     [SerializeField] private AudioSource staticSource;
 
     [Header("Intensity per beaten level")]
@@ -30,6 +30,10 @@ public class MenuStaticInterruptions : MonoBehaviour
 
     private float baseMusicVolume;
 
+    private void Awake()
+    {
+        musicSource = GameObject.FindGameObjectWithTag("musicSource").GetComponent<AudioSource>();
+    }
     private void Start()
     {
         baseMusicVolume = musicSource.volume;
