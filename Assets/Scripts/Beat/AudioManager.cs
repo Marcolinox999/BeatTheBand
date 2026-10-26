@@ -60,9 +60,10 @@ public class AudioManager : MonoBehaviour
     }
     public void PlaySongSynced(AudioClip song, float bpm, float firstBeatOffset = 0f)
     {
+        Debug.Log(2);
         if (song == null || bpm <= 0f)
             return;
-
+        Debug.Log(song);
         musicSource.Stop();
         musicSource.clip = song;
         //musicSource.loop = false;
@@ -70,7 +71,7 @@ public class AudioManager : MonoBehaviour
         double startTime = AudioSettings.dspTime + 0.2;
 
         musicSource.PlayScheduled(startTime);
-
+        Debug.Log(3);
         BeatManager.instance.StartBeatSync(
             bpm,
             startTime + firstBeatOffset

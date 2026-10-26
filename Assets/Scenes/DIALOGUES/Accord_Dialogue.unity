@@ -515,6 +515,18 @@ PrefabInstance:
       value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3712
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3712
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3712
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -544,11 +556,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 12.290115
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 18.546738
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1144,7 +1156,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c50a746115946f241a9574575337cb75, type: 3}
   - {fileID: 8300000, guid: 1b7e5c04d354a4b4fa82b1d027dd1d63, type: 3}
   - {fileID: 8300000, guid: e4f87cb0643b8e74ca1f5269fe5d36c7, type: 3}
-  lettersPerSound: 3
+  lettersPerSound: 7
 --- !u!1 &1491390598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,6 +1548,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1805118626}
   - component: {fileID: 1805118625}
+  - component: {fileID: 1805118627}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -1617,6 +1630,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1805118627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805118624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3177afbe1502484d86046385723c976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicSceneConfig
+  music: {fileID: 0}
+  bpm: 120
+  firstBeatOffset: 0
 --- !u!1 &1960290516
 GameObject:
   m_ObjectHideFlags: 0

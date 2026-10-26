@@ -355,7 +355,7 @@ MonoBehaviour:
   - {fileID: 4290160201787101369}
   - {fileID: 7652525672339871724}
   - {fileID: 7123629665076350593}
-  mapName: Level Hub
+  mapName: Game Over
   boss: {fileID: 0}
 --- !u!50 &3286618622399576044
 Rigidbody2D:

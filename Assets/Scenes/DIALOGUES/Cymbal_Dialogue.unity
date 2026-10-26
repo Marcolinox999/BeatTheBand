@@ -329,7 +329,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ae2c531f9e965a24385f7f4556e2ad55, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 60619b6fbd9e64f42b75e64b42f406c5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -495,7 +495,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -577,7 +577,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -859,7 +859,7 @@ RectTransform:
   m_GameObject: {fileID: 1433215837}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.3789, y: 2.3789, z: 2.3789}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 410441909}
@@ -872,7 +872,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1.1301, y: -4.3709}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1433215839
@@ -946,7 +946,7 @@ MonoBehaviour:
   tag1Image: {fileID: 410441910}
   tag2Image: {fileID: 390727181}
   tag1IdleSprite: {fileID: 21300000, guid: 76079328c9c15ca4db548df121d4fe3b, type: 3}
-  tag2IdleSprite: {fileID: 21300000, guid: ae2c531f9e965a24385f7f4556e2ad55, type: 3}
+  tag2IdleSprite: {fileID: 21300000, guid: 60619b6fbd9e64f42b75e64b42f406c5, type: 3}
   characterName: {fileID: 1491390600}
   dialogueArea: {fileID: 1577727787}
   music: {fileID: 8300000, guid: 51798f261b63e9c449e3177ae52898dd, type: 3}
@@ -1140,6 +1140,18 @@ PrefabInstance:
     - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
       propertyPath: m_SizeDelta.y
       value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3712
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3712
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3712
       objectReference: {fileID: 0}
     - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
       propertyPath: m_LocalPosition.x

@@ -603,15 +603,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.3712
       objectReference: {fileID: 0}
     - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.3712
       objectReference: {fileID: 0}
     - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.3712
       objectReference: {fileID: 0}
     - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
       propertyPath: m_LocalPosition.x
@@ -748,7 +748,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -779,6 +779,53 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &867804618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 867804620}
+  - component: {fileID: 867804619}
+  m_Layer: 0
+  m_Name: WinMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &867804619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867804618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3177afbe1502484d86046385723c976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicSceneConfig
+  music: {fileID: 8300000, guid: f62b9c2c909916e4b9e200c94b5bcd2d, type: 3}
+  bpm: 120
+  firstBeatOffset: 0
+--- !u!4 &867804620
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867804618}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.22222, y: 6.78944, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &934115982 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3980416881378928749, guid: dd7079d2bb6d3184da4c0d2a9d0b08b5, type: 3}
@@ -868,7 +915,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 2028895301
   m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!224 &1138179946
@@ -1031,7 +1078,6 @@ GameObject:
   - component: {fileID: 1433215838}
   - component: {fileID: 1433215840}
   - component: {fileID: 1433215839}
-  - component: {fileID: 1433215841}
   m_Layer: 5
   m_Name: Dialogue system
   m_TagString: Untagged
@@ -1047,8 +1093,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433215837}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.5257}
+  m_LocalScale: {x: 2.4024, y: 2.4024, z: 2.4024}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 410441909}
@@ -1061,7 +1107,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -3.5061, y: 18}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1433215839
@@ -1130,7 +1176,7 @@ MonoBehaviour:
   tag2IdleSprite: {fileID: 21300000, guid: b946edd4fba08334c9da3d0b17e6807f, type: 3}
   characterName: {fileID: 1491390600}
   dialogueArea: {fileID: 1577727787}
-  music: {fileID: 0}
+  music: {fileID: 8300000, guid: f62b9c2c909916e4b9e200c94b5bcd2d, type: 3}
   isDialogueActive: 0
   typingSpeed: 0.04
   tag1TypingSounds:
@@ -1159,21 +1205,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9975b1d225b4ba04b8591b6636a42b4a, type: 3}
   - {fileID: 8300000, guid: 51faac5d16826964fa13eece75491c29, type: 3}
   lettersPerSound: 3
---- !u!114 &1433215841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1433215837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3177afbe1502484d86046385723c976, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MusicSceneConfig
-  music: {fileID: 8300000, guid: f62b9c2c909916e4b9e200c94b5bcd2d, type: 3}
-  bpm: 120
-  firstBeatOffset: 0
 --- !u!1 &1491390598
 GameObject:
   m_ObjectHideFlags: 0
@@ -2105,3 +2136,4 @@ SceneRoots:
   - {fileID: 1138179946}
   - {fileID: 1847883435}
   - {fileID: 1670209944}
+  - {fileID: 867804620}

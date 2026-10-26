@@ -11,6 +11,7 @@ public class MusicSceneConfig : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log(1);
         AudioManager.instance.PlaySongSynced(music, bpm, firstBeatOffset);
     }
 }

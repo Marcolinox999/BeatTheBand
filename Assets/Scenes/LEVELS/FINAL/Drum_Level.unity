@@ -767,6 +767,18 @@ PrefabInstance:
       value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3712
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3712
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3712
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -796,11 +808,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 12.290115
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 18.546738
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1421,10 +1433,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1441,8 +1453,8 @@ Canvas:
   m_GameObject: {fileID: 1170471123}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1322612348}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1452,8 +1464,8 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1258807667
+  m_SortingOrder: 1477
   m_TargetDisplay: 0
 --- !u!1 &1217429558 stripped
 GameObject:
@@ -2032,6 +2044,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2037993504}
     m_Modifications:
+    - target: {fileID: 1075921650742335572, guid: 93425f41aa037034fa41a3db750937a2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.4907365
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075921650742335572, guid: 93425f41aa037034fa41a3db750937a2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.4907365
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075921650742335572, guid: 93425f41aa037034fa41a3db750937a2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.4907365
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075921650742335572, guid: 93425f41aa037034fa41a3db750937a2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -157.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 1655433246057161519, guid: 93425f41aa037034fa41a3db750937a2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.4907365
+      objectReference: {fileID: 0}
+    - target: {fileID: 1655433246057161519, guid: 93425f41aa037034fa41a3db750937a2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.4907365
+      objectReference: {fileID: 0}
+    - target: {fileID: 1655433246057161519, guid: 93425f41aa037034fa41a3db750937a2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.4907365
+      objectReference: {fileID: 0}
+    - target: {fileID: 1655433246057161519, guid: 93425f41aa037034fa41a3db750937a2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -314.17
+      objectReference: {fileID: 0}
     - target: {fileID: 2243974438350493808, guid: 93425f41aa037034fa41a3db750937a2, type: 3}
       propertyPath: m_Name
       value: UI
@@ -2076,9 +2120,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3853458806364558331, guid: 93425f41aa037034fa41a3db750937a2, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1322612348}
+    - target: {fileID: 3853458806364558331, guid: 93425f41aa037034fa41a3db750937a2, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338955791882350851, guid: 93425f41aa037034fa41a3db750937a2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.4907365
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338955791882350851, guid: 93425f41aa037034fa41a3db750937a2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.4907365
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338955791882350851, guid: 93425f41aa037034fa41a3db750937a2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.4907365
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338955791882350851, guid: 93425f41aa037034fa41a3db750937a2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 157.09
+      objectReference: {fileID: 0}
     - target: {fileID: 4915352421516408210, guid: 93425f41aa037034fa41a3db750937a2, type: 3}
       propertyPath: sceneName
       value: Level Hub
+      objectReference: {fileID: 0}
+    - target: {fileID: 6505142748476194627, guid: 93425f41aa037034fa41a3db750937a2, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 6505142748476194627, guid: 93425f41aa037034fa41a3db750937a2, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

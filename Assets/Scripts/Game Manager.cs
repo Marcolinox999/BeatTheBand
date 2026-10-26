@@ -103,7 +103,6 @@ public class GameManager : MonoBehaviour
             animator.Play("Trans_In");
 
         SceneManager.LoadScene(desiredLevel);
-
         animator = GameObject.FindGameObjectsWithTag("Transition")[0]
             .GetComponent<Animator>();
     }

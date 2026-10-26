@@ -1475,14 +1475,14 @@ RectTransform:
   m_GameObject: {fileID: 367854789}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.76, y: 1.14, z: 1.0270268}
+  m_LocalScale: {x: 1.6198641, y: 2.429796, z: 2.189005}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1997572070}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -216, y: -116.900024}
+  m_AnchoredPosition: {x: -461.51, y: -189}
   m_SizeDelta: {x: 420.19, y: 100.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &367854791
@@ -7393,14 +7393,14 @@ RectTransform:
   m_GameObject: {fileID: 1746200168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.76, y: 1.14, z: 1.0270268}
+  m_LocalScale: {x: 1.6198641, y: 2.429796, z: 2.189005}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1997572070}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -209, y: -116.900024}
+  m_AnchoredPosition: {x: -446.59, y: -189}
   m_SizeDelta: {x: 420.19, y: 100.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1746200170
@@ -7525,14 +7525,14 @@ RectTransform:
   m_GameObject: {fileID: 1759952613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.76, y: 1.14, z: 1.0270268}
+  m_LocalScale: {x: 1.6198641, y: 2.429796, z: 2.189005}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1997572070}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 218, y: -116.900024}
+  m_AnchoredPosition: {x: 463.51, y: -189}
   m_SizeDelta: {x: 420.19, y: 100.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1759952615
@@ -8409,7 +8409,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -8501,6 +8501,18 @@ PrefabInstance:
     - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
       propertyPath: m_SizeDelta.y
       value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3712
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3712
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3712
       objectReference: {fileID: 0}
     - target: {fileID: 6978733890057559636, guid: c405baa929a711646af3571294dfbb32, type: 3}
       propertyPath: m_LocalPosition.x

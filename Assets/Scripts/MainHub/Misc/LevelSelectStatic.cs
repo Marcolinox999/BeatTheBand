@@ -17,6 +17,7 @@ public class MenuStaticInterruptions : MonoBehaviour
 
     [Header("Audio")]
     private AudioSource musicSource;
+
     [SerializeField] private AudioSource staticSource;
 
     [Header("Intensity per beaten level")]
@@ -29,6 +30,8 @@ public class MenuStaticInterruptions : MonoBehaviour
     };
 
     private float baseMusicVolume;
+
+    private bool hasBaseVolume;
 
     private void Awake()
     {
@@ -43,13 +46,16 @@ public class MenuStaticInterruptions : MonoBehaviour
         musicSource = musicObject.GetComponentInChildren<AudioSource>();
 
         if (musicSource == null)
-            Debug.LogError("No AudioSource found on ");
+            Debug.LogError("No AudioSource found on " + musicObject.name);
     }
+
     private void Start()
     {
         if (musicSource == null || staticSource == null) return;
 
         baseMusicVolume = musicSource.volume;
+        hasBaseVolume = true;
+
         staticSource.loop = true;
         staticSource.volume = 0f;
         staticSource.Play();
@@ -57,8 +63,25 @@ public class MenuStaticInterruptions : MonoBehaviour
         StartCoroutine(StaticRoutine());
     }
 
+    private void OnDisable()
+    {
+        RestoreVolumes();
+    }
+
+    private void RestoreVolumes()
+    {
+        if (hasBaseVolume && musicSource != null)
+            musicSource.volume = baseMusicVolume;
+
+        if (staticSource != null)
+            staticSource.volume = 0f;
+    }
+
     private int CountBeatenLevels()
     {
+        if (GameManager.Instance == null || GameManager.Instance.beatenLevels == null)
+            return 0;
+
         int count = 0;
         foreach (bool beaten in GameManager.Instance.beatenLevels)
         {
@@ -88,9 +111,8 @@ public class MenuStaticInterruptions : MonoBehaviour
 
             yield return new WaitForSecondsRealtime(
                 Random.Range(level.burstDuration.x, level.burstDuration.y));
-            
-            staticSource.volume = 0f;
-            musicSource.volume = baseMusicVolume;
+
+            RestoreVolumes();
         }
     }
 }

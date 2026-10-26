@@ -147,7 +147,7 @@ public class DialogueManager : MonoBehaviour
             if (letterCount % step == 0 && currentTypingSounds != null && currentTypingSounds.Length > 0)
             {
                 int i = Random.Range(0, currentTypingSounds.Length);
-                AudioManager.instance.PlayMusic(currentTypingSounds[i]);
+                AudioManager.instance.PlaySFX(currentTypingSounds[i]);
             }
 
             letterCount++;
