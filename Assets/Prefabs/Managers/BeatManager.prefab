@@ -52,5 +52,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8d16356af3013314cb906ae5b1b1b244, type: 3}
   windowOfInteractions: 0.2
   audioLatencyOffset: 0.08
-  perfectWindow: 0.06
-  okWindow: 0.23
+  perfectWindow: 0.05
+  okWindow: 0.2
