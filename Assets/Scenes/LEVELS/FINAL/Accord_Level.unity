@@ -899,7 +899,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2404520482391533329, guid: 997ad635925c0d74587e7af2108f3f19, type: 3}
       propertyPath: BPM
-      value: 120
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 2404520482391533329, guid: 997ad635925c0d74587e7af2108f3f19, type: 3}
       propertyPath: 'blip.Array.data[0]'
