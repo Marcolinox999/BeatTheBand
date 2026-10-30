@@ -605,7 +605,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 2028895301
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &772234975
@@ -949,7 +949,7 @@ MonoBehaviour:
   tag2IdleSprite: {fileID: 21300000, guid: 60619b6fbd9e64f42b75e64b42f406c5, type: 3}
   characterName: {fileID: 1491390600}
   dialogueArea: {fileID: 1577727787}
-  music: {fileID: 8300000, guid: 51798f261b63e9c449e3177ae52898dd, type: 3}
+  music: {fileID: 0}
   isDialogueActive: 0
   typingSpeed: 0.04
   tag1TypingSounds:
@@ -963,7 +963,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e63909ad56798184289fb321688a73ac, type: 3}
   - {fileID: 8300000, guid: 0e48f6e2debb3754c912f1ec85819f0a, type: 3}
   - {fileID: 8300000, guid: d47c851086788054f8d9a4e818841c61, type: 3}
-  lettersPerSound: 3
+  lettersPerSound: 7
 --- !u!1 &1491390598
 GameObject:
   m_ObjectHideFlags: 0

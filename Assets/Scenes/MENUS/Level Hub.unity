@@ -5385,11 +5385,11 @@ MonoBehaviour:
   - timeBetweenBursts: {x: 2, y: 3}
     burstDuration: {x: 0.4, y: 0.6}
     staticVolume: 0.3
-    musicDuck: 0.5
+    musicDuck: 0.719
   - timeBetweenBursts: {x: 4, y: 9}
-    burstDuration: {x: 0.2, y: 0.6}
+    burstDuration: {x: 0.8, y: 1.2}
     staticVolume: 0.5
-    musicDuck: 0.401
+    musicDuck: 0.35
   - timeBetweenBursts: {x: 0, y: 0}
     burstDuration: {x: 2, y: 2}
     staticVolume: 1

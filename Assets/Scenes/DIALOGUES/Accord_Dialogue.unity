@@ -828,7 +828,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 2028895301
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1138179946
@@ -1189,7 +1189,7 @@ MonoBehaviour:
   tag2IdleSprite: {fileID: 21300000, guid: b946edd4fba08334c9da3d0b17e6807f, type: 3}
   characterName: {fileID: 1491390600}
   dialogueArea: {fileID: 1577727787}
-  music: {fileID: 8300000, guid: 51798f261b63e9c449e3177ae52898dd, type: 3}
+  music: {fileID: 0}
   isDialogueActive: 0
   typingSpeed: 0.04
   tag1TypingSounds:
