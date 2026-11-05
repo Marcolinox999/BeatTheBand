@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MusicalReward
   maxHealth: 150
   damageCooldown: 0
-  _flashColor: {r: 0, g: 0.6560173, b: 1, a: 1}
+  _flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashTime: 0.25
   speed: 6.5
   maxBounceAngle: 35

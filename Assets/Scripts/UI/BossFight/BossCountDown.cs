@@ -26,7 +26,14 @@ public class BossCountDown : MonoBehaviour
     {
      timer -= Time.deltaTime;
      int visualtimer = (int)timer;
-     bossCountdownText.text = visualtimer.ToString("F0");
+     if (timer >= 1)
+     {
+         bossCountdownText.text = visualtimer.ToString("F0");
+     }
+     else
+     {
+         bossCountdownText.text = "Play!";
+     }
      if (timer <= 0)
      {
          player.enabled = true;
